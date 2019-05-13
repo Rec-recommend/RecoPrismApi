@@ -13,7 +13,7 @@ class EnforceTenancy
      */
     public function handle($request, Closure $next)
     {
-        Config::set('database.default', 'tenant');
+        Config::set('database.default', 'tenancy');
         
         return $next($request);
     }

@@ -1,13 +1,13 @@
 <?php
-
 namespace App\Http\Controllers\Auth;
-
 use App\User;
+use App\Tenant;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\Request;
 class RegisterController extends Controller
 {
     /*
@@ -20,16 +20,13 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
-
     use RegistersUsers;
-
     /**
      * Where to redirect users after registration.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
-
+    protected $redirectTo = '/login';
     /**
      * Create a new controller instance.
      *
@@ -39,7 +36,6 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
-
     /**
      * Get a validator for an incoming registration request.
      *
@@ -49,12 +45,29 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'password' => 'required|string|min:6|confirmed',
+            'fqdn' => 'required|unique:system.hostnames'
         ]);
+    } 
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function register(Request $request)
+    {
+        dd($request);
+        $request->merge(['fqdn' => $request->name . '.' . env('TENANT_URL_BASE')]);
+        $this->validator($request->all())->validate();
+        Tenant::create($request->input('fqdn'));
+        event(new Registered($user = $this->create($request->all())));
+        return $this->registered($request, $user)
+                        ?: redirect('http://' . $request->input('fqdn') . $this->redirectTo);
+        
     }
-
     /**
      * Create a new user instance after a valid registration.
      *
@@ -62,7 +75,7 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {
+    {   
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
