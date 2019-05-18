@@ -27,11 +27,12 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
-        $env = app(Environment::class);
-        if ($fqdn= optional($env->hostname()->fqdn)) {
-            config(['database.default' => 'tenant']);
-        }
-        //
+
+    {     config(['database.default' => 'tenant']);
+    
+        // if ($fqdn= optional($env->hostname()->fqdn)) {
+        //     $env = app(Environment::class);
+        // }
+        
     }
 }
