@@ -16,12 +16,9 @@ use Illuminate\Http\Request;
 Route::group(['prefix' => 'v1'], function () {
     Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
     Route::post('register', 'Auth\RegisterController@register');
+    Route::post('login', 'Auth\LoginController@login');
 });
-// Route::group(function () {
-    // Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
-    // Route::post('password/reset', 'Auth\ResetPasswordController@reset');
-    // Route::post('checkDomain', 'Auth\RegisterController@checkDomain');
-// });
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

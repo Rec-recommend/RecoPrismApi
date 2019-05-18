@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        // 'App\Model' => 'App\Policies\ModelPolicy',
+        'App\Model' => 'App\Policies\ModelPolicy',
     ];
 
     /**
@@ -32,8 +32,8 @@ class AuthServiceProvider extends ServiceProvider
             
         ]);
         
-            \Laravel\Passport\Passport::tokensExpireIn(\Carbon\Carbon::now()->addMinutes(10));
-            \Laravel\Passport\Passport::refreshTokensExpireIn(\Carbon\Carbon::now()->addDays(1));
+        \Laravel\Passport\Passport::tokensExpireIn(\Carbon\Carbon::now()->addMinutes(10));
+        \Laravel\Passport\Passport::refreshTokensExpireIn(\Carbon\Carbon::now()->addDays(1));
 
         //
     }

@@ -8,7 +8,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Hyn\Tenancy\Traits\UsesTenantConnection;
 use Laravel\Passport\HasApiTokens;
 
-
 class User extends Authenticatable
 {
     use HasApiTokens,Notifiable, UsesTenantConnection;
