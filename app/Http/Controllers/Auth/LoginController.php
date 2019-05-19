@@ -53,7 +53,6 @@ class LoginController extends Controller
         ];
         if (auth()->attempt($credentials)) {
             $token = auth()->user()->createToken('token')->accessToken;
-            dd($token);
             return response()->json(['token' => $token], 200);
         } else {
             return response()->json(['error' => 'UnAuthorised'], 401);
