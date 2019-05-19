@@ -15,8 +15,8 @@ class CreateTenantUsersTable extends Migration
     {
         Schema::create('tenant_users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('age');
-            $table->string('country');
+            $table->integer('age')->nullable();
+            $table->string('country')->nullable();
             $table->timestamps();
         });
     }

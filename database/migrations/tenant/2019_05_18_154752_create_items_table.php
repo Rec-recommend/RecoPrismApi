@@ -15,19 +15,19 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('price');
-            $table->string('category_A');
-            $table->string('category_B');
-            $table->string('category_C');
-            $table->string('category_D');
-            $table->string('category_E');
-            $table->text('tags');
-            $table->text('description');
-            $table->string('field_1');
-            $table->string('field_2');
-            $table->string('field_3');
-            $table->string('field_4');
-            $table->string('field_5');
+            $table->integer('price')->nullable();
+            $table->string('category_A')->nullable();
+            $table->string('category_B')->nullable();
+            $table->string('category_C')->nullable();
+            $table->string('category_D')->nullable();
+            $table->string('category_E')->nullable();
+            $table->text('tags')->nullable();
+            $table->text('description')->nullable();
+            $table->string('field_1')->nullable();
+            $table->string('field_2')->nullable();
+            $table->string('field_3')->nullable();
+            $table->string('field_4')->nullable();
+            $table->string('field_5')->nullable();
             $table->timestamps();
         });
     }

@@ -15,11 +15,11 @@ class CreateRatingsTable extends Migration
     {
         Schema::create('ratings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('value');
-            $table->unsignedBigInteger('item_id');
-            $table->unsignedBigInteger('tenant_user_id');
-            $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
-            $table->foreign('tenant_user_id')->references('id')->on('tenant_users')->onDelete('cascade');
+            $table->integer('value')->nullable();
+            $table->unsignedBigInteger('item_id')->nullable();
+            $table->unsignedBigInteger('tenant_user_id')->nullable();
+            $table->foreign('item_id')->references('id')->on('items')->nullable();
+            $table->foreign('tenant_user_id')->references('id')->on('tenant_users')->nullable();
 
             $table->timestamps();
         });
