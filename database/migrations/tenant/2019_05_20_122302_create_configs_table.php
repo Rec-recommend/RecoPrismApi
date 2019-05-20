@@ -22,6 +22,9 @@ class CreateConfigsTable extends Migration
             $table->boolean('used')->default(false);
             $table->enum('target', ['table', 'column'])->default('table');
             $table->string('table')->nullable();
+            $table->unsignedBigInteger('group_id')->nullable();
+            $table->foreign('group_id')->references('id')->on('relation_groups')->nullable();
+
 
             $table->timestamps();
         });
