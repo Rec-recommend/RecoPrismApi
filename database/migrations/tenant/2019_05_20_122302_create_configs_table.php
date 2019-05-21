@@ -17,11 +17,12 @@ class CreateConfigsTable extends Migration
             $table->bigIncrements('id');
 
             $table->string('name');
-            $table->integer('weight')->default(10);
-            $table->integer('default_weight')->default(10);
+            $table->integer('weight')->default(1);
+            $table->integer('default_weight')->default(1);
             $table->boolean('used')->default(false);
             $table->enum('target', ['table', 'column'])->default('table');
             $table->string('table')->nullable();
+
 
             $table->timestamps();
         });
