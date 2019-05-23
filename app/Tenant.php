@@ -1,12 +1,14 @@
 <?php
 
 namespace App;
+
 use Illuminate\Support\Facades\Artisan;
 use Hyn\Tenancy\Environment;
 use Hyn\Tenancy\Models\Hostname;
 use Hyn\Tenancy\Models\Website;
 use Hyn\Tenancy\Contracts\Repositories\HostnameRepository;
 use Hyn\Tenancy\Contracts\Repositories\WebsiteRepository;
+
 /**
  * @property Website website
  * @property Hostname hostname
@@ -16,7 +18,6 @@ class Tenant
 {
     public function __construct(Website $website = null, Hostname $hostname = null)
     {
-        
         $this->website = $website ?? $sub->website;
         $this->hostname = $hostname ?? $sub->websites->hostnames->first();
     }
@@ -51,5 +52,3 @@ class Tenant
         return Hostname::where('fqdn', $name)->exists();
     }
 }
-
-?>
