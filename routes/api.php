@@ -17,7 +17,7 @@ Route::group(['prefix' => 'v1'], function () {
     Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
     Route::post('register', 'Auth\RegisterController@register');
     Route::post('login', 'Auth\LoginController@login');
-    Route::get('item', 'Api\TenantController@show');
+    Route::post('data', 'Api\TenantController@insert_data');
 });
 
 
