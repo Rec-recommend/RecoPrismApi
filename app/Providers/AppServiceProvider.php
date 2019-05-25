@@ -28,6 +28,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        config(['database.default' => 'tenant']);
+        // config(['database.default' => 'tenant']);
     }
 }
