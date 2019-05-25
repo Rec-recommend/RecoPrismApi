@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 
 class CreateTenant extends Command
 {
-    protected $signature = 'tenant:create';
+    protected $signature = 'create:tenant';
     protected $description = 'Creates a tenant with the provided name and email address e.g. php artisan tenant:create boise boise@example.com';
     public function handle()
     {
@@ -16,7 +16,7 @@ class CreateTenant extends Command
         $user = User::where([
             'email'=>'test@tester.com',
         ])->first();
-        Tenant::create($user,$subdomain);
+        Tenant::create($user, $subdomain);
         $this->info("Tenant '{$subdomain}' is created and is now accessible at {$user->name}");
     }
 }
