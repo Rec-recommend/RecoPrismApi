@@ -15,7 +15,7 @@ class TenantController extends Controller
     public function insert_data(Request $request)
     {
         if ($model = TenantModelFactory::create($request->model)) {
-            $model->insert($request->data);
+            $model->insert_many($request->data);
             return response()->json(['success'=>true,'data' => $data, 'message'=>$message], $code);
         
         // return $this->success("Items inserted", 201);

@@ -4,6 +4,7 @@ namespace App\Models\Api;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use phpDocumentor\Reflection\Types\Object_;
 
 class Item extends Model
 {
@@ -14,12 +15,14 @@ class Item extends Model
         $this->attributes['options'] = json_encode($options);
     }
 
-    public function insert($data)
+    public function insert_many($data)
     {
         // dd($data);
-
-        DB::table('items')->insert(
-            array($data)
-        );
+        // $data_arr = [];
+        // Item::insert($data);    
+        foreach ($data as $key => $value) {
+            DB::table('items')->insert( $value);
+        }
+        // $data =  ["category_A"=>"aeme", "category_B"=>"a121eme",];  
     }
 }
