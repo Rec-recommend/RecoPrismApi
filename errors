@@ -1,0 +1,2072 @@
+-- Logs begin at Sat 2018-10-13 22:54:02 EET, end at Sat 2019-05-25 11:04:58 EET. --
+May 24 11:30:00 babylon kernel: audit: type=1400 audit(1558690200.584:59): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/snap/core/6964/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=4946 comm="apparmor_parser"
+May 24 11:30:00 babylon audit[4964]: AVC apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.core.hook.configure" pid=4964 comm="apparmor_parser"
+May 24 11:30:00 babylon audit[4966]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.core" pid=4966 comm="apparmor_parser"
+May 24 11:30:00 babylon kernel: audit: type=1400 audit(1558690200.956:60): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.core.hook.configure" pid=4964 comm="apparmor_parser"
+May 24 11:30:00 babylon kernel: audit: type=1400 audit(1558690200.956:61): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.core" pid=4966 comm="apparmor_parser"
+May 24 11:30:01 babylon audit[4968]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.discord" pid=4968 comm="apparmor_parser"
+May 24 11:30:01 babylon kernel: audit: type=1400 audit(1558690201.852:62): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.discord" pid=4968 comm="apparmor_parser"
+May 24 11:30:01 babylon audit[4970]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.discord.discord" pid=4970 comm="apparmor_parser"
+May 24 11:30:01 babylon kernel: audit: type=1400 audit(1558690201.864:63): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.discord.discord" pid=4970 comm="apparmor_parser"
+May 24 11:30:03 babylon audit[4972]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.gimp" pid=4972 comm="apparmor_parser"
+May 24 11:30:03 babylon kernel: audit: type=1400 audit(1558690203.000:64): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.gimp" pid=4972 comm="apparmor_parser"
+May 24 11:30:03 babylon audit[4974]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.gimp.gimp" pid=4974 comm="apparmor_parser"
+May 24 11:30:03 babylon kernel: audit: type=1400 audit(1558690203.008:65): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.gimp.gimp" pid=4974 comm="apparmor_parser"
+May 24 11:30:03 babylon audit[4976]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.gnome-calculator" pid=4976 comm="apparmor_parser"
+May 24 11:30:03 babylon kernel: audit: type=1400 audit(1558690203.644:66): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.gnome-calculator" pid=4976 comm="apparmor_parser"
+May 24 11:30:03 babylon audit[4983]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.gnome-calculator.gnome-calculator" pid=4983 comm="apparmor_parser"
+May 24 11:30:03 babylon kernel: audit: type=1400 audit(1558690203.656:67): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.gnome-calculator.gnome-calculator" pid=4983 comm="apparmor_parser"
+May 24 11:30:04 babylon audit[4985]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.gnome-characters" pid=4985 comm="apparmor_parser"
+May 24 11:30:04 babylon audit[4987]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.gnome-characters.gnome-characters" pid=4987 comm="apparmor_parser"
+May 24 11:30:04 babylon audit[4989]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.gnome-logs" pid=4989 comm="apparmor_parser"
+May 24 11:30:04 babylon audit[4991]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.gnome-logs.gnome-logs" pid=4991 comm="apparmor_parser"
+May 24 11:30:05 babylon audit[4993]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.gnome-system-monitor" pid=4993 comm="apparmor_parser"
+May 24 11:30:05 babylon audit[4996]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.gnome-system-monitor.gnome-system-monitor" pid=4996 comm="apparmor_parser"
+May 24 11:30:05 babylon audit[4998]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.pall" pid=4998 comm="apparmor_parser"
+May 24 11:30:05 babylon audit[4999]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.pall.pall" pid=4999 comm="apparmor_parser"
+May 24 11:30:05 babylon audit[5001]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.postman" pid=5001 comm="apparmor_parser"
+May 24 11:30:05 babylon audit[5002]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.postman.postman" pid=5002 comm="apparmor_parser"
+May 24 11:30:05 babylon snapd[1187]: daemon.go:611: gracefully waiting for running hooks
+May 24 11:30:05 babylon snapd[1187]: daemon.go:613: done waiting for running hooks
+May 24 11:30:06 babylon systemd[1]: snapd.service: Service RestartSec=100ms expired, scheduling restart.
+May 24 11:30:06 babylon systemd[1]: snapd.service: Scheduled restart job, restart counter is at 1.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Automatic restarting of the unit snapd.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+May 24 11:30:06 babylon systemd[1]: Stopped Snappy daemon.
+-- Subject: Unit snapd.service has finished shutting down
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit snapd.service has finished shutting down.
+May 24 11:30:06 babylon systemd[1]: Starting Snappy daemon...
+-- Subject: Unit snapd.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit snapd.service has begun starting up.
+May 24 11:30:06 babylon snapd[5052]: AppArmor status: apparmor is enabled and all features are available
+May 24 11:30:06 babylon snapd[5052]: AppArmor status: apparmor is enabled and all features are available
+May 24 11:30:06 babylon audit[5135]: AVC apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.gnome-logs.gnome-logs" pid=5135 comm="apparmor_parser"
+May 24 11:30:06 babylon kernel: kauditd_printk_skb: 10 callbacks suppressed
+May 24 11:30:06 babylon kernel: audit: type=1400 audit(1558690206.876:78): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.gnome-logs.gnome-logs" pid=5135 comm="apparmor_parser"
+May 24 11:30:07 babylon audit[5134]: AVC apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap-update-ns.gnome-logs" pid=5134 comm="apparmor_parser"
+May 24 11:30:07 babylon kernel: audit: type=1400 audit(1558690207.232:79): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap-update-ns.gnome-logs" pid=5134 comm="apparmor_parser"
+May 24 11:30:07 babylon audit[5183]: AVC apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/snap/core/6964/usr/lib/snapd/snap-confine" pid=5183 comm="apparmor_parser"
+May 24 11:30:07 babylon kernel: audit: type=1400 audit(1558690207.276:80): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/snap/core/6964/usr/lib/snapd/snap-confine" pid=5183 comm="apparmor_parser"
+May 24 11:30:07 babylon audit[5183]: AVC apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/snap/core/6964/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=5183 comm="apparmor_parser"
+May 24 11:30:07 babylon kernel: audit: type=1400 audit(1558690207.296:81): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/snap/core/6964/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=5183 comm="apparmor_parser"
+May 24 11:30:07 babylon audit[5185]: AVC apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.core.hook.configure" pid=5185 comm="apparmor_parser"
+May 24 11:30:07 babylon audit[5187]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.core" pid=5187 comm="apparmor_parser"
+May 24 11:30:07 babylon kernel: audit: type=1400 audit(1558690207.344:82): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.core.hook.configure" pid=5185 comm="apparmor_parser"
+May 24 11:30:07 babylon kernel: audit: type=1400 audit(1558690207.344:83): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.core" pid=5187 comm="apparmor_parser"
+May 24 11:30:07 babylon audit[5197]: AVC apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.gnome-characters.gnome-characters" pid=5197 comm="apparmor_parser"
+May 24 11:30:07 babylon kernel: audit: type=1400 audit(1558690207.616:84): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.gnome-characters.gnome-characters" pid=5197 comm="apparmor_parser"
+May 24 11:30:08 babylon audit[5196]: AVC apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap-update-ns.gnome-characters" pid=5196 comm="apparmor_parser"
+May 24 11:30:08 babylon kernel: audit: type=1400 audit(1558690208.064:85): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap-update-ns.gnome-characters" pid=5196 comm="apparmor_parser"
+May 24 11:30:08 babylon audit[5206]: AVC apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.gnome-system-monitor.gnome-system-monitor" pid=5206 comm="apparmor_parser"
+May 24 11:30:08 babylon kernel: audit: type=1400 audit(1558690208.404:86): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.gnome-system-monitor.gnome-system-monitor" pid=5206 comm="apparmor_parser"
+May 24 11:30:08 babylon audit[5205]: AVC apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap-update-ns.gnome-system-monitor" pid=5205 comm="apparmor_parser"
+May 24 11:30:08 babylon kernel: audit: type=1400 audit(1558690208.848:87): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap-update-ns.gnome-system-monitor" pid=5205 comm="apparmor_parser"
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb2
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-0:1.0
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb2/2-0:1.0
+May 24 11:30:09 babylon NetworkManager[929]: <info>  [1558690209.1198] device changed (path: /sys/devices/pci0000:00/0000:00:1f.6/net/enp0s31f6, iface: enp0s31f6)
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.0
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.2
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-1
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.0/0003:056A:0084.0005
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.1
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.2
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.2/0003:279E:024E.0004
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.1/0003:056A:0084.0006
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.1
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.2/0003:056A:0084.0007
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/0003:279E:024E.0002
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1:1.0
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.1/0003:279E:024E.0003
+May 24 11:30:09 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1:1.0/0003:275D:0BA6.0001
+May 24 11:30:09 babylon NetworkManager[929]: <info>  [1558690209.2060] device changed (path: /sys/devices/virtual/net/docker0, iface: docker0)
+May 24 11:30:09 babylon NetworkManager[929]: <info>  [1558690209.2062] device changed (path: /sys/devices/virtual/net/lo, iface: lo)
+May 24 11:30:09 babylon audit[5319]: AVC apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.postman.postman" pid=5319 comm="apparmor_parser"
+May 24 11:30:09 babylon audit[5321]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.postman" pid=5321 comm="apparmor_parser"
+May 24 11:30:09 babylon audit[5330]: AVC apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.gnome-calculator.gnome-calculator" pid=5330 comm="apparmor_parser"
+May 24 11:30:10 babylon audit[5329]: AVC apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap-update-ns.gnome-calculator" pid=5329 comm="apparmor_parser"
+May 24 11:30:10 babylon audit[5339]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.pycharm-community" pid=5339 comm="apparmor_parser"
+May 24 11:30:10 babylon audit[5340]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.pycharm-community.pycharm-community" pid=5340 comm="apparmor_parser"
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb2
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb2/2-0:1.0
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-0:1.0
+May 24 11:30:10 babylon NetworkManager[929]: <info>  [1558690210.5084] device changed (path: /sys/devices/pci0000:00/0000:00:1f.6/net/enp0s31f6, iface: enp0s31f6)
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-1
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.2
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.1
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.2
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1:1.0
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.0
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/0003:279E:024E.0002
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.2/0003:279E:024E.0004
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.2/0003:056A:0084.0007
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.1
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1:1.0/0003:275D:0BA6.0001
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.1/0003:279E:024E.0003
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.0/0003:056A:0084.0005
+May 24 11:30:10 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.1/0003:056A:0084.0006
+May 24 11:30:10 babylon NetworkManager[929]: <info>  [1558690210.5846] device changed (path: /sys/devices/virtual/net/docker0, iface: docker0)
+May 24 11:30:10 babylon NetworkManager[929]: <info>  [1558690210.5893] device changed (path: /sys/devices/virtual/net/lo, iface: lo)
+May 24 11:30:10 babylon audit[5430]: AVC apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.pall.pall" pid=5430 comm="apparmor_parser"
+May 24 11:30:10 babylon audit[5432]: AVC apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap-update-ns.pall" pid=5432 comm="apparmor_parser"
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-1
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb2
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-0:1.0
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1:1.0
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb2/2-0:1.0
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.1
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.2
+May 24 11:30:11 babylon NetworkManager[929]: <info>  [1558690211.0717] device changed (path: /sys/devices/pci0000:00/0000:00:1f.6/net/enp0s31f6, iface: enp0s31f6)
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.0
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.2
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1:1.0/0003:275D:0BA6.0001
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.1
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/0003:279E:024E.0002
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.0/0003:056A:0084.0005
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.1/0003:056A:0084.0006
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.2/0003:279E:024E.0004
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.1/0003:279E:024E.0003
+May 24 11:30:11 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.2/0003:056A:0084.0007
+May 24 11:30:11 babylon NetworkManager[929]: <info>  [1558690211.1387] device changed (path: /sys/devices/virtual/net/lo, iface: lo)
+May 24 11:30:11 babylon NetworkManager[929]: <info>  [1558690211.1403] device changed (path: /sys/devices/virtual/net/docker0, iface: docker0)
+May 24 11:30:11 babylon audit[5521]: AVC apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.discord.discord" pid=5521 comm="apparmor_parser"
+May 24 11:30:11 babylon ModemManager[917]: <info>  Couldn't check support for device '/sys/devices/pci0000:00/0000:00:1f.6': not supported by any plugin
+May 24 11:30:11 babylon systemd-resolved[751]: Using degraded feature set (UDP) for DNS server 192.168.1.1.
+May 24 11:30:11 babylon audit[5520]: AVC apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap-update-ns.discord" pid=5520 comm="apparmor_parser"
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb2
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-0:1.0
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-1
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1:1.0
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb2/2-0:1.0
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.1
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.2
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/0003:279E:024E.0002
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1:1.0/0003:275D:0BA6.0001
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.1/0003:279E:024E.0003
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.2
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.1
+May 24 11:30:12 babylon NetworkManager[929]: <info>  [1558690212.0888] device changed (path: /sys/devices/pci0000:00/0000:00:1f.6/net/enp0s31f6, iface: enp0s31f6)
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.0
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.1/0003:056A:0084.0006
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.0/0003:056A:0084.0005
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-7/1-7:1.2/0003:056A:0084.0007
+May 24 11:30:12 babylon upowerd[3780]: treating change event as add on /sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.2/0003:279E:024E.0004
+May 24 11:30:12 babylon NetworkManager[929]: <info>  [1558690212.1640] device changed (path: /sys/devices/virtual/net/lo, iface: lo)
+May 24 11:30:12 babylon NetworkManager[929]: <info>  [1558690212.1671] device changed (path: /sys/devices/virtual/net/docker0, iface: docker0)
+May 24 11:30:12 babylon audit[5627]: AVC apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.gimp.gimp" pid=5627 comm="apparmor_parser"
+May 24 11:30:12 babylon kernel: kauditd_printk_skb: 10 callbacks suppressed
+May 24 11:30:12 babylon kernel: audit: type=1400 audit(1558690212.620:98): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.gimp.gimp" pid=5627 comm="apparmor_parser"
+May 24 11:30:13 babylon audit[5626]: AVC apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap-update-ns.gimp" pid=5626 comm="apparmor_parser"
+May 24 11:30:13 babylon kernel: audit: type=1400 audit(1558690213.172:99): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap-update-ns.gimp" pid=5626 comm="apparmor_parser"
+May 24 11:30:13 babylon snapd[5052]: daemon.go:379: started snapd/2.39 (series 16; classic) ubuntu/18.10 (amd64) linux/4.18.0-20-generic.
+May 24 11:30:13 babylon systemd[1]: Started Snappy daemon.
+-- Subject: Unit snapd.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit snapd.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 11:30:14 babylon systemd[1]: Reloading.
+May 24 11:30:14 babylon systemd[1]: Starting resolvconf-pull-resolved.service...
+-- Subject: Unit resolvconf-pull-resolved.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit resolvconf-pull-resolved.service has begun starting up.
+May 24 11:30:14 babylon systemd[1]: Started resolvconf-pull-resolved.service.
+-- Subject: Unit resolvconf-pull-resolved.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit resolvconf-pull-resolved.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 11:30:14 babylon ModemManager[917]: <info>  Couldn't check support for device '/sys/devices/pci0000:00/0000:00:1f.6': not supported by any plugin
+May 24 11:30:14 babylon snapd[5052]: storehelpers.go:441: cannot refresh: snap has no updates available: "core", "core18"
+May 24 11:30:36 babylon gnome-software[5807]: enabled plugins: desktop-categories, fwupd, os-release, packagekit, packagekit-local, packagekit-offline, packagekit-proxy, packagekit-refine-repos, packagekit-refresh, packagekit-upgrade, packagekit-url-to-app, shell-extensions, ubuntuone, appstream, desktop-menu-path, hardcoded-blacklist, hardcoded-featured, hardcoded-popular, modalias, odrs, packagekit-refine, rewrite-resource, steam, packagekit-history, provenance, snap, systemd-updates, generic-updates, provenance-license, icons, key-colors, key-colors-metadata
+May 24 11:30:36 babylon gnome-software[5807]: disabled plugins: dpkg, dummy, repos, epiphany
+May 24 11:30:36 babylon dbus-daemon[926]: [system] Activating via systemd: service name='org.freedesktop.fwupd' unit='fwupd.service' requested by ':1.164' (uid=1000 pid=5807 comm="/usr/bin/gnome-software --gapplication-service " label="unconfined")
+May 24 11:30:36 babylon systemd[1]: Starting Firmware update daemon...
+-- Subject: Unit fwupd.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit fwupd.service has begun starting up.
+May 24 11:30:36 babylon fwupd[5828]: disabling plugin because: failed to startup dell_esrt: token 1122 is not boolean
+May 24 11:30:36 babylon fwupd[5828]: disabling plugin because: failed to startup dell: Firmware updating not supported
+May 24 11:30:36 babylon fwupd[5828]: disabling plugin because: failed to startup redfish: no SMBIOS table
+May 24 11:30:36 babylon fwupd[5828]: disabling plugin because: failed to startup uefi: kernel efivars support missing: /sys/firmware/efi/efivars
+May 24 11:30:36 babylon fwupd[5828]: disabling plugin because: failed to coldplug amt: ME refused connection
+May 24 11:30:36 babylon dbus-daemon[926]: [system] Activating via systemd: service name='org.freedesktop.bolt' unit='bolt.service' requested by ':1.168' (uid=0 pid=5828 comm="/usr/lib/fwupd/fwupd " label="unconfined")
+May 24 11:30:36 babylon systemd[1]: Starting Thunderbolt system service...
+-- Subject: Unit bolt.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit bolt.service has begun starting up.
+May 24 11:30:36 babylon boltd[5857]: bolt 0.5 starting up.
+May 24 11:30:36 babylon boltd[5857]: config: loading user config
+May 24 11:30:36 babylon boltd[5857]: bouncer: initializing polkit
+May 24 11:30:36 babylon boltd[5857]: udev: initializing udev
+May 24 11:30:36 babylon boltd[5857]: store: loading devices
+May 24 11:30:36 babylon boltd[5857]: power: force power support: no
+May 24 11:30:36 babylon boltd[5857]: udev: enumerating devices
+May 24 11:30:36 babylon dbus-daemon[926]: [system] Successfully activated service 'org.freedesktop.bolt'
+May 24 11:30:36 babylon systemd[1]: Started Thunderbolt system service.
+-- Subject: Unit bolt.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit bolt.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 11:30:36 babylon fwupd[5828]: disabling plugin because: failed to coldplug thunderbolt_power: No support for force power via kernel or bolt
+May 24 11:30:36 babylon fwupd[5828]: Daemon ready for requests
+May 24 11:30:36 babylon dbus-daemon[926]: [system] Successfully activated service 'org.freedesktop.fwupd'
+May 24 11:30:36 babylon systemd[1]: Started Firmware update daemon.
+-- Subject: Unit fwupd.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit fwupd.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 11:30:36 babylon PackageKit[3875]: get-updates transaction /3914_edebdcee from uid 1000 finished with success after 472ms
+May 24 11:30:37 babylon gnome-software[5807]: Only 0 apps for recent list, hiding
+May 24 11:30:37 babylon PackageKit[3875]: resolve transaction /3915_cdebbcbc from uid 1000 finished with success after 427ms
+May 24 11:30:37 babylon pkexec[5906]: pam_unix(polkit-1:session): session opened for user root by (uid=1000)
+May 24 11:30:37 babylon pkexec[5906]: a-tarek: Executing command [USER=root] [TTY=unknown] [CWD=/home/a-tarek] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+May 24 11:30:37 babylon update-notifier.desktop[5804]: /var/lib/dpkg/lock:
+May 24 11:30:37 babylon gnome-software[5807]: hiding category audio-video featured applications: found only 0 to show, need at least 9
+May 24 11:30:38 babylon PackageKit[3875]: search-file transaction /3916_ebbcdabc from uid 1000 finished with success after 1091ms
+May 24 11:30:39 babylon PackageKit[3875]: search-file transaction /3917_ddbbdace from uid 1000 finished with success after 407ms
+May 24 11:30:39 babylon PackageKit[3875]: search-file transaction /3918_cdbdbbca from uid 1000 finished with success after 383ms
+May 24 11:30:39 babylon PackageKit[3875]: search-file transaction /3919_cccdebeb from uid 1000 finished with success after 394ms
+May 24 11:30:40 babylon PackageKit[3875]: search-file transaction /3920_adcedcea from uid 1000 finished with success after 416ms
+May 24 11:30:40 babylon gnome-software[5807]: Failed to find one package for netbeans-8.2.desktop, /usr/share/applications/netbeans-8.2.desktop, [0]
+May 24 11:30:40 babylon PackageKit[3875]: search-file transaction /3921_edcedddb from uid 1000 finished with success after 474ms
+May 24 11:30:41 babylon PackageKit[3875]: search-file transaction /3922_ccceeaed from uid 1000 finished with success after 424ms
+May 24 11:30:41 babylon PackageKit[3875]: search-file transaction /3923_bebaddca from uid 1000 finished with success after 436ms
+May 24 11:30:41 babylon gnome-software[5807]: Failed to find one package for phpmyadmin.desktop, /usr/share/applications/phpmyadmin.desktop, [0]
+May 24 11:30:42 babylon PackageKit[3875]: search-file transaction /3924_ccabeebd from uid 1000 finished with success after 401ms
+May 24 11:30:42 babylon PackageKit[3875]: search-file transaction /3925_adcdedea from uid 1000 finished with success after 394ms
+May 24 11:30:43 babylon PackageKit[3875]: search-file transaction /3926_bbbebada from uid 1000 finished with success after 406ms
+May 24 11:30:43 babylon PackageKit[3875]: search-file transaction /3927_badccceb from uid 1000 finished with success after 403ms
+May 24 11:30:43 babylon PackageKit[3875]: search-file transaction /3928_aaabbadd from uid 1000 finished with success after 391ms
+May 24 11:30:44 babylon PackageKit[3875]: search-file transaction /3929_adbcbbab from uid 1000 finished with success after 376ms
+May 24 11:30:44 babylon PackageKit[3875]: search-file transaction /3930_abcaddbb from uid 1000 finished with success after 359ms
+May 24 11:30:45 babylon PackageKit[3875]: search-file transaction /3931_aadbbeac from uid 1000 finished with success after 398ms
+May 24 11:30:45 babylon PackageKit[3875]: get-details transaction /3932_bebccbae from uid 1000 finished with success after 342ms
+May 24 11:30:45 babylon gnome-software[5807]: Failed to load snap icon: local snap has no icon
+May 24 11:30:45 babylon gnome-software[5807]: Failed to load snap icon: local snap has no icon
+May 24 11:30:45 babylon gnome-software[5807]: Failed to load snap icon: local snap has no icon
+May 24 11:30:45 babylon gnome-software[5807]: Failed to load snap icon: local snap has no icon
+May 24 11:30:45 babylon gnome-software[5807]: Failed to load snap icon: local snap has no icon
+May 24 11:30:47 babylon update-notifier.desktop[5804]: /usr/lib/ubuntu-release-upgrader/check-new-release-gtk:30: PyGIWarning: Gtk was imported without specifying a version first. Use gi.require_version('Gtk', '3.0') before import to ensure that the right version gets loaded.
+May 24 11:30:47 babylon update-notifier.desktop[5804]:   from gi.repository import Gtk
+May 24 11:31:05 babylon systemd[1]: Started Daily apt download activities.
+-- Subject: Unit apt-daily.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit apt-daily.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 11:31:05 babylon systemd[1]: Starting Daily apt upgrade and clean activities...
+-- Subject: Unit apt-daily-upgrade.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit apt-daily-upgrade.service has begun starting up.
+May 24 11:31:18 babylon gnome-software[5807]: failed to rescan: Failed to parse /usr/share/applications/firefox.desktop.dpkg-new file: cannot process file of type text/plain
+May 24 11:31:18 babylon gnome-software[5807]: failed to rescan: Failed to parse /usr/share/applications/firefox.desktop.dpkg-tmp file: cannot process file of type text/plain
+May 24 11:31:18 babylon gnome-software[5807]: failed to rescan: Failed to parse /usr/share/applications/firefox.desktop file: cannot process file of type application/x-desktop
+May 24 11:31:18 babylon gnome-software[5807]: failed to rescan: Failed to parse /usr/share/applications/bamf-2.index file: cannot process file of type text/plain
+May 24 11:31:23 babylon gnome-software[5807]: Only 0 apps for recent list, hiding
+May 24 11:31:23 babylon PackageKit[3875]: resolve transaction /3933_aaceeebe from uid 1000 finished with success after 332ms
+May 24 11:31:23 babylon gnome-software[5807]: hiding category audio-video featured applications: found only 0 to show, need at least 9
+May 24 11:31:24 babylon PackageKit[3875]: search-file transaction /3934_badeadce from uid 1000 finished with success after 391ms
+May 24 11:31:24 babylon gnome-software[5807]: Failed to find one package for netbeans-8.2.desktop, /usr/share/applications/netbeans-8.2.desktop, [0]
+May 24 11:31:24 babylon PackageKit[3875]: search-file transaction /3935_cccdddea from uid 1000 finished with success after 373ms
+May 24 11:31:24 babylon gnome-software[5807]: Failed to find one package for phpmyadmin.desktop, /usr/share/applications/phpmyadmin.desktop, [0]
+May 24 11:31:38 babylon PackageKit[3875]: get-updates transaction /3936_edcecabb from uid 1000 finished with success after 650ms
+May 24 11:32:07 babylon systemd[1]: Started Daily apt upgrade and clean activities.
+-- Subject: Unit apt-daily-upgrade.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit apt-daily-upgrade.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 11:32:07 babylon systemd[1]: Startup finished in 2.010s (kernel) + 2min 55.351s (userspace) = 2min 57.362s.
+-- Subject: System start-up is now complete
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- All system services necessary queued for starting at boot have been
+-- started. Note that this does not mean that the machine is now idle as services
+-- might still be busy with completing start-up.
+-- 
+-- Kernel start-up required 2010866 microseconds.
+-- 
+-- Initial RAM disk start-up required INITRD_USEC microseconds.
+-- 
+-- Userspace start-up required 175351943 microseconds.
+May 24 11:33:00 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113300.941718:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -101
+May 24 11:33:00 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113300.951815:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -101
+May 24 11:33:01 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113301.018966:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -101
+May 24 11:33:01 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113301.037542:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -101
+May 24 11:33:01 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113301.190008:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -101
+May 24 11:33:01 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113301.192962:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -101
+May 24 11:33:01 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113301.273160:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -101
+May 24 11:33:03 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113303.141795:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -101
+May 24 11:33:18 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113318.187670:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -100
+May 24 11:33:18 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113318.285038:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -100
+May 24 11:33:18 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113318.300153:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -101
+May 24 11:33:19 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113319.537171:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -100
+May 24 11:33:24 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113324.231785:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -101
+May 24 11:33:24 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113324.261458:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -101
+May 24 11:33:24 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113324.329136:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -101
+May 24 11:33:29 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113329.018297:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -101
+May 24 11:33:29 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113329.021727:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -101
+May 24 11:33:36 babylon pkexec[16795]: pam_unix(polkit-1:session): session opened for user root by (uid=1000)
+May 24 11:33:36 babylon pkexec[16795]: a-tarek: Executing command [USER=root] [TTY=unknown] [CWD=/home/a-tarek] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+May 24 11:33:44 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113344.151686:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -100
+May 24 11:34:13 babylon anacron[900]: Job `cron.daily' started
+May 24 11:34:13 babylon anacron[16824]: Updated timestamp for job `cron.daily' to 2019-05-24
+May 24 11:34:13 babylon cracklib[16854]: no dictionary update necessary.
+May 24 11:34:25 babylon anacron[900]: Job `cron.daily' terminated
+May 24 11:38:09 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113809.325535:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -101
+May 24 11:38:09 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113809.328866:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -101
+May 24 11:38:09 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/113809.410445:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -101
+May 24 11:39:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 11:39:01 babylon CRON[17544]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 11:39:01 babylon CRON[17551]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 11:39:01 babylon CRON[17544]: pam_unix(cron:session): session closed for user root
+May 24 11:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 11:39:13 babylon anacron[900]: Job `cron.weekly' started
+May 24 11:39:13 babylon anacron[17643]: Updated timestamp for job `cron.weekly' to 2019-05-24
+May 24 11:39:14 babylon anacron[900]: Job `cron.weekly' terminated
+May 24 11:39:14 babylon anacron[900]: Normal exit (2 jobs run)
+May 24 11:44:02 babylon systemd-resolved[751]: Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 192.168.1.1.
+May 24 11:44:02 babylon systemd-resolved[751]: Using degraded feature set (UDP) for DNS server 192.168.1.1.
+May 24 11:44:15 babylon systemd[1]: Starting Cleanup of Temporary Directories...
+-- Subject: Unit systemd-tmpfiles-clean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit systemd-tmpfiles-clean.service has begun starting up.
+May 24 11:44:15 babylon systemd-tmpfiles[17721]: [/usr/lib/tmpfiles.d/speech-dispatcher.conf:1] Line references path below legacy directory /var/run/, updating /var/run/speech-dispatcher → /run/speech-dispatcher; please update the tmpfiles.d/ drop-in file accordingly.
+May 24 11:44:15 babylon systemd-tmpfiles[17721]: [/usr/lib/tmpfiles.d/speech-dispatcher.conf:2] Line references path below legacy directory /var/run/, updating /var/run/speech-dispatcher/.cache → /run/speech-dispatcher/.cache; please update the tmpfiles.d/ drop-in file accordingly.
+May 24 11:44:15 babylon systemd-tmpfiles[17721]: [/usr/lib/tmpfiles.d/speech-dispatcher.conf:3] Line references path below legacy directory /var/run/, updating /var/run/speech-dispatcher/.speech-dispatcher → /run/speech-dispatcher/.speech-dispatcher; please update the tmpfiles.d/ drop-in file accordingly.
+May 24 11:44:15 babylon systemd-tmpfiles[17721]: [/usr/lib/tmpfiles.d/speech-dispatcher.conf:4] Line references path below legacy directory /var/run/, updating /var/run/speech-dispatcher/.cache/speech-dispatcher → /run/speech-dispatcher/.cache/speech-dispatcher; please update the tmpfiles.d/ drop-in file accordingly.
+May 24 11:44:15 babylon systemd-tmpfiles[17721]: [/usr/lib/tmpfiles.d/speech-dispatcher.conf:5] Line references path below legacy directory /var/run/, updating /var/run/speech-dispatcher/log → /run/speech-dispatcher/log; please update the tmpfiles.d/ drop-in file accordingly.
+May 24 11:44:15 babylon systemd-tmpfiles[17721]: [/usr/lib/tmpfiles.d/spice-vdagentd.conf:2] Line references path below legacy directory /var/run/, updating /var/run/spice-vdagentd → /run/spice-vdagentd; please update the tmpfiles.d/ drop-in file accordingly.
+May 24 11:44:15 babylon systemd[1]: Started Cleanup of Temporary Directories.
+-- Subject: Unit systemd-tmpfiles-clean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit systemd-tmpfiles-clean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 11:45:19 babylon org.gnome.Shell.desktop[2641]: [4179:4179:0524/114519.487052:ERROR:textfield.cc(1773)] Not implemented reached in virtual bool views::Textfield::ShouldDoLearning()
+May 24 11:50:32 babylon dbus-daemon[2414]: [session uid=1000 pid=2414] Activating via systemd: service name='org.gnome.Terminal' unit='gnome-terminal-server.service' requested by ':1.121' (uid=1000 pid=17942 comm="/usr/bin/gnome-terminal.real --window " label="unconfined")
+May 24 11:50:32 babylon systemd[1957]: Starting GNOME Terminal Server...
+-- Subject: Unit UNIT has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit UNIT has begun starting up.
+May 24 11:50:32 babylon dbus-daemon[2414]: [session uid=1000 pid=2414] Successfully activated service 'org.gnome.Terminal'
+May 24 11:50:32 babylon systemd[1957]: Started GNOME Terminal Server.
+-- Subject: Unit UNIT has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit UNIT has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 11:50:32 babylon org.gnome.Shell.desktop[2641]: # watch_fast: "/org/gnome/terminal/legacy/" (establishing: 0, active: 0)
+May 24 11:50:32 babylon org.gnome.Shell.desktop[2641]: # unwatch_fast: "/org/gnome/terminal/legacy/" (active: 0, establishing: 1)
+May 24 11:50:32 babylon org.gnome.Shell.desktop[2641]: # watch_established: "/org/gnome/terminal/legacy/" (establishing: 0)
+May 24 11:50:52 babylon gnome-shell[2641]: remove_mnemonics: assertion 'label != NULL' failed
+May 24 11:51:04 babylon dbus-daemon[926]: [system] Activating via systemd: service name='org.bluez' unit='dbus-org.bluez.service' requested by ':1.217' (uid=1000 pid=18059 comm="/usr/share/code/code . " label="unconfined")
+May 24 11:51:29 babylon dbus-daemon[926]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+May 24 12:00:52 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 12:00:52 babylon anacron[18744]: Anacron 2.3 started on 2019-05-24
+May 24 12:00:52 babylon anacron[18744]: Normal exit (0 jobs run)
+May 24 12:09:01 babylon CRON[18844]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 12:09:01 babylon CRON[18845]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 12:09:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 12:09:01 babylon CRON[18844]: pam_unix(cron:session): session closed for user root
+May 24 12:09:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 12:17:01 babylon CRON[19007]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 12:17:01 babylon CRON[19008]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 24 12:17:01 babylon CRON[19007]: pam_unix(cron:session): session closed for user root
+May 24 12:39:01 babylon CRON[19195]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 12:39:01 babylon CRON[19196]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 12:39:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 12:39:01 babylon CRON[19195]: pam_unix(cron:session): session closed for user root
+May 24 12:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 12:53:05 babylon gnome-screensaver-dialog[19405]: gkr-pam: unlocked login keyring
+May 24 13:04:32 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 13:04:32 babylon anacron[19639]: Anacron 2.3 started on 2019-05-24
+May 24 13:04:32 babylon anacron[19639]: Normal exit (0 jobs run)
+May 24 13:09:01 babylon CRON[19726]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 13:09:01 babylon CRON[19727]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 13:09:01 babylon CRON[19726]: pam_unix(cron:session): session closed for user root
+May 24 13:09:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 13:09:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 13:12:17 babylon dbus-daemon[926]: [system] Activating via systemd: service name='org.bluez' unit='dbus-org.bluez.service' requested by ':1.231' (uid=1000 pid=19960 comm="/usr/share/code/code testing.php " label="unconfined")
+May 24 13:12:42 babylon dbus-daemon[926]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+May 24 13:17:01 babylon CRON[20252]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 13:17:01 babylon CRON[20253]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 24 13:17:01 babylon CRON[20252]: pam_unix(cron:session): session closed for user root
+May 24 13:30:17 babylon snapd[5052]: storehelpers.go:441: cannot refresh: snap has no updates available: "core", "core18", "discord", "gimp", "gnome-3-26-1604", "gnome-3-28-1804", "gnome-calculator", "gnome-characters", "gnome-logs", "gnome-system-monitor", "gtk-common-themes", "pall", "postman", "pycharm-community"
+May 24 13:30:17 babylon snapd[5052]: autorefresh.go:389: auto-refresh: all snaps are up-to-date
+May 24 13:32:07 babylon org.gnome.Shell.desktop[2641]: [4223:4297:0524/133207.890768:ERROR:latency_info.cc(147)] Surface::TakeLatencyInfoFromFrame, LatencyInfo vector size 102 is too big.
+May 24 13:32:14 babylon org.gnome.Shell.desktop[2641]: [4223:4297:0524/133214.969094:ERROR:latency_info.cc(147)] Surface::TakeLatencyInfoFromFrame, LatencyInfo vector size 102 is too big.
+May 24 13:39:00 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 13:39:00 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 13:39:01 babylon CRON[21229]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 13:39:01 babylon CRON[21230]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 13:39:01 babylon CRON[21229]: pam_unix(cron:session): session closed for user root
+May 24 13:46:55 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/134655.025795:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -101
+May 24 13:46:55 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/134655.028200:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -101
+May 24 13:46:55 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/134655.127857:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -101
+May 24 13:47:10 babylon org.gnome.Shell.desktop[2641]: [4228:4264:0524/134710.071851:ERROR:ssl_client_socket_impl.cc(946)] handshake failed; returned -1, SSL error code 1, net_error -100
+May 24 14:00:56 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 14:00:56 babylon anacron[22382]: Anacron 2.3 started on 2019-05-24
+May 24 14:00:56 babylon anacron[22382]: Normal exit (0 jobs run)
+May 24 14:09:01 babylon CRON[22759]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 14:09:01 babylon CRON[22760]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 14:09:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 14:09:01 babylon CRON[22759]: pam_unix(cron:session): session closed for user root
+May 24 14:09:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 14:17:01 babylon CRON[23303]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 14:17:01 babylon CRON[23304]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 24 14:17:01 babylon CRON[23303]: pam_unix(cron:session): session closed for user root
+May 24 14:39:01 babylon CRON[24449]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 14:39:01 babylon CRON[24450]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 14:39:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 14:39:01 babylon CRON[24449]: pam_unix(cron:session): session closed for user root
+May 24 14:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 14:43:59 babylon dbus-daemon[926]: [system] Activating via systemd: service name='org.bluez' unit='dbus-org.bluez.service' requested by ':1.260' (uid=1000 pid=24830 comm="/usr/share/code/code trait.php " label="unconfined")
+May 24 14:44:24 babylon dbus-daemon[926]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+May 24 14:47:16 babylon dbus-daemon[926]: [system] Activating via systemd: service name='org.bluez' unit='dbus-org.bluez.service' requested by ':1.262' (uid=1000 pid=25124 comm="/usr/share/code/code UsesResponse.php " label="unconfined")
+May 24 14:47:41 babylon dbus-daemon[926]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+May 24 14:51:08 babylon dbus-daemon[926]: [system] Activating via systemd: service name='org.bluez' unit='dbus-org.bluez.service' requested by ':1.263' (uid=1000 pid=25395 comm="/usr/share/code/code composer.json " label="unconfined")
+May 24 14:51:33 babylon dbus-daemon[926]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+May 24 14:53:10 babylon dbus-daemon[926]: [system] Activating via systemd: service name='org.bluez' unit='dbus-org.bluez.service' requested by ':1.264' (uid=1000 pid=25696 comm="/usr/share/code/code composer.json " label="unconfined")
+May 24 14:53:35 babylon dbus-daemon[926]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+May 24 14:54:13 babylon dbus-daemon[926]: [system] Activating via systemd: service name='org.bluez' unit='dbus-org.bluez.service' requested by ':1.265' (uid=1000 pid=25828 comm="/usr/share/code/code testing.php " label="unconfined")
+May 24 14:54:38 babylon dbus-daemon[926]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+May 24 15:00:26 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 15:00:26 babylon anacron[26279]: Anacron 2.3 started on 2019-05-24
+May 24 15:00:26 babylon anacron[26279]: Normal exit (0 jobs run)
+May 24 15:09:01 babylon CRON[26499]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 15:09:01 babylon CRON[26500]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 15:09:01 babylon CRON[26499]: pam_unix(cron:session): session closed for user root
+May 24 15:09:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 15:09:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 15:17:01 babylon CRON[26733]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 15:17:01 babylon CRON[26734]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 24 15:17:01 babylon CRON[26733]: pam_unix(cron:session): session closed for user root
+May 24 15:21:59 babylon gnome-screensav[2588]: Source ID 33 was not found when attempting to remove it
+May 24 15:39:01 babylon CRON[27053]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 15:39:01 babylon CRON[27054]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 15:39:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 15:39:01 babylon CRON[27053]: pam_unix(cron:session): session closed for user root
+May 24 15:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 16:04:17 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 16:04:17 babylon anacron[27476]: Anacron 2.3 started on 2019-05-24
+May 24 16:04:17 babylon anacron[27476]: Normal exit (0 jobs run)
+May 24 16:09:01 babylon CRON[27553]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 16:09:01 babylon CRON[27554]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 16:09:01 babylon CRON[27553]: pam_unix(cron:session): session closed for user root
+May 24 16:09:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 16:09:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 16:17:01 babylon CRON[27745]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 16:17:01 babylon CRON[27746]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 24 16:17:01 babylon CRON[27745]: pam_unix(cron:session): session closed for user root
+May 24 16:39:01 babylon CRON[28056]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 16:39:01 babylon CRON[28057]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 16:39:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 16:39:01 babylon CRON[28056]: pam_unix(cron:session): session closed for user root
+May 24 16:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 17:04:27 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 17:04:27 babylon anacron[28445]: Anacron 2.3 started on 2019-05-24
+May 24 17:04:27 babylon anacron[28445]: Normal exit (0 jobs run)
+May 24 17:09:01 babylon CRON[28511]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 17:09:01 babylon CRON[28512]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 17:09:01 babylon CRON[28511]: pam_unix(cron:session): session closed for user root
+May 24 17:09:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 17:09:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 17:17:01 babylon CRON[28705]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 17:17:01 babylon CRON[28706]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 24 17:17:01 babylon CRON[28705]: pam_unix(cron:session): session closed for user root
+May 24 17:19:38 babylon NetworkManager[929]: <info>  [1558711178.9556] manager: NetworkManager state is now CONNECTED_SITE
+May 24 17:19:38 babylon whoopsie[2077]: [17:19:38] offline
+May 24 17:19:38 babylon dbus-daemon[926]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.11' (uid=0 pid=929 comm="/usr/sbin/NetworkManager --no-daemon " label="unconfined")
+May 24 17:19:38 babylon systemd[1]: Starting Network Manager Script Dispatcher Service...
+-- Subject: Unit NetworkManager-dispatcher.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit NetworkManager-dispatcher.service has begun starting up.
+May 24 17:19:38 babylon dbus-daemon[926]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+May 24 17:19:38 babylon systemd[1]: Started Network Manager Script Dispatcher Service.
+-- Subject: Unit NetworkManager-dispatcher.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit NetworkManager-dispatcher.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 17:19:38 babylon nm-dispatcher[28739]: req:1 'connectivity-change': new request (1 scripts)
+May 24 17:19:38 babylon nm-dispatcher[28739]: req:1 'connectivity-change': start running ordered scripts...
+May 24 17:19:43 babylon NetworkManager[929]: <info>  [1558711183.3371] manager: NetworkManager state is now CONNECTED_GLOBAL
+May 24 17:19:43 babylon nm-dispatcher[28739]: req:2 'connectivity-change': new request (1 scripts)
+May 24 17:19:43 babylon nm-dispatcher[28739]: req:2 'connectivity-change': start running ordered scripts...
+May 24 17:19:45 babylon whoopsie[2077]: [17:19:45] The default IPv4 route is: /org/freedesktop/NetworkManager/ActiveConnection/1
+May 24 17:19:45 babylon whoopsie[2077]: [17:19:45] Not a paid data plan: /org/freedesktop/NetworkManager/ActiveConnection/1
+May 24 17:19:45 babylon whoopsie[2077]: [17:19:45] Found usable connection: /org/freedesktop/NetworkManager/ActiveConnection/1
+May 24 17:19:45 babylon whoopsie[2077]: [17:19:45] online
+May 24 17:24:48 babylon gnome-screensaver-dialog[28833]: gkr-pam: unlocked login keyring
+May 24 17:31:19 babylon gnome-screensav[2588]: Source ID 356 was not found when attempting to remove it
+May 24 17:39:01 babylon CRON[29845]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 17:39:01 babylon CRON[29846]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 17:39:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 17:39:01 babylon CRON[29845]: pam_unix(cron:session): session closed for user root
+May 24 17:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 17:39:12 babylon gnome-screensaver-dialog[29836]: gkr-pam: unlocked login keyring
+May 24 18:00:08 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 18:00:08 babylon anacron[30570]: Anacron 2.3 started on 2019-05-24
+May 24 18:00:08 babylon anacron[30570]: Normal exit (0 jobs run)
+May 24 18:04:41 babylon NetworkManager[929]: <info>  [1558713881.9840] manager: NetworkManager state is now CONNECTED_SITE
+May 24 18:04:41 babylon whoopsie[2077]: [18:04:41] offline
+May 24 18:04:41 babylon dbus-daemon[926]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.11' (uid=0 pid=929 comm="/usr/sbin/NetworkManager --no-daemon " label="unconfined")
+May 24 18:04:42 babylon systemd[1]: Starting Network Manager Script Dispatcher Service...
+-- Subject: Unit NetworkManager-dispatcher.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit NetworkManager-dispatcher.service has begun starting up.
+May 24 18:04:42 babylon dbus-daemon[926]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+May 24 18:04:42 babylon nm-dispatcher[30655]: req:1 'connectivity-change': new request (1 scripts)
+May 24 18:04:42 babylon systemd[1]: Started Network Manager Script Dispatcher Service.
+-- Subject: Unit NetworkManager-dispatcher.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit NetworkManager-dispatcher.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 18:04:42 babylon nm-dispatcher[30655]: req:1 'connectivity-change': start running ordered scripts...
+May 24 18:04:53 babylon whoopsie[2077]: [18:04:53] Cannot reach: https://daisy.ubuntu.com
+May 24 18:04:59 babylon NetworkManager[929]: <info>  [1558713899.3031] manager: NetworkManager state is now CONNECTED_GLOBAL
+May 24 18:04:59 babylon dbus-daemon[926]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.11' (uid=0 pid=929 comm="/usr/sbin/NetworkManager --no-daemon " label="unconfined")
+May 24 18:04:59 babylon whoopsie[2077]: [18:04:59] The default IPv4 route is: /org/freedesktop/NetworkManager/ActiveConnection/1
+May 24 18:04:59 babylon systemd[1]: Starting Network Manager Script Dispatcher Service...
+-- Subject: Unit NetworkManager-dispatcher.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit NetworkManager-dispatcher.service has begun starting up.
+May 24 18:04:59 babylon whoopsie[2077]: [18:04:59] Not a paid data plan: /org/freedesktop/NetworkManager/ActiveConnection/1
+May 24 18:04:59 babylon whoopsie[2077]: [18:04:59] Found usable connection: /org/freedesktop/NetworkManager/ActiveConnection/1
+May 24 18:04:59 babylon dbus-daemon[926]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+May 24 18:04:59 babylon systemd[1]: Started Network Manager Script Dispatcher Service.
+-- Subject: Unit NetworkManager-dispatcher.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit NetworkManager-dispatcher.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 18:04:59 babylon nm-dispatcher[30699]: req:1 'connectivity-change': new request (1 scripts)
+May 24 18:04:59 babylon nm-dispatcher[30699]: req:1 'connectivity-change': start running ordered scripts...
+May 24 18:05:00 babylon whoopsie[2077]: [18:05:00] online
+May 24 18:09:01 babylon CRON[30926]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 18:09:01 babylon CRON[30927]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 18:09:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 18:09:01 babylon CRON[30926]: pam_unix(cron:session): session closed for user root
+May 24 18:09:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 18:17:01 babylon CRON[31240]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 18:17:01 babylon CRON[31241]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 24 18:17:01 babylon CRON[31240]: pam_unix(cron:session): session closed for user root
+May 24 18:19:30 babylon kernel: perf: interrupt took too long (2526 > 2500), lowering kernel.perf_event_max_sample_rate to 79000
+May 24 18:23:13 babylon org.gnome.Shell.desktop[2641]: [Parent 28969, Gecko_IOThread] WARNING: pipe error (227): Connection reset by peer: file /build/firefox-NZA0Em/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+May 24 18:28:57 babylon org.gnome.SettingsDaemon.MediaKeys.desktop[3917]: # watch_fast: "/org/gnome/terminal/legacy/" (establishing: 0, active: 0)
+May 24 18:28:57 babylon org.gnome.SettingsDaemon.MediaKeys.desktop[3917]: # unwatch_fast: "/org/gnome/terminal/legacy/" (active: 0, establishing: 1)
+May 24 18:28:57 babylon org.gnome.SettingsDaemon.MediaKeys.desktop[3917]: # watch_established: "/org/gnome/terminal/legacy/" (establishing: 0)
+May 24 18:39:01 babylon CRON[32046]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 18:39:01 babylon CRON[32047]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 18:39:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 18:39:01 babylon CRON[32046]: pam_unix(cron:session): session closed for user root
+May 24 18:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 18:41:49 babylon gnome-screensav[2588]: Source ID 652 was not found when attempting to remove it
+May 24 19:03:33 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 19:03:33 babylon anacron[32488]: Anacron 2.3 started on 2019-05-24
+May 24 19:03:33 babylon anacron[32488]: Normal exit (0 jobs run)
+May 24 19:09:01 babylon CRON[32577]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 19:09:01 babylon CRON[32578]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 19:09:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 19:09:01 babylon CRON[32577]: pam_unix(cron:session): session closed for user root
+May 24 19:09:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 19:17:01 babylon CRON[32764]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 19:17:01 babylon CRON[32765]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 24 19:17:01 babylon CRON[32764]: pam_unix(cron:session): session closed for user root
+May 24 19:39:01 babylon CRON[625]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 19:39:01 babylon CRON[626]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 19:39:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 19:39:01 babylon CRON[625]: pam_unix(cron:session): session closed for user root
+May 24 19:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 20:03:08 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 20:03:08 babylon anacron[1105]: Anacron 2.3 started on 2019-05-24
+May 24 20:03:08 babylon anacron[1105]: Normal exit (0 jobs run)
+May 24 20:09:01 babylon CRON[1200]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 20:09:01 babylon CRON[1201]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 20:09:01 babylon CRON[1200]: pam_unix(cron:session): session closed for user root
+May 24 20:09:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 20:09:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 20:10:15 babylon snapd[5052]: storehelpers.go:441: cannot refresh: snap has no updates available: "core", "core18", "discord", "gimp", "gnome-3-26-1604", "gnome-3-28-1804", "gnome-calculator", "gnome-characters", "gnome-logs", "gnome-system-monitor", "gtk-common-themes", "pall", "postman", "pycharm-community"
+May 24 20:10:15 babylon snapd[5052]: autorefresh.go:389: auto-refresh: all snaps are up-to-date
+May 24 20:17:01 babylon CRON[1406]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 20:17:01 babylon CRON[1407]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 24 20:17:01 babylon CRON[1406]: pam_unix(cron:session): session closed for user root
+May 24 20:39:01 babylon CRON[1806]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 20:39:01 babylon CRON[1807]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 20:39:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 20:39:01 babylon CRON[1806]: pam_unix(cron:session): session closed for user root
+May 24 20:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 21:01:59 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 21:01:59 babylon anacron[2238]: Anacron 2.3 started on 2019-05-24
+May 24 21:01:59 babylon anacron[2238]: Normal exit (0 jobs run)
+May 24 21:09:01 babylon CRON[2367]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 21:09:01 babylon CRON[2368]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 21:09:01 babylon CRON[2367]: pam_unix(cron:session): session closed for user root
+May 24 21:09:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 21:09:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 21:17:01 babylon CRON[2613]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 21:17:01 babylon CRON[2614]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 24 21:17:01 babylon CRON[2613]: pam_unix(cron:session): session closed for user root
+May 24 21:17:50 babylon dhclient[1840]: DHCPREQUEST of 192.168.1.11 on enp0s31f6 to 192.168.1.1 port 67 (xid=0x19045dfc)
+May 24 21:17:50 babylon dhclient[1840]: DHCPACK of 192.168.1.11 from 192.168.1.1
+May 24 21:17:50 babylon NetworkManager[929]: <info>  [1558725470.4486] dhcp4 (enp0s31f6):   address 192.168.1.11
+May 24 21:17:50 babylon NetworkManager[929]: <info>  [1558725470.4495] dhcp4 (enp0s31f6):   plen 24 (255.255.255.0)
+May 24 21:17:50 babylon NetworkManager[929]: <info>  [1558725470.4495] dhcp4 (enp0s31f6):   gateway 192.168.1.1
+May 24 21:17:50 babylon NetworkManager[929]: <info>  [1558725470.4496] dhcp4 (enp0s31f6):   lease time 86400
+May 24 21:17:50 babylon NetworkManager[929]: <info>  [1558725470.4496] dhcp4 (enp0s31f6):   nameserver '192.168.1.1'
+May 24 21:17:50 babylon NetworkManager[929]: <info>  [1558725470.4496] dhcp4 (enp0s31f6): state changed bound -> bound
+May 24 21:17:50 babylon dbus-daemon[926]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.11' (uid=0 pid=929 comm="/usr/sbin/NetworkManager --no-daemon " label="unconfined")
+May 24 21:17:50 babylon dhclient[1840]: bound to 192.168.1.11 -- renewal in 41228 seconds.
+May 24 21:17:50 babylon systemd[1]: Starting Network Manager Script Dispatcher Service...
+-- Subject: Unit NetworkManager-dispatcher.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit NetworkManager-dispatcher.service has begun starting up.
+May 24 21:17:50 babylon dbus-daemon[926]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+May 24 21:17:50 babylon systemd[1]: Started Network Manager Script Dispatcher Service.
+-- Subject: Unit NetworkManager-dispatcher.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit NetworkManager-dispatcher.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 21:17:50 babylon nm-dispatcher[2636]: req:1 'dhcp4-change' [enp0s31f6]: new request (1 scripts)
+May 24 21:17:50 babylon nm-dispatcher[2636]: req:1 'dhcp4-change' [enp0s31f6]: start running ordered scripts...
+May 24 21:39:01 babylon CRON[3007]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 21:39:01 babylon CRON[3008]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 21:39:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 21:39:01 babylon CRON[3007]: pam_unix(cron:session): session closed for user root
+May 24 21:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 22:00:59 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 22:00:59 babylon anacron[3390]: Anacron 2.3 started on 2019-05-24
+May 24 22:00:59 babylon anacron[3390]: Normal exit (0 jobs run)
+May 24 22:08:34 babylon gnome-screensaver-dialog[3512]: gkr-pam: unlocked login keyring
+May 24 22:09:01 babylon CRON[3566]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 22:09:01 babylon CRON[3567]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 22:09:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 22:09:01 babylon CRON[3566]: pam_unix(cron:session): session closed for user root
+May 24 22:09:02 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 22:17:01 babylon CRON[4005]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 22:17:01 babylon CRON[4006]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 24 22:17:01 babylon CRON[4005]: pam_unix(cron:session): session closed for user root
+May 24 22:22:29 babylon org.gnome.Shell.desktop[2641]: (/usr/lib/firefox/firefox:29536): dconf-WARNING **: 22:22:29.991: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+May 24 22:39:00 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 22:39:00 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 22:39:01 babylon CRON[4784]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 22:39:01 babylon CRON[4785]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 22:39:01 babylon CRON[4784]: pam_unix(cron:session): session closed for user root
+May 24 22:39:18 babylon kernel: perf: interrupt took too long (3183 > 3157), lowering kernel.perf_event_max_sample_rate to 62750
+May 24 23:04:59 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 23:04:59 babylon anacron[5425]: Anacron 2.3 started on 2019-05-24
+May 24 23:04:59 babylon anacron[5425]: Normal exit (0 jobs run)
+May 24 23:05:47 babylon gnome-screensav[2588]: Source ID 730 was not found when attempting to remove it
+May 24 23:07:17 babylon gnome-screensaver-dialog[5475]: gkr-pam: unlocked login keyring
+May 24 23:09:00 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 23:09:00 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 23:09:01 babylon CRON[5654]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 23:09:01 babylon CRON[5655]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 23:09:01 babylon CRON[5654]: pam_unix(cron:session): session closed for user root
+May 24 23:16:31 babylon systemd[1]: Starting Daily apt download activities...
+-- Subject: Unit apt-daily.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit apt-daily.service has begun starting up.
+May 24 23:16:32 babylon systemd[1]: Started Daily apt download activities.
+-- Subject: Unit apt-daily.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit apt-daily.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 23:17:01 babylon CRON[5951]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 23:17:01 babylon CRON[5952]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 24 23:17:01 babylon CRON[5951]: pam_unix(cron:session): session closed for user root
+May 24 23:39:00 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 24 23:39:01 babylon CRON[6492]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 24 23:39:01 babylon CRON[6494]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 24 23:39:01 babylon CRON[6492]: pam_unix(cron:session): session closed for user root
+May 24 23:39:02 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 24 23:45:47 babylon org.gnome.Shell.desktop[2641]: [Child 29380, MediaPlayback #32] WARNING: Decoder=7f9510d5ae00 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-NZA0Em/firefox-67.0+build2/dom/media/MediaDecoderStateMachine.cpp, line 3296
+May 25 00:00:00 babylon systemd[1]: Starting Rotate log files...
+-- Subject: Unit logrotate.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit logrotate.service has begun starting up.
+May 25 00:00:01 babylon systemd[1]: Reloading The Apache HTTP Server.
+-- Subject: Unit apache2.service has begun reloading its configuration
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit apache2.service has begun reloading its configuration
+May 25 00:00:01 babylon apachectl[7055]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+May 25 00:00:01 babylon systemd[1]: Reloaded The Apache HTTP Server.
+-- Subject: Unit apache2.service has finished reloading its configuration
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit apache2.service has finished reloading its configuration
+-- 
+-- The result is RESULT.
+May 25 00:00:01 babylon systemd[1]: Stopping Make remote CUPS printers available locally...
+-- Subject: Unit cups-browsed.service has begun shutting down
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit cups-browsed.service has begun shutting down.
+May 25 00:00:01 babylon systemd[1]: Stopped Make remote CUPS printers available locally.
+-- Subject: Unit cups-browsed.service has finished shutting down
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit cups-browsed.service has finished shutting down.
+May 25 00:00:01 babylon systemd[1]: Stopping CUPS Scheduler...
+-- Subject: Unit cups.service has begun shutting down
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit cups.service has begun shutting down.
+May 25 00:00:01 babylon systemd[1]: Stopped CUPS Scheduler.
+-- Subject: Unit cups.service has finished shutting down
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit cups.service has finished shutting down.
+May 25 00:00:01 babylon systemd[1]: Closed CUPS Scheduler.
+-- Subject: Unit cups.socket has finished shutting down
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit cups.socket has finished shutting down.
+May 25 00:00:01 babylon systemd[1]: Stopping CUPS Scheduler.
+-- Subject: Unit cups.socket has begun shutting down
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit cups.socket has begun shutting down.
+May 25 00:00:01 babylon systemd[1]: Listening on CUPS Scheduler.
+-- Subject: Unit cups.socket has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit cups.socket has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 00:00:01 babylon systemd[1]: Stopped CUPS Scheduler.
+-- Subject: Unit cups.path has finished shutting down
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit cups.path has finished shutting down.
+May 25 00:00:01 babylon systemd[1]: Stopping CUPS Scheduler.
+-- Subject: Unit cups.path has begun shutting down
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit cups.path has begun shutting down.
+May 25 00:00:01 babylon systemd[1]: Started CUPS Scheduler.
+-- Subject: Unit cups.path has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit cups.path has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 00:00:01 babylon systemd[1]: Started CUPS Scheduler.
+-- Subject: Unit cups.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit cups.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 00:00:01 babylon systemd[1]: Started Make remote CUPS printers available locally.
+-- Subject: Unit cups-browsed.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit cups-browsed.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 00:00:02 babylon systemd[1]: Started Rotate log files.
+-- Subject: Unit logrotate.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit logrotate.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 00:02:10 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 00:02:10 babylon anacron[7182]: Anacron 2.3 started on 2019-05-25
+May 25 00:02:10 babylon anacron[7182]: Will run job `cron.daily' in 5 min.
+May 25 00:02:10 babylon anacron[7182]: Jobs will be executed sequentially
+May 25 00:07:10 babylon anacron[7182]: Job `cron.daily' started
+May 25 00:07:10 babylon anacron[7298]: Updated timestamp for job `cron.daily' to 2019-05-25
+May 25 00:07:10 babylon cracklib[7329]: no dictionary update necessary.
+May 25 00:07:24 babylon anacron[7182]: Job `cron.daily' terminated
+May 25 00:07:24 babylon anacron[7182]: Normal exit (1 job run)
+May 25 00:09:00 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 00:09:00 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 00:09:01 babylon CRON[7696]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 00:09:01 babylon CRON[7697]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 00:09:01 babylon CRON[7696]: pam_unix(cron:session): session closed for user root
+May 25 00:17:01 babylon CRON[7877]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 00:17:01 babylon CRON[7878]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 25 00:17:01 babylon CRON[7877]: pam_unix(cron:session): session closed for user root
+May 25 00:17:07 babylon org.gnome.Shell.desktop[2641]: [Parent 28969, Gecko_IOThread] WARNING: pipe error: Broken pipe: file /build/firefox-NZA0Em/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 726
+May 25 00:39:00 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 00:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 00:39:01 babylon CRON[8536]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 00:39:01 babylon CRON[8537]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 00:39:01 babylon CRON[8536]: pam_unix(cron:session): session closed for user root
+May 25 00:44:22 babylon org.gnome.Shell.desktop[2641]: [RDD 8731, Chrome_ChildThread] WARNING: pipe error (20): Connection reset by peer: file /build/firefox-NZA0Em/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+May 25 00:44:22 babylon org.gnome.Shell.desktop[2641]: [RDD 8731, Chrome_ChildThread] WARNING: pipe error (23): Connection reset by peer: file /build/firefox-NZA0Em/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+May 25 00:44:22 babylon org.gnome.Shell.desktop[2641]: [RDD 8731, Chrome_ChildThread] WARNING: pipe error (24): Connection reset by peer: file /build/firefox-NZA0Em/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+May 25 00:52:12 babylon org.gnome.Shell.desktop[2641]: [Parent 28969, Gecko_IOThread] WARNING: pipe error: Broken pipe: file /build/firefox-NZA0Em/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 726
+May 25 00:58:29 babylon gnome-screensav[2588]: Source ID 1554 was not found when attempting to remove it
+May 25 01:03:30 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 01:03:30 babylon anacron[9198]: Anacron 2.3 started on 2019-05-25
+May 25 01:03:30 babylon anacron[9198]: Normal exit (0 jobs run)
+May 25 01:09:00 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 01:09:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 01:09:01 babylon CRON[9383]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 01:09:01 babylon CRON[9384]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 01:09:01 babylon CRON[9383]: pam_unix(cron:session): session closed for user root
+May 25 01:17:01 babylon CRON[9517]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 01:17:01 babylon CRON[9518]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 25 01:17:01 babylon CRON[9517]: pam_unix(cron:session): session closed for user root
+May 25 01:35:18 babylon snapd[5052]: storehelpers.go:441: cannot refresh: snap has no updates available: "core", "core18", "discord", "gimp", "gnome-3-26-1604", "gnome-3-28-1804", "gnome-calculator", "gnome-characters", "gnome-logs", "gnome-system-monitor", "gtk-common-themes", "pall", "postman", "pycharm-community"
+May 25 01:35:18 babylon snapd[5052]: autorefresh.go:389: auto-refresh: all snaps are up-to-date
+May 25 01:39:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 01:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 01:39:01 babylon CRON[9976]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 01:39:01 babylon CRON[9977]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 01:39:01 babylon CRON[9976]: pam_unix(cron:session): session closed for user root
+May 25 02:02:01 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 02:02:01 babylon anacron[10322]: Anacron 2.3 started on 2019-05-25
+May 25 02:02:01 babylon anacron[10322]: Normal exit (0 jobs run)
+May 25 02:09:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 02:09:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 02:09:01 babylon CRON[10529]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 02:09:01 babylon CRON[10530]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 02:09:01 babylon CRON[10529]: pam_unix(cron:session): session closed for user root
+May 25 02:17:01 babylon CRON[10661]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 02:17:02 babylon CRON[10662]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 25 02:17:02 babylon CRON[10661]: pam_unix(cron:session): session closed for user root
+May 25 02:39:01 babylon CRON[11011]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 02:39:01 babylon CRON[11012]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 02:39:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 02:39:01 babylon CRON[11011]: pam_unix(cron:session): session closed for user root
+May 25 02:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 03:00:21 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 03:00:21 babylon anacron[11429]: Anacron 2.3 started on 2019-05-25
+May 25 03:00:21 babylon anacron[11429]: Normal exit (0 jobs run)
+May 25 03:09:01 babylon CRON[11559]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 03:09:01 babylon CRON[11560]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 03:09:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 03:09:01 babylon CRON[11559]: pam_unix(cron:session): session closed for user root
+May 25 03:09:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 03:17:01 babylon CRON[11793]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 03:17:01 babylon CRON[11794]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 25 03:17:01 babylon CRON[11793]: pam_unix(cron:session): session closed for user root
+May 25 03:35:00 babylon NetworkManager[929]: <info>  [1558748100.0378] manager: NetworkManager state is now CONNECTED_SITE
+May 25 03:35:00 babylon whoopsie[2077]: [03:35:00] offline
+May 25 03:35:00 babylon dbus-daemon[926]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.11' (uid=0 pid=929 comm="/usr/sbin/NetworkManager --no-daemon " label="unconfined")
+May 25 03:35:00 babylon systemd[1]: Starting Network Manager Script Dispatcher Service...
+-- Subject: Unit NetworkManager-dispatcher.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit NetworkManager-dispatcher.service has begun starting up.
+May 25 03:35:00 babylon dbus-daemon[926]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+May 25 03:35:00 babylon nm-dispatcher[12075]: req:1 'connectivity-change': new request (1 scripts)
+May 25 03:35:00 babylon systemd[1]: Started Network Manager Script Dispatcher Service.
+-- Subject: Unit NetworkManager-dispatcher.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit NetworkManager-dispatcher.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 03:35:00 babylon nm-dispatcher[12075]: req:1 'connectivity-change': start running ordered scripts...
+May 25 03:35:02 babylon NetworkManager[929]: <info>  [1558748102.3679] manager: NetworkManager state is now CONNECTED_GLOBAL
+May 25 03:35:02 babylon nm-dispatcher[12075]: req:2 'connectivity-change': new request (1 scripts)
+May 25 03:35:02 babylon nm-dispatcher[12075]: req:2 'connectivity-change': start running ordered scripts...
+May 25 03:35:02 babylon whoopsie[2077]: [03:35:02] The default IPv4 route is: /org/freedesktop/NetworkManager/ActiveConnection/1
+May 25 03:35:02 babylon whoopsie[2077]: [03:35:02] Not a paid data plan: /org/freedesktop/NetworkManager/ActiveConnection/1
+May 25 03:35:02 babylon whoopsie[2077]: [03:35:02] Found usable connection: /org/freedesktop/NetworkManager/ActiveConnection/1
+May 25 03:35:03 babylon whoopsie[2077]: [03:35:03] online
+May 25 03:39:01 babylon CRON[12176]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 03:39:01 babylon CRON[12177]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 03:39:01 babylon CRON[12176]: pam_unix(cron:session): session closed for user root
+May 25 03:39:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 03:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 04:04:12 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 04:04:12 babylon anacron[12598]: Anacron 2.3 started on 2019-05-25
+May 25 04:04:12 babylon anacron[12598]: Normal exit (0 jobs run)
+May 25 04:09:01 babylon CRON[12672]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 04:09:01 babylon CRON[12673]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 04:09:01 babylon CRON[12672]: pam_unix(cron:session): session closed for user root
+May 25 04:09:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 04:09:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 04:17:01 babylon CRON[12901]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 04:17:01 babylon CRON[12902]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 25 04:17:01 babylon CRON[12901]: pam_unix(cron:session): session closed for user root
+May 25 04:39:01 babylon CRON[13245]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 04:39:01 babylon CRON[13246]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 04:39:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 04:39:01 babylon CRON[13245]: pam_unix(cron:session): session closed for user root
+May 25 04:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 05:04:02 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 05:04:02 babylon anacron[13700]: Anacron 2.3 started on 2019-05-25
+May 25 05:04:02 babylon anacron[13700]: Normal exit (0 jobs run)
+May 25 05:09:01 babylon CRON[13787]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 05:09:01 babylon CRON[13788]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 05:09:01 babylon CRON[13787]: pam_unix(cron:session): session closed for user root
+May 25 05:09:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 05:09:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 05:17:01 babylon CRON[14022]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 05:17:01 babylon CRON[14023]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 25 05:17:01 babylon CRON[14022]: pam_unix(cron:session): session closed for user root
+May 25 05:18:40 babylon kernel: perf: interrupt took too long (3991 > 3978), lowering kernel.perf_event_max_sample_rate to 50000
+May 25 05:39:01 babylon CRON[14386]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 05:39:01 babylon CRON[14387]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 05:39:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 05:39:01 babylon CRON[14386]: pam_unix(cron:session): session closed for user root
+May 25 05:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 06:03:52 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 06:03:53 babylon anacron[14835]: Anacron 2.3 started on 2019-05-25
+May 25 06:03:53 babylon anacron[14835]: Normal exit (0 jobs run)
+May 25 06:09:00 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 06:09:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 06:09:01 babylon CRON[15013]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 06:09:01 babylon CRON[15019]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 06:09:01 babylon CRON[15013]: pam_unix(cron:session): session closed for user root
+May 25 06:17:01 babylon CRON[15150]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 06:17:01 babylon CRON[15151]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 25 06:17:01 babylon CRON[15150]: pam_unix(cron:session): session closed for user root
+May 25 06:25:01 babylon CRON[15287]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 06:25:01 babylon CRON[15288]: (root) CMD (test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily ))
+May 25 06:25:01 babylon CRON[15287]: pam_unix(cron:session): session closed for user root
+May 25 06:31:37 babylon PackageKit[3875]: get-updates transaction /3937_daacebdc from uid 1000 finished with success after 715ms
+May 25 06:34:00 babylon systemd[1]: Starting Daily apt upgrade and clean activities...
+-- Subject: Unit apt-daily-upgrade.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit apt-daily-upgrade.service has begun starting up.
+May 25 06:34:04 babylon systemd[1]: Started Daily apt upgrade and clean activities.
+-- Subject: Unit apt-daily-upgrade.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit apt-daily-upgrade.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 06:39:01 babylon CRON[15629]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 06:39:01 babylon CRON[15630]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 06:39:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 06:39:01 babylon CRON[15629]: pam_unix(cron:session): session closed for user root
+May 25 06:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 07:00:43 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 07:00:43 babylon anacron[16036]: Anacron 2.3 started on 2019-05-25
+May 25 07:00:43 babylon anacron[16036]: Normal exit (0 jobs run)
+May 25 07:09:01 babylon CRON[16179]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 07:09:01 babylon CRON[16180]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 07:09:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 07:09:01 babylon CRON[16179]: pam_unix(cron:session): session closed for user root
+May 25 07:09:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 07:17:01 babylon CRON[16410]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 07:17:01 babylon CRON[16411]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 25 07:17:01 babylon CRON[16410]: pam_unix(cron:session): session closed for user root
+May 25 07:30:01 babylon CRON[16632]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 07:30:01 babylon CRON[16633]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)
+May 25 07:30:01 babylon CRON[16632]: pam_unix(cron:session): session closed for user root
+May 25 07:35:16 babylon snapd[5052]: storehelpers.go:441: cannot refresh: snap has no updates available: "core", "core18", "discord", "gimp", "gnome-3-26-1604", "gnome-3-28-1804", "gnome-calculator", "gnome-characters", "gnome-logs", "gnome-system-monitor", "gtk-common-themes", "pall", "postman", "pycharm-community"
+May 25 07:35:16 babylon snapd[5052]: autorefresh.go:389: auto-refresh: all snaps are up-to-date
+May 25 07:39:01 babylon CRON[16785]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 07:39:01 babylon CRON[16786]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 07:39:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 07:39:01 babylon CRON[16785]: pam_unix(cron:session): session closed for user root
+May 25 07:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 07:56:01 babylon CRON[17134]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 07:56:01 babylon CRON[17135]: (root) CMD (   test -x /etc/cron.daily/popularity-contest && /etc/cron.daily/popularity-contest --crond)
+May 25 07:56:01 babylon CRON[17134]: pam_unix(cron:session): session closed for user root
+May 25 08:01:33 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 08:01:33 babylon anacron[17249]: Anacron 2.3 started on 2019-05-25
+May 25 08:01:33 babylon anacron[17249]: Normal exit (0 jobs run)
+May 25 08:09:01 babylon CRON[17397]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 08:09:01 babylon CRON[17398]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 08:09:01 babylon CRON[17397]: pam_unix(cron:session): session closed for user root
+May 25 08:09:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 08:09:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 08:17:01 babylon CRON[17644]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 08:17:01 babylon CRON[17645]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 25 08:17:01 babylon CRON[17644]: pam_unix(cron:session): session closed for user root
+May 25 08:39:01 babylon CRON[18006]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 08:39:01 babylon CRON[18007]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 08:39:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 08:39:01 babylon CRON[18006]: pam_unix(cron:session): session closed for user root
+May 25 08:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 08:44:58 babylon dhclient[1840]: DHCPREQUEST of 192.168.1.11 on enp0s31f6 to 192.168.1.1 port 67 (xid=0x19045dfc)
+May 25 08:44:58 babylon dhclient[1840]: DHCPACK of 192.168.1.11 from 192.168.1.1
+May 25 08:44:58 babylon NetworkManager[929]: <info>  [1558766698.7557] dhcp4 (enp0s31f6):   address 192.168.1.11
+May 25 08:44:58 babylon NetworkManager[929]: <info>  [1558766698.7559] dhcp4 (enp0s31f6):   plen 24 (255.255.255.0)
+May 25 08:44:58 babylon NetworkManager[929]: <info>  [1558766698.7560] dhcp4 (enp0s31f6):   gateway 192.168.1.1
+May 25 08:44:58 babylon dbus-daemon[926]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.11' (uid=0 pid=929 comm="/usr/sbin/NetworkManager --no-daemon " label="unconfined")
+May 25 08:44:58 babylon NetworkManager[929]: <info>  [1558766698.7571] dhcp4 (enp0s31f6):   lease time 86400
+May 25 08:44:58 babylon dhclient[1840]: bound to 192.168.1.11 -- renewal in 37545 seconds.
+May 25 08:44:58 babylon NetworkManager[929]: <info>  [1558766698.7572] dhcp4 (enp0s31f6):   nameserver '192.168.1.1'
+May 25 08:44:58 babylon NetworkManager[929]: <info>  [1558766698.7572] dhcp4 (enp0s31f6): state changed bound -> bound
+May 25 08:44:58 babylon systemd[1]: Starting Network Manager Script Dispatcher Service...
+-- Subject: Unit NetworkManager-dispatcher.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit NetworkManager-dispatcher.service has begun starting up.
+May 25 08:44:58 babylon dbus-daemon[926]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+May 25 08:44:58 babylon systemd[1]: Started Network Manager Script Dispatcher Service.
+-- Subject: Unit NetworkManager-dispatcher.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit NetworkManager-dispatcher.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 08:44:58 babylon nm-dispatcher[18346]: req:1 'dhcp4-change' [enp0s31f6]: new request (1 scripts)
+May 25 08:44:58 babylon nm-dispatcher[18346]: req:1 'dhcp4-change' [enp0s31f6]: start running ordered scripts...
+May 25 09:01:33 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 09:01:33 babylon anacron[18698]: Anacron 2.3 started on 2019-05-25
+May 25 09:01:33 babylon anacron[18698]: Normal exit (0 jobs run)
+May 25 09:09:01 babylon CRON[18818]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 09:09:01 babylon CRON[18819]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 09:09:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 09:09:01 babylon CRON[18818]: pam_unix(cron:session): session closed for user root
+May 25 09:09:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 09:17:01 babylon CRON[19038]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 09:17:01 babylon CRON[19039]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 25 09:17:01 babylon CRON[19038]: pam_unix(cron:session): session closed for user root
+May 25 09:35:21 babylon gnome-screensaver-dialog[19350]: gkr-pam: unlocked login keyring
+May 25 09:39:01 babylon CRON[19475]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 09:39:01 babylon CRON[19476]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 09:39:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 09:39:01 babylon CRON[19475]: pam_unix(cron:session): session closed for user root
+May 25 09:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 09:46:32 babylon org.gnome.Shell.desktop[2641]: [Parent 28969, Gecko_IOThread] WARNING: pipe error: Broken pipe: file /build/firefox-NZA0Em/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 726
+May 25 10:04:04 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 10:04:04 babylon anacron[20127]: Anacron 2.3 started on 2019-05-25
+May 25 10:04:04 babylon anacron[20127]: Normal exit (0 jobs run)
+May 25 10:09:01 babylon CRON[20234]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 10:09:01 babylon CRON[20235]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 10:09:01 babylon CRON[20234]: pam_unix(cron:session): session closed for user root
+May 25 10:09:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 10:09:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 10:17:01 babylon CRON[20553]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 10:17:01 babylon CRON[20554]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 25 10:17:01 babylon CRON[20553]: pam_unix(cron:session): session closed for user root
+May 25 10:34:16 babylon org.gnome.Shell.desktop[2641]: [RDD 8731, Chrome_ChildThread] WARNING: pipe error (15): Connection reset by peer: file /build/firefox-NZA0Em/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+May 25 10:34:16 babylon org.gnome.Shell.desktop[2641]: [RDD 8731, Chrome_ChildThread] WARNING: pipe error (20): Connection reset by peer: file /build/firefox-NZA0Em/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+May 25 10:34:16 babylon org.gnome.Shell.desktop[2641]: [RDD 8731, Chrome_ChildThread] WARNING: pipe error (23): Connection reset by peer: file /build/firefox-NZA0Em/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+May 25 10:38:09 babylon org.gnome.Shell.desktop[2641]: [RDD 8731, Chrome_ChildThread] WARNING: pipe error: Broken pipe: file /build/firefox-NZA0Em/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 726
+May 25 10:38:09 babylon org.gnome.Shell.desktop[2641]: [RDD 8731, Chrome_ChildThread] WARNING: pipe error: Broken pipe: file /build/firefox-NZA0Em/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 726
+May 25 10:38:10 babylon org.gnome.Shell.desktop[2641]: [RDD 8731, Chrome_ChildThread] WARNING: pipe error: Broken pipe: file /build/firefox-NZA0Em/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 726
+May 25 10:38:12 babylon org.gnome.Shell.desktop[2641]: [Child 29536, MediaPlayback #16] WARNING: Decoder=7f7b0d74bc00 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-NZA0Em/firefox-67.0+build2/dom/media/MediaDecoderStateMachine.cpp, line 3296
+May 25 10:38:12 babylon org.gnome.Shell.desktop[2641]: [Child 29536, MediaPlayback #16] WARNING: Decoder=7f7b0d74bc00 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-NZA0Em/firefox-67.0+build2/dom/media/MediaDecoderStateMachine.cpp, line 3296
+May 25 10:38:12 babylon org.gnome.Shell.desktop[2641]: [Child 29536, MediaPlayback #19] WARNING: Decoder=7f7b0d74bc00 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-NZA0Em/firefox-67.0+build2/dom/media/MediaDecoderStateMachine.cpp, line 3296
+May 25 10:38:12 babylon org.gnome.Shell.desktop[2641]: [Child 29536, MediaPlayback #19] WARNING: Decoder=7f7b0d74bc00 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-NZA0Em/firefox-67.0+build2/dom/media/MediaDecoderStateMachine.cpp, line 3296
+May 25 10:38:12 babylon org.gnome.Shell.desktop[2641]: [Child 29536, MediaPlayback #19] WARNING: Decoder=7f7b0d74bc00 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-NZA0Em/firefox-67.0+build2/dom/media/MediaDecoderStateMachine.cpp, line 3296
+May 25 10:38:16 babylon org.gnome.Shell.desktop[2641]: [RDD 8731, Chrome_ChildThread] WARNING: pipe error: Broken pipe: file /build/firefox-NZA0Em/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 726
+May 25 10:38:16 babylon org.gnome.Shell.desktop[2641]: [RDD 8731, Chrome_ChildThread] WARNING: pipe error: Broken pipe: file /build/firefox-NZA0Em/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 726
+May 25 10:38:16 babylon org.gnome.Shell.desktop[2641]: [RDD 8731, Chrome_ChildThread] WARNING: pipe error (15): Connection reset by peer: file /build/firefox-NZA0Em/firefox-67.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+May 25 10:38:20 babylon org.gnome.Shell.desktop[2641]: [Child 29536, MediaPlayback #17] WARNING: Decoder=7f7b0bbb6c00 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-NZA0Em/firefox-67.0+build2/dom/media/MediaDecoderStateMachine.cpp, line 3296
+May 25 10:38:20 babylon org.gnome.Shell.desktop[2641]: [Child 29536, MediaPlayback #19] WARNING: Decoder=7f7b0bbb6c00 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-NZA0Em/firefox-67.0+build2/dom/media/MediaDecoderStateMachine.cpp, line 3296
+May 25 10:38:20 babylon org.gnome.Shell.desktop[2641]: [Child 29536, MediaPlayback #16] WARNING: Decoder=7f7b0bbb6c00 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-NZA0Em/firefox-67.0+build2/dom/media/MediaDecoderStateMachine.cpp, line 3296
+May 25 10:38:20 babylon org.gnome.Shell.desktop[2641]: [Child 29536, MediaPlayback #18] WARNING: Decoder=7f7b0bbb6c00 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-NZA0Em/firefox-67.0+build2/dom/media/MediaDecoderStateMachine.cpp, line 3296
+May 25 10:38:20 babylon org.gnome.Shell.desktop[2641]: [Child 29536, MediaPlayback #19] WARNING: Decoder=7f7b0bbb6c00 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-NZA0Em/firefox-67.0+build2/dom/media/MediaDecoderStateMachine.cpp, line 3296
+May 25 10:38:20 babylon org.gnome.Shell.desktop[2641]: [Child 29536, MediaPlayback #19] WARNING: Decoder=7f7b0bbb6c00 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-NZA0Em/firefox-67.0+build2/dom/media/MediaDecoderStateMachine.cpp, line 3296
+May 25 10:39:01 babylon systemd[1]: Starting Clean php session files...
+-- Subject: Unit phpsessionclean.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has begun starting up.
+May 25 10:39:01 babylon CRON[21224]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 25 10:39:01 babylon CRON[21235]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 25 10:39:01 babylon CRON[21224]: pam_unix(cron:session): session closed for user root
+May 25 10:39:01 babylon systemd[1]: Started Clean php session files.
+-- Subject: Unit phpsessionclean.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit phpsessionclean.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 10:44:16 babylon dbus-daemon[2414]: [session uid=1000 pid=2414] Activating service name='org.gnome.Nautilus' requested by ':1.40' (uid=1000 pid=2641 comm="/usr/bin/gnome-shell " label="unconfined")
+May 25 10:44:16 babylon dbus-daemon[2414]: [session uid=1000 pid=2414] Successfully activated service 'org.gnome.Nautilus'
+May 25 10:44:17 babylon dbus-daemon[926]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.360' (uid=1000 pid=21720 comm="/usr/bin/nautilus --gapplication-service " label="unconfined")
+May 25 10:44:17 babylon systemd[1]: Starting Hostname Service...
+-- Subject: Unit systemd-hostnamed.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit systemd-hostnamed.service has begun starting up.
+May 25 10:44:17 babylon nautilus[21720]: Called "net usershare info" but it failed: Failed to execute child process “net” (No such file or directory)
+May 25 10:44:17 babylon dbus-daemon[926]: [system] Successfully activated service 'org.freedesktop.hostname1'
+May 25 10:44:17 babylon systemd[1]: Started Hostname Service.
+-- Subject: Unit systemd-hostnamed.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit systemd-hostnamed.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 10:44:17 babylon org.gnome.SettingsDaemon.MediaKeys.desktop[3917]: # watch_fast: "/org/gnome/terminal/legacy/" (establishing: 0, active: 0)
+May 25 10:44:17 babylon org.gnome.SettingsDaemon.MediaKeys.desktop[3917]: # unwatch_fast: "/org/gnome/terminal/legacy/" (active: 0, establishing: 1)
+May 25 10:44:17 babylon org.gnome.SettingsDaemon.MediaKeys.desktop[3917]: # watch_established: "/org/gnome/terminal/legacy/" (establishing: 0)
+May 25 10:44:50 babylon sudo[21891]:  a-tarek : TTY=pts/2 ; PWD=/home/a-tarek ; USER=root ; COMMAND=/usr/bin/gedit /etc/hosts
+May 25 10:44:50 babylon sudo[21891]: pam_unix(sudo:session): session opened for user root by (uid=0)
+May 25 10:44:50 babylon dbus-daemon[21917]: [session uid=0 pid=21915] AppArmor D-Bus mediation is enabled
+May 25 10:44:51 babylon dbus-daemon[21917]: [session uid=0 pid=21915] Activating service name='org.freedesktop.portal.Desktop' requested by ':1.0' (uid=0 pid=21909 comm="gedit /etc/hosts " label="unconfined")
+May 25 10:44:51 babylon dbus-daemon[21917]: [session uid=0 pid=21915] Activating service name='org.freedesktop.portal.Documents' requested by ':1.1' (uid=0 pid=21919 comm="/usr/libexec/xdg-desktop-portal " label="unconfined")
+May 25 10:44:51 babylon dbus-daemon[21917]: [session uid=0 pid=21915] Activating service name='org.freedesktop.impl.portal.PermissionStore' requested by ':1.2' (uid=0 pid=21924 comm="/usr/libexec/xdg-document-portal " label="unconfined")
+May 25 10:44:51 babylon dbus-daemon[21917]: [session uid=0 pid=21915] Successfully activated service 'org.freedesktop.impl.portal.PermissionStore'
+May 25 10:44:51 babylon dbus-daemon[21917]: [session uid=0 pid=21915] Successfully activated service 'org.freedesktop.portal.Documents'
+May 25 10:44:51 babylon dbus-daemon[21917]: [session uid=0 pid=21915] Activating service name='org.freedesktop.impl.portal.desktop.gtk' requested by ':1.1' (uid=0 pid=21919 comm="/usr/libexec/xdg-desktop-portal " label="unconfined")
+May 25 10:44:51 babylon dbus-daemon[21917]: [session uid=0 pid=21915] Activating service name='org.gtk.vfs.Daemon' requested by ':1.4' (uid=0 pid=21939 comm="/usr/libexec/xdg-desktop-portal-gtk " label="unconfined")
+May 25 10:44:51 babylon dbus-daemon[21917]: [session uid=0 pid=21915] Successfully activated service 'org.gtk.vfs.Daemon'
+May 25 10:44:51 babylon dbus-daemon[21917]: [session uid=0 pid=21915] Successfully activated service 'org.freedesktop.impl.portal.desktop.gtk'
+May 25 10:44:51 babylon dbus-daemon[21917]: [session uid=0 pid=21915] Successfully activated service 'org.freedesktop.portal.Desktop'
+May 25 10:44:51 babylon dbus-daemon[21917]: [session uid=0 pid=21915] Activating service name='ca.desrt.dconf' requested by ':1.0' (uid=0 pid=21909 comm="gedit /etc/hosts " label="unconfined")
+May 25 10:44:51 babylon dbus-daemon[21917]: [session uid=0 pid=21915] Successfully activated service 'ca.desrt.dconf'
+May 25 10:44:52 babylon org.gnome.Shell.desktop[2641]: Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x5c00028 (hosts (/et)
+May 25 10:44:52 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 10:44:54 babylon xdg-desktop-por[21919]: Error getting permissions: GDBus.Error:org.freedesktop.portal.Error.NotFound: No entry for inhibit
+May 25 10:44:54 babylon xdg-desktop-por[21919]: Backend call failed: GDBus.Error:org.freedesktop.portal.Error.Failed: Inhibiting other than idle not supported
+May 25 10:45:47 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 10:45:55 babylon sudo[21891]: pam_unix(sudo:session): session closed for user root
+May 25 10:45:55 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 10:45:59 babylon sudo[22414]:  a-tarek : TTY=pts/2 ; PWD=/home/a-tarek ; USER=root ; COMMAND=/usr/bin/gedit /etc/hosts
+May 25 10:45:59 babylon sudo[22414]: pam_unix(sudo:session): session opened for user root by (uid=0)
+May 25 10:46:00 babylon org.gnome.Shell.desktop[2641]: Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x5c00028 (hosts (/et)
+May 25 10:46:00 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 10:46:03 babylon sudo[22414]: pam_unix(sudo:session): session closed for user root
+May 25 10:46:03 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 10:50:43 babylon sudo[22878]: pam_unix(sudo:auth): authentication failure; logname= uid=1000 euid=0 tty=/dev/pts/1 ruser=a-tarek rhost=  user=a-tarek
+May 25 10:50:49 babylon sudo[22878]:  a-tarek : TTY=pts/1 ; PWD=/home/a-tarek/dev ; USER=root ; COMMAND=/bin/chmod 777 -R recos/
+May 25 10:50:49 babylon sudo[22878]: pam_unix(sudo:session): session opened for user root by (uid=0)
+May 25 10:50:49 babylon sudo[22878]: pam_unix(sudo:session): session closed for user root
+May 25 10:51:47 babylon sudo[22932]:  a-tarek : TTY=pts/1 ; PWD=/home/a-tarek/dev/recos ; USER=root ; COMMAND=/usr/bin/gedit /etc/apache2/site-available/laravel.conf
+May 25 10:51:47 babylon sudo[22932]: pam_unix(sudo:session): session opened for user root by (uid=0)
+May 25 10:51:47 babylon org.gnome.Shell.desktop[2641]: Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x5c00028 (laravel.co)
+May 25 10:51:49 babylon sudo[22932]: pam_unix(sudo:session): session closed for user root
+May 25 10:51:49 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 10:51:58 babylon sudo[22946]:  a-tarek : TTY=pts/1 ; PWD=/home/a-tarek/dev/recos ; USER=root ; COMMAND=/usr/bin/gedit /etc/apache2/site-available/recos.conf
+May 25 10:51:58 babylon sudo[22946]: pam_unix(sudo:session): session opened for user root by (uid=0)
+May 25 10:51:58 babylon org.gnome.Shell.desktop[2641]: Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x5c00028 (recos.conf)
+May 25 10:52:07 babylon xdg-desktop-por[21919]: Error getting permissions: GDBus.Error:org.freedesktop.portal.Error.NotFound: No entry for inhibit
+May 25 10:52:07 babylon xdg-desktop-por[21919]: Backend call failed: GDBus.Error:org.freedesktop.portal.Error.Failed: Inhibiting other than idle not supported
+May 25 10:52:12 babylon sudo[22946]: pam_unix(sudo:session): session closed for user root
+May 25 10:52:12 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 10:52:32 babylon sudo[22965]:  a-tarek : TTY=pts/1 ; PWD=/home/a-tarek/dev/recos ; USER=root ; COMMAND=/usr/bin/touch /etc/apache2/site-available/recos.conf
+May 25 10:52:32 babylon sudo[22965]: pam_unix(sudo:session): session opened for user root by (uid=0)
+May 25 10:52:32 babylon sudo[22965]: pam_unix(sudo:session): session closed for user root
+May 25 10:52:40 babylon sudo[22967]:  a-tarek : TTY=pts/1 ; PWD=/home/a-tarek/dev/recos ; USER=root ; COMMAND=/usr/bin/touch /etc/apache2/sites-available/recos.conf
+May 25 10:52:40 babylon sudo[22967]: pam_unix(sudo:session): session opened for user root by (uid=0)
+May 25 10:52:40 babylon sudo[22967]: pam_unix(sudo:session): session closed for user root
+May 25 10:53:05 babylon sudo[22980]:  a-tarek : TTY=pts/1 ; PWD=/home/a-tarek/dev/recos ; USER=root ; COMMAND=/usr/bin/gedit /etc/apache2/sites-available/recos.conf
+May 25 10:53:05 babylon sudo[22980]: pam_unix(sudo:session): session opened for user root by (uid=0)
+May 25 10:53:05 babylon org.gnome.Shell.desktop[2641]: Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x5c00028 (recos.conf)
+May 25 10:53:06 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 10:53:07 babylon xdg-desktop-por[21919]: Error getting permissions: GDBus.Error:org.freedesktop.portal.Error.NotFound: No entry for inhibit
+May 25 10:53:07 babylon xdg-desktop-por[21919]: Backend call failed: GDBus.Error:org.freedesktop.portal.Error.Failed: Inhibiting other than idle not supported
+May 25 10:53:08 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 10:53:26 babylon xdg-desktop-por[21919]: Error getting permissions: GDBus.Error:org.freedesktop.portal.Error.NotFound: No entry for inhibit
+May 25 10:53:26 babylon xdg-desktop-por[21919]: Backend call failed: GDBus.Error:org.freedesktop.portal.Error.Failed: Inhibiting other than idle not supported
+May 25 10:53:27 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 10:53:32 babylon xdg-desktop-por[21919]: Error getting permissions: GDBus.Error:org.freedesktop.portal.Error.NotFound: No entry for inhibit
+May 25 10:53:32 babylon xdg-desktop-por[21919]: Backend call failed: GDBus.Error:org.freedesktop.portal.Error.Failed: Inhibiting other than idle not supported
+May 25 10:53:33 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 10:53:42 babylon sudo[22980]: pam_unix(sudo:session): session closed for user root
+May 25 10:53:43 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 10:54:25 babylon sudo[23175]:  a-tarek : TTY=pts/2 ; PWD=/home/a-tarek ; USER=root ; COMMAND=/usr/bin/gedit /etc/hosts
+May 25 10:54:25 babylon sudo[23175]: pam_unix(sudo:session): session opened for user root by (uid=0)
+May 25 10:54:25 babylon org.gnome.Shell.desktop[2641]: Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x5c00028 (hosts (/et)
+May 25 10:54:26 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 10:58:46 babylon sudo[23733]:  a-tarek : TTY=pts/1 ; PWD=/home/a-tarek/dev/recos ; USER=root ; COMMAND=/usr/bin/gedit /etc/apache2/sites-available/recos.conf
+May 25 10:58:46 babylon sudo[23733]: pam_unix(sudo:session): session opened for user root by (uid=0)
+May 25 10:58:46 babylon sudo[23733]: pam_unix(sudo:session): session closed for user root
+May 25 10:58:46 babylon org.gnome.Shell.desktop[2641]: Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x5c00028 (recos.conf)
+May 25 10:58:47 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 10:58:52 babylon xdg-desktop-por[21919]: Error getting permissions: GDBus.Error:org.freedesktop.portal.Error.NotFound: No entry for inhibit
+May 25 10:58:52 babylon xdg-desktop-por[21919]: Backend call failed: GDBus.Error:org.freedesktop.portal.Error.Failed: Inhibiting other than idle not supported
+May 25 10:58:55 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 11:00:21 babylon gnome-shell[2641]: Some code accessed the property 'WindowPreviewMenu' on the module 'windowPreview'. That property was defined with 'let' or 'const' inside the module. This was previously supported, but is not correct according to the ES6 standard. Any symbols to be exported from a module must be defined with 'var'. The property access will work as previously for the time being, but please fix your code anyway.
+May 25 11:00:38 babylon sudo[23834]: pam_unix(sudo:auth): authentication failure; logname= uid=1000 euid=0 tty=/dev/pts/0 ruser=a-tarek rhost=  user=a-tarek
+May 25 11:00:41 babylon sudo[23834]:  a-tarek : TTY=pts/0 ; PWD=/home/a-tarek/dev/recos ; USER=root ; COMMAND=/usr/sbin/a2enmod headers
+May 25 11:00:41 babylon sudo[23834]: pam_unix(sudo:session): session opened for user root by (uid=0)
+May 25 11:00:41 babylon sudo[23834]: pam_unix(sudo:session): session closed for user root
+May 25 11:00:53 babylon sudo[23841]:  a-tarek : TTY=pts/0 ; PWD=/home/a-tarek/dev/recos ; USER=root ; COMMAND=/usr/sbin/a2enmod rewrite
+May 25 11:00:53 babylon sudo[23841]: pam_unix(sudo:session): session opened for user root by (uid=0)
+May 25 11:00:53 babylon sudo[23841]: pam_unix(sudo:session): session closed for user root
+May 25 11:00:57 babylon sudo[23847]:  a-tarek : TTY=pts/0 ; PWD=/home/a-tarek/dev/recos ; USER=root ; COMMAND=/usr/sbin/a2ensite laravel
+May 25 11:00:57 babylon sudo[23847]: pam_unix(sudo:session): session opened for user root by (uid=0)
+May 25 11:00:57 babylon systemd[1]: Started Run anacron jobs.
+-- Subject: Unit anacron.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit anacron.service has finished starting up.
+-- 
+-- The start-up result is RESULT.
+May 25 11:00:57 babylon anacron[23849]: Anacron 2.3 started on 2019-05-25
+May 25 11:00:57 babylon anacron[23849]: Normal exit (0 jobs run)
+May 25 11:00:57 babylon sudo[23847]: pam_unix(sudo:session): session closed for user root
+May 25 11:01:05 babylon sudo[23881]:  a-tarek : TTY=pts/0 ; PWD=/home/a-tarek/dev/recos ; USER=root ; COMMAND=/usr/sbin/a2ensite recos.conf
+May 25 11:01:05 babylon sudo[23881]: pam_unix(sudo:session): session opened for user root by (uid=0)
+May 25 11:01:05 babylon sudo[23881]: pam_unix(sudo:session): session closed for user root
+May 25 11:01:15 babylon polkitd(authority=local)[1197]: Registered Authentication Agent for unix-process:23892:8472472 (system bus name :1.392 [/usr/bin/pkttyagent --notify-fd 5 --fallback], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+May 25 11:01:18 babylon polkitd(authority=local)[1197]: Operator of unix-session:c1 successfully authenticated as unix-user:a-tarek to gain TEMPORARY authorization for action org.freedesktop.systemd1.manage-units for system-bus-name::1.393 [systemctl reload apache2] (owned by unix-user:a-tarek)
+May 25 11:01:18 babylon systemd[1]: Reloading The Apache HTTP Server.
+-- Subject: Unit apache2.service has begun reloading its configuration
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit apache2.service has begun reloading its configuration
+May 25 11:01:18 babylon apachectl[23902]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+May 25 11:01:18 babylon apachectl[23902]: (2)No such file or directory: AH02291: Cannot access directory '/var/www/app-root/storage/logs/' for error log of vhost defined at /etc/apache2/sites-enabled/recos.conf:1
+May 25 11:01:18 babylon apachectl[23902]: AH00014: Configuration check failed
+May 25 11:01:18 babylon apachectl[23902]: Action 'graceful' failed.
+May 25 11:01:18 babylon apachectl[23902]: The Apache error log may have more information.
+May 25 11:01:18 babylon systemd[1]: apache2.service: Control process exited, code=exited status=1
+May 25 11:01:18 babylon systemd[1]: apache2.service: Failed with result 'exit-code'.
+May 25 11:01:18 babylon systemd[1]: Reload failed for The Apache HTTP Server.
+-- Subject: Unit apache2.service has finished reloading its configuration
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit apache2.service has finished reloading its configuration
+-- 
+-- The result is RESULT.
+May 25 11:01:18 babylon polkitd(authority=local)[1197]: Unregistered Authentication Agent for unix-process:23892:8472472 (system bus name :1.392, object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8) (disconnected from bus)
+May 25 11:01:43 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 11:01:43 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 11:01:43 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 11:01:45 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 11:01:45 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 11:01:48 babylon xdg-desktop-por[21919]: Error getting permissions: GDBus.Error:org.freedesktop.portal.Error.NotFound: No entry for inhibit
+May 25 11:01:48 babylon xdg-desktop-por[21919]: Backend call failed: GDBus.Error:org.freedesktop.portal.Error.Failed: Inhibiting other than idle not supported
+May 25 11:01:57 babylon zeitgeist-datah[4509]: Attempting to read the recently used resources file at '/home/a-tarek/.local/share/recently-used.xbel', but the parser failed: Failed to open file “/home/a-tarek/.local/share/recently-used.xbel”: Permission denied.
+May 25 11:04:17 babylon sudo[23175]: pam_unix(sudo:session): session closed for user root
+May 25 11:04:58 babylon sudo[24350]:  a-tarek : TTY=pts/2 ; PWD=/home/a-tarek ; USER=root ; COMMAND=/bin/systemctl restart apache2
+May 25 11:04:58 babylon sudo[24350]: pam_unix(sudo:session): session opened for user root by (uid=0)
+May 25 11:04:58 babylon systemd[1]: Starting The Apache HTTP Server...
+-- Subject: Unit apache2.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit apache2.service has begun starting up.
+May 25 11:04:58 babylon apachectl[24353]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+May 25 11:04:58 babylon apachectl[24353]: (2)No such file or directory: AH02291: Cannot access directory '/var/www/app-root/storage/logs/' for error log of vhost defined at /etc/apache2/sites-enabled/recos.conf:1
+May 25 11:04:58 babylon apachectl[24353]: AH00014: Configuration check failed
+May 25 11:04:58 babylon apachectl[24353]: Action 'start' failed.
+May 25 11:04:58 babylon apachectl[24353]: The Apache error log may have more information.
+May 25 11:04:58 babylon systemd[1]: apache2.service: Control process exited, code=exited status=1
+May 25 11:04:58 babylon systemd[1]: apache2.service: Failed with result 'exit-code'.
+May 25 11:04:58 babylon systemd[1]: Failed to start The Apache HTTP Server.
+-- Subject: Unit apache2.service has failed
+-- Defined-By: systemd
+-- Support: http://www.ubuntu.com/support
+-- 
+-- Unit apache2.service has failed.
+-- 
+-- The result is RESULT.
+May 25 11:04:58 babylon sudo[24350]: pam_unix(sudo:session): session closed for user root

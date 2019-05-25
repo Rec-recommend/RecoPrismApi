@@ -16,11 +16,11 @@ class TenantController extends Controller
     {
         if ($model = TenantModelFactory::create($request->model)) {
             $model->insert($request->data);
-            return response()->json(['success'=>true,'data' => $data, 'message'=>$message], $code);
-        
+            return response()->json(['success'=>true], 200);
+            return success()->send();
         // return $this->success("Items inserted", 201);
         } else {
-            return response()->json(['success'=>false,'errors' => $errors, 'message'=>$message], $code);
+            // return response()->json(['success'=>false,'errors' => $errors, 'message'=>$message], $code);
 
             // return $this->fail("Bad model name", 400);
         }
