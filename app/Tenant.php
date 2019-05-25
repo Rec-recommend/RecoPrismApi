@@ -8,6 +8,7 @@ use Hyn\Tenancy\Models\Hostname;
 use Hyn\Tenancy\Models\Website;
 use Hyn\Tenancy\Contracts\Repositories\HostnameRepository;
 use Hyn\Tenancy\Contracts\Repositories\WebsiteRepository;
+use Illuminate\Support\Str;
 
 /**
  * @property Website website
@@ -28,15 +29,17 @@ class Tenant
         app(WebsiteRepository::class)->delete($this->website, true);
     }
     
-    public static function create($fqdn): Tenant
+    public static function create(User $user, String $subdomain): Tenant
     {
         // Create New Website
         $website = new Website;
+        $website->uuid = "tn_".Str::random(29);
         app(WebsiteRepository::class)->create($website);
         
         // associate the website with a hostname
         $hostname = new Hostname;
-        $hostname->fqdn = $fqdn;
+        $hostname->user_id= $user->id;
+        $hostname->fqdn = strtolower($subdomain).".".env('TENANT_URL_BASE');
         app(HostnameRepository::class)->attach($hostname, $website);
         
         // make hostname current
