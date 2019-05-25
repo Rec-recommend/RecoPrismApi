@@ -52,24 +52,7 @@ class RegisterController extends Controller
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
-    /**
-     * Handle a registration request for the application.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\69cb983Http\Response
-     */
-    public function register(Request $request)
-    {
-        $request->merge(['fqdn' => $request->name . '.' . env('TENANT_URL_BASE')]);
-        $this->validator($request->all())->validate();
-        Tenant::create($request->input('fqdn'));
-        event(new Registered($user = $this->create($request->all())));
-        $token = $user->createToken('token')->accessToken;
-        return response()->json([
-            'token' => $token,
-            'message' => 'Registration Successful!',
-        ], 201);
-    }
+   
     /**
      * Create a new user instance after a valid registration.
      *
