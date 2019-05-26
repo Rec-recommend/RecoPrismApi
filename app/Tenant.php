@@ -49,9 +49,9 @@ class Tenant
         // make hostname current
         app(Environment::class)->tenant($website);
         
-        Artisan::call('passport:install');
         
         return new Tenant($website, $hostname);
+        Artisan::call('passport:install');
     }
     
     public function subsrcibe(PaymentPlan $plan)

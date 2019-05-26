@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePurchasesTable extends Migration
+class CreateItemAttributeValuesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreatePurchasesTable extends Migration
      */
     public function up()
     {
-        Schema::create('purchases', function (Blueprint $table) {
+        Schema::create('item_attribute_values', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('item_id')->nullable();
+            
+            $table->bigInteger('item_id')->unsigned()->nullable();            
             $table->foreign('item_id')->references('id')->on('items')->nullable();
-            $table->unsignedBigInteger('tenant_user_id')->nullable();
-            $table->foreign('tenant_user_id')->references('id')->on('tenant_users')->nullable();
+
+            $table->bigInteger('attribute_id')->unsigned()->nullable();
+            $table->foreign('attribute_id')->references('id')->on('attributes')->onDelete('set null');
+            
             $table->timestamps();
         });
     }
@@ -30,6 +33,6 @@ class CreatePurchasesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('purchases');
+        Schema::dropIfExists('entity_attribute_values');
     }
 }
