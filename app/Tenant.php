@@ -45,19 +45,19 @@ class Tenant
         $hostname->user_id= $user->id;
         $hostname->fqdn = strtolower($subdomain).".".env('TENANT_URL_BASE');
         app(HostnameRepository::class)->attach($hostname, $website);
-        
         // make hostname current
         app(Environment::class)->tenant($website);
-        
-        
-        return new Tenant($website, $hostname);
         Artisan::call('passport:install');
+        return new Tenant($website, $hostname);
     }
     
     public function subsrcibe(PaymentPlan $plan)
     {
         Subscription::new($this->hostname, $plan);
     } 
+    public function get_api_key(){
+        return Subscription::where("hostname_id",$this->hostname->id)->get('api_key')->first()->api_key;
+    }
 
     public function suspend(){
         Subscription::suspend($this->hostname);

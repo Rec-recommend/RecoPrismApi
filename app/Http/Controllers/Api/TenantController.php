@@ -2,27 +2,26 @@
 
 namespace App\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Models\Api\Item;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use App\Factories\TenantModelFactory;
-use App\Traits\JsonResponse;
+use Hyn\Tenancy\Traits\UsesTenantConnection;
+use Illuminate\Support\Facades\Config;
 
 class TenantController extends Controller
 {
+    use UsesTenantConnection;
     // use JsonResponse;
 
+    public function __construct()
+    {
+        // $this->middleware('check.apikey');
+        // $this->middleware('tenancy.enforce');
+    }
     public function insert_data(Request $request)
     {
-        if ($model = TenantModelFactory::create($request->model)) {
-            $model->insert($request->data);
-            return response()->json(['success'=>true], 200);
-            return success()->send();
-        // return $this->success("Items inserted", 201);
-        } else {
-            // return response()->json(['success'=>false,'errors' => $errors, 'message'=>$message], $code);
-
-            // return $this->fail("Bad model name", 400);
-        }
+            return response()->json(['message'=>'data added'],200);
     }
 }

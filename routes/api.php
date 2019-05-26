@@ -17,10 +17,12 @@ Route::group(['prefix' => 'v1'], function () {
     Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
     Route::post('register', 'Auth\RegisterController@register');
     Route::post('login', 'Auth\LoginController@login');
-    Route::post('data', 'Api\TenantController@insert_data');
 });
 
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+    // return $request->user();
+// });
+Route::post('data', 'Api\TenantController@insert_data')->middleware(['apikeycheck','tenancy.enforce']);
+// Route::middleware()->group(function () {
+// });

@@ -29,12 +29,15 @@ class SystemSeeder extends Seeder
             'email' => 'test@tester.com',
         ])->first();
 
-        PaymentPlan::create([
+        $pp = PaymentPlan::create([
             'name' => 'basic',
             'price' => 25
         ]);
 
-        Tenant::create($user, $subdomain);
-        echo "Database seeder ran \r\n";
+
+        $tenant = Tenant::create($user, $subdomain);
+        Config::set('database.default', 'system');
+
+        $tenant->subsrcibe($pp);
     }
 }

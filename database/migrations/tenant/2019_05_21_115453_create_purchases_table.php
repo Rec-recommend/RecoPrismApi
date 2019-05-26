@@ -15,6 +15,8 @@ class CreatePurchasesTable extends Migration
     {
         Schema::create('purchases', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('count');
+            
             $table->unsignedBigInteger('item_id')->nullable();
             $table->foreign('item_id')->references('id')->on('items')->nullable();
             $table->unsignedBigInteger('tenant_user_id')->nullable();
