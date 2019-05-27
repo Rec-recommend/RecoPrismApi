@@ -6,11 +6,11 @@ LIGHTGRAY='\033[0;37m'
 YELLOW='\033[1;33m'
 RED='\033[0;31m'
 LIGHTPURPLE='\033[1;35m'
+GREEN='\033[0;32m'
 
 
 NC='\033[0m'
 
-cd $HOME/dev/recos
 USER=`cat .env | grep "DB_USERNAME" |awk -F '=' {'print $2'}`
 PASS=`cat .env | grep "DB_PASSWORD" |awk -F '=' {'print $2'}`
 clean(){
@@ -45,8 +45,7 @@ help(){
 }
 
 invalid(){
-    printf "${LIGHTRED}!! INVALID PARAMATERS ${NC}\n"
-    help
+    printf "    ${RED}!! INVALID PARAMATERS ${NC} ${GREEN} -h for help\n"
 }
 
 if [ -z $1 ]
