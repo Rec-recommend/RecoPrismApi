@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemAttributeValuesTable extends Migration
+class CreateEavItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateItemAttributeValuesTable extends Migration
      */
     public function up()
     {
-        Schema::create('item_attribute_values', function (Blueprint $table) {
+        Schema::create('eav_items', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('value');
             
             $table->bigInteger('item_id')->unsigned()->nullable();            
             $table->foreign('item_id')->references('id')->on('items')->nullable();
@@ -33,6 +34,6 @@ class CreateItemAttributeValuesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('entity_attribute_values');
+        Schema::dropIfExists('eav_items');
     }
 }
