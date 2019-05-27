@@ -15,6 +15,7 @@ class CreateEavTenantUsersTable extends Migration
     {
         Schema::create('eav_tenant_users', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('value');
             
             $table->bigInteger('tenant_user_id')->unsigned()->nullable();            
             $table->foreign('tenant_user_id')->references('id')->on('tenant_users')->nullable();

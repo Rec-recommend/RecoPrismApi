@@ -10,7 +10,7 @@ class EavTenantUser extends Model
 {
     use UsesTenantConnection;
 
-    protected $fillable = ["user_id", "attribute_id", "value"];
+    protected $fillable = ["tenant_user_id", "attribute_id", "value"];
     protected $table = "eav_tenant_users";
 
     public function tenant_user(){

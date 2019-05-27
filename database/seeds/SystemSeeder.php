@@ -40,33 +40,8 @@ class SystemSeeder extends Seeder
 
         
         $tenant = Tenant::create($user, $subdomain);
-        $now = Carbon::now('utc')->toDateTimeString();
-
-        $entities = array(
-            array(
-                'name' => 'item', 
-                'created_at' => $now,
-                'updated_at' => $now
-            ),
-            array(
-                'name' => 'user',
-                'created_at' => $now,
-                'updated_at' => $now
-            ),
-        );
-        Entity::insert($entities);
-        $attributes = array(
-            array(
-                'label' => 'name', 
-                'created_at' => $now,
-                'updated_at' => $now
-            ),
-            array(
-                'label' => 'price',
-                'created_at' => $now,
-                'updated_at' => $now
-            ),
-        );
+        
+        $this->call(TenantSeeder::class);
         
         Config::set('database.default', 'system');
 

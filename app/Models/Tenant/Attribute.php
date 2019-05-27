@@ -14,6 +14,7 @@ class Attribute extends Model
 
     public function entity()
     {
+        $fillable = ['label',"entity_id"];
         return $this->belongsTo(Entity::class);
     }
 }
