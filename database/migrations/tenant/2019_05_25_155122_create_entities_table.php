@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateConfigsTable extends Migration
+class CreateEntitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,9 @@ class CreateConfigsTable extends Migration
      */
     public function up()
     {
-        Schema::create('configs', function (Blueprint $table) {
+        Schema::create('entities', function (Blueprint $table) {
             $table->bigIncrements('id');
-
             $table->string('name');
-            $table->integer('weight')->default(1);
-            $table->integer('default_weight')->default(1);
-            $table->boolean('used')->default(false);
-            $table->enum('target', ['table', 'column'])->default('table');
-            $table->string('table')->nullable();
-
-
             $table->timestamps();
         });
     }
@@ -35,6 +27,6 @@ class CreateConfigsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('configs');
+        Schema::dropIfExists('entities');
     }
 }

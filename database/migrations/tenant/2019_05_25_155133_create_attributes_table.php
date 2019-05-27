@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePaymentPlansTable extends Migration
+class CreateAttributesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreatePaymentPlansTable extends Migration
      */
     public function up()
     {
-        Schema::create('payment_plans', function (Blueprint $table) {
+        Schema::create('attributes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->integer('price');
-            $table->bigInteger('hostname_id')->unsigned()->nullable();
-            $table->foreign('hostname_id')->references('id')->on('hostnames')->onDelete('set null');
+            $table->string('label');
+            $table->integer('weight');
+            $table->bigInteger('entity_id')->unsigned()->nullable();
+            $table->foreign('entity_id')->references('id')->on('entities')->onDelete('set null');
             
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ class CreatePaymentPlansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('payment_plans');
+        Schema::dropIfExists('attributes');
     }
 }

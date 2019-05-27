@@ -2,11 +2,13 @@
 
 use App\User;
 use App\Tenant;
+use App\PaymentPlan;
 use Illuminate\Database\Seeder;
-
+use Hyn\Tenancy\Traits\UsesSystemConnection;
 
 class SystemSeeder extends Seeder
 {
+    use UsesSystemConnection;
     /**
      * Run the database seeds.
      *
@@ -26,6 +28,13 @@ class SystemSeeder extends Seeder
         $user = User::where([
             'email' => 'test@tester.com',
         ])->first();
+
+        PaymentPlan::create([
+            'name' => 'basic',
+            'price' => 25
+        ]);
+
         Tenant::create($user, $subdomain);
+        echo "Database seeder ran \r\n";
     }
 }

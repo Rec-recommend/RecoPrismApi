@@ -17,8 +17,8 @@ class CreateRequestLogsTable extends Migration
             $table->bigIncrements('id');
 
             $table->unsignedBigInteger('item_id')->nullable();
-            $table->unsignedBigInteger('tenant_user_id')->nullable();
             $table->foreign('item_id')->references('id')->on('items')->nullable();
+            $table->unsignedBigInteger('tenant_user_id')->nullable();
             $table->foreign('tenant_user_id')->references('id')->on('tenant_users')->nullable();
 
             $table->timestamps();

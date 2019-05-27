@@ -15,13 +15,16 @@ class CreateSubscriptionsTable extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
+            $table->boolean('is_active');
+            $table->dropColumn('api_key');
 
             $table->bigInteger('hostname_id')->unsigned()->nullable();
             $table->foreign('hostname_id')->references('id')->on('hostnames')->onDelete('set null');
-
+            
             $table->bigInteger('payment_plan_id')->unsigned()->nullable();
             $table->foreign('payment_plan_id')->references('id')->on('payment_plans')->onDelete('set null');
+            
+            $table->timestamps();
         });
     }
 

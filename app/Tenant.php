@@ -1,13 +1,15 @@
 <?php
 
 namespace App;
-use Illuminate\Support\Facades\Artisan;
-use Hyn\Tenancy\Environment;
-use Hyn\Tenancy\Models\Hostname;
-use Hyn\Tenancy\Models\Website;
-use Hyn\Tenancy\Contracts\Repositories\HostnameRepository;
-use Hyn\Tenancy\Contracts\Repositories\WebsiteRepository;
+
+use App\PaymentPlan;
 use Illuminate\Support\Str;
+use Hyn\Tenancy\Environment;
+use Hyn\Tenancy\Models\Website;
+use Hyn\Tenancy\Models\Hostname;
+use Illuminate\Support\Facades\Artisan;
+use Hyn\Tenancy\Contracts\Repositories\WebsiteRepository;
+use Hyn\Tenancy\Contracts\Repositories\HostnameRepository;
 
 /**
  * @property Website website
@@ -16,10 +18,13 @@ use Illuminate\Support\Str;
  
 class Tenant
 {
+    public $website;
+    public $hostname;
+    
     public function __construct(Website $website = null, Hostname $hostname = null)
     {
-        $this->website = $website ?? $sub->website;
-        $this->hostname = $hostname ?? $sub->websites->hostnames->first();
+        $this->website = $website ;
+        $this->hostname = $hostname ;
     }
     
     public function delete()
@@ -47,6 +52,16 @@ class Tenant
         Artisan::call('passport:install');
         
         return new Tenant($website, $hostname);
+        Artisan::call('passport:install');
+    }
+    
+    public function subsrcibe(PaymentPlan $plan)
+    {
+        Subscription::new($this->hostname, $plan);
+    } 
+
+    public function suspend(){
+        Subscription::suspend($this->hostname);
     }
     
     public static function tenantExists($name)
