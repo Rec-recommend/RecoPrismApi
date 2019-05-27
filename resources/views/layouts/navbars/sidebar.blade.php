@@ -106,8 +106,8 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="ni ni-planet text-blue"></i> {{ __('Icons') }}
+                    <a class="nav-link" href='{{ route('tenantIndex') }}'>
+                        <i class="ni ni-planet text-blue"></i> {{ __('Apps') }}
                     </a>
                 </li>
                 <li class="nav-item">

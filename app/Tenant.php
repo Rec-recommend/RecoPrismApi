@@ -68,16 +68,10 @@ class Tenant
     {
         return Hostname::where('fqdn', $name)->exists();
     }
+    public static function rules(){
+        return [
+            'fqdn' => 'unique:hostnames|max:30|min:5',
+        ];
 
-    public static function delete_by_fqdn($fqdn)
-    {
-        $hostname = Hostname::where('fqdn', $fqdn)->with(['website'])->first();
-        if ($hostname) {
-            $website = $hostname->website;
-            app(HostnameRepository::class)->delete($hostname, true);
-            app(WebsiteRepository::class)->delete($website, true);
-            return true;
-        } else
-            return false;
     }
 }
