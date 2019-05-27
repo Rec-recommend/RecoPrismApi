@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-
 use Illuminate\Support\Facades\Artisan;
 use Hyn\Tenancy\Environment;
 use Hyn\Tenancy\Models\Hostname;
@@ -43,8 +42,8 @@ class Tenant
         app(HostnameRepository::class)->attach($hostname, $website);
         
         // make hostname current
-        app(Environment::class)->tenant($website);
-        
+       // app(Environment::class)->tenant($website);
+
         Artisan::call('passport:install');
         
         return new Tenant($website, $hostname);
@@ -53,5 +52,11 @@ class Tenant
     public static function tenantExists($name)
     {
         return Hostname::where('fqdn', $name)->exists();
+    }
+    public static function rules(){
+        return [
+            'fqdn' => 'unique:hostnames|max:30|min:5',
+        ];
+
     }
 }
