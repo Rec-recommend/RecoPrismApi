@@ -24,7 +24,14 @@
                                         {{$website->fqdn}}
                                     </th>
                                     <td>
-                                        4,569
+                                        <form id="delete-form" method="POST" action='{{ route('deleteApp',[$website->id])}}'> 
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                            <div class="form-group">
+                                            <button type="submit" class="btn btn-danger"> DELETE </button>
+                                            </div>
+                                        </form>
+                                            {{-- <input type="submit" class="btn btn-danger" href='{{ route('deleteApp') }}' value="DELETE">  --}}
                                     </td>
                                   
                                   

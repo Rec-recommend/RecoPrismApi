@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Api;
+
 use Redirect;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -22,30 +23,41 @@ class TenantController extends Controller
     {
         if ($model = TenantModelFactory::create($request->model)) {
             $model->insert($request->data);
-            return response()->json(['success'=>true], 200);
+            return response()->json(['success' => true], 200);
             return success()->send();
-        // return $this->success("Items inserted", 201);
+            // return $this->success("Items inserted", 201);
         } else {
             // return response()->json(['success'=>false,'errors' => $errors, 'message'=>$message], $code);
 
             // return $this->fail("Bad model name", 400);
         }
     }
-    public function index(){
-        $websites=Hostname::all()->where('user_id',auth()->user()->id);
+    public function index()
+    {
+        $websites = Hostname::all()->where('user_id', auth()->user()->id);
         return view('tenantApps')->with('websites', $websites);
     }
-    public function create(){
+    public function create()
+    {
         return view('createApp');
     }
-    public function store(Request $request){
-        $request->request->add(['fqdn' => $request->subdomain .'.recoprism.com']); //add request
-        $validator= Validator::make($request->all(),Tenant::rules());
-        if(!$validator->fails()){
-            Tenant::create(auth()->user(),$request->subdomain);
+    public function store(Request $request)
+    {
+        $request->request->add(['fqdn' => $request->subdomain . '.recoprism.com']); //add request
+        $validator = Validator::make($request->all(), Tenant::rules());
+        if (!$validator->fails()) {
+            Tenant::create(auth()->user(), $request->subdomain);
             return redirect('/applications');
-        }else{
+        } else {
             return Redirect::back()->withErrors($validator);
         }
+    }
+
+    public function delete($id)
+    {
+        $hostname = Hostname::where(['id' => $id, 'user_id' => auth()->user()->id])->first();
+        $website = $hostname->website()->first();
+        Tenant::delete($hostname, $website);
+        return redirect('/applications');
     }
 }
