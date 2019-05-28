@@ -28,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // $tables = DB::connection()->getDoctrineSchemaManager()->listTableNames();
         // config(['database.default' => 'tenant']);
     }
 }

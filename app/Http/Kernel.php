@@ -40,13 +40,15 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
-            'throttle:60,1',
+            // 'throttle:60,1',
             'bindings',
+            'apikeycheck',
+            'tenancy.enforce'
         ],
     ];
 
     /**
-     * The application's route middleware.
+     * The application's route middleware.y
      *
      * These middleware may be assigned to groups or used individually.
      *
@@ -60,10 +62,10 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
-        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        // 'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        // 'tenancy.enforce' => \App\Http\Middleware\EnforceTenancy::class,
-
+        'apikeycheck' => \App\Http\Middleware\ApiKeyCheck::class,
+        'tenancy.enforce' => \App\Http\Middleware\EnforceTenancy::class,
     ];
 
     /**

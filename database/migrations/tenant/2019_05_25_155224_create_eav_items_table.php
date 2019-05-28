@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersAttributeValues extends Migration
+class CreateEavItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateUsersAttributeValues extends Migration
      */
     public function up()
     {
-        Schema::create('users_attribute_values', function (Blueprint $table) {
+        Schema::create('eav_items', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('value');
             
-            $table->bigInteger('tenant_user_id')->unsigned()->nullable();            
-            $table->foreign('tenant_user_id')->references('id')->on('tenant_users')->nullable();
+            $table->bigInteger('item_id')->unsigned()->nullable();            
+            $table->foreign('item_id')->references('id')->on('items')->nullable();
 
             $table->bigInteger('attribute_id')->unsigned()->nullable();
             $table->foreign('attribute_id')->references('id')->on('attributes')->onDelete('set null');
@@ -33,6 +34,6 @@ class CreateUsersAttributeValues extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_attribute_values');
+        Schema::dropIfExists('eav_items');
     }
 }

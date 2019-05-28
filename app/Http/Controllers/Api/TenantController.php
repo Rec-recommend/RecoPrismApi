@@ -4,12 +4,15 @@ namespace App\Http\Controllers\Api;
 
 use Redirect;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Config;
+use Hyn\Tenancy\Traits\UsesTenantConnection;
 use App\Models\Api\Item;
 use App\Tenant;
 use App\User;
 use App\Factories\TenantModelFactory;
-use App\Traits\JsonResponse;
 use Illuminate\Support\Facades\Validator;
 use Hyn\Tenancy\Models\Website;
 use Hyn\Tenancy\Models\Hostname;
@@ -17,7 +20,10 @@ use Hyn\Tenancy\Models\Hostname;
 
 class TenantController extends Controller
 {
-    // use JsonResponse;
+    use UsesTenantConnection;
+
+    public function __construct()
+    { }
 
     public function insert_data(Request $request)
     {

@@ -1,8 +1,10 @@
 <?php
 
 use App\User;
-use App\Tenant;
+use App\Models\Tenant\Entity;
 use App\PaymentPlan;
+use App\Tenant;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Hyn\Tenancy\Traits\UsesSystemConnection;
 
@@ -16,6 +18,8 @@ class SystemSeeder extends Seeder
      */
     public function run()
     {
+        Config::set('database.default', 'system');
+
         User::create([
             "name" => "test",
             "email" => "test@tester.com",
@@ -29,12 +33,18 @@ class SystemSeeder extends Seeder
             'email' => 'test@tester.com',
         ])->first();
 
-        PaymentPlan::create([
+        $pp = PaymentPlan::create([
             'name' => 'basic',
             'price' => 25
         ]);
 
-        Tenant::create($user, $subdomain);
-        echo "Database seeder ran \r\n";
+        
+        $tenant = Tenant::create($user, $subdomain);
+        
+        $this->call(TenantSeeder::class);
+        
+        Config::set('database.default', 'system');
+
+        $tenant->subsrcibe($pp);
     }
 }
