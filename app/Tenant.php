@@ -46,32 +46,18 @@ class Tenant
         $hostname->user_id = $user->id;
         $hostname->fqdn = strtolower($subdomain) . "." . env('TENANT_URL_BASE');
         app(HostnameRepository::class)->attach($hostname, $website);
-<<<<<<< HEAD
-
         // make hostname current
-        // app(Environment::class)->tenant($website);
-
-        Artisan::call('passport:install');
-
         return new Tenant($website, $hostname);
-=======
-        // make hostname current
-        app(Environment::class)->tenant($website);
-    return new Tenant($website, $hostname);
->>>>>>> b02503dd526dd2c8bb4989b1a63ebed7063494d4
     }
 
     public function subsrcibe(PaymentPlan $plan)
     {
         Subscription::new($this->hostname, $plan);
     }
-<<<<<<< HEAD
-=======
     public function get_api_key()
     {
-        return Subscription::where("hostname_id", $this->hostname->id)->get('api_key')->first()->api_key;
+        return Subscription::where("hostname_id",  $this->hostname->id)->get('api_key')->first()->api_key;
     }
->>>>>>> b02503dd526dd2c8bb4989b1a63ebed7063494d4
 
     public function suspend()
     {
@@ -80,7 +66,7 @@ class Tenant
 
     public static function tenantExists($name)
     {
-        return Hostname::where('fqdn', $name)->exists();
+        return Hostname::where('fqdn',  $name)->exists();
     }
     public static function rules()
     {
