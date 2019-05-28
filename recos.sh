@@ -36,25 +36,34 @@ clean(){
     return 0
 }
 format(){
-    printf "    ${LIGHTPURPLE} => [ %-6s || %-2s ]: ${LIGHTGREEN}%-10s\n" "$1 " "$2" "$3" 
+    printf "    ${LIGHTPURPLE} => [ %-10s || %-2s ]: ${LIGHTGREEN}%-10s\n" "$1 " "$2" "$3" 
 }
 
 help(){
-    format "help" "-h" "Displays available commands"
-    format "clean" "-c" "Deletes all tenant dbs that has the tn_ prefix"
+    format "--help" "-h" "Displays available commands"
+    format "--clean" "-c" "Deletes all tenant dbs that has the tn_ prefix"
+    format "--samurai" "-s" "Deletes all tn_dbs migrate and seed"
 }
 
 invalid(){
     printf "    ${RED}!! INVALID PARAMATERS ${NC} ${GREEN} -h for help\n"
 }
 
+samurai(){
+    clean
+    php artisan migrate:fresh
+    php artisan db:seed
+}
 if [ -z $1 ]
 then 
     invalid
-elif [ $1 == 'help' ] || [ $1 == '-h' ] 
+elif [ $1 == '--help' ] || [ $1 == '-h' ] 
 then 
     help
-elif [ $1 == 'clean'  ] || [ $1 == '-c' ]
+elif [ $1 == '--samurai' ] || [ $1 == '-s' ] 
+then 
+    samurai
+elif [ $1 == '--clean'  ] || [ $1 == '-c' ]
 then
     clean
     exit 0
