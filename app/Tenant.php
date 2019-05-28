@@ -8,8 +8,8 @@ use Hyn\Tenancy\Environment;
 use Hyn\Tenancy\Models\Website;
 use Hyn\Tenancy\Models\Hostname;
 use Illuminate\Support\Facades\Artisan;
-use Hyn\Tenancy\Contracts\Repositories\WebsiteRepository;
-use Hyn\Tenancy\Contracts\Repositories\HostnameRepository;
+use Hyn\Tenancy\Repositories\WebsiteRepository;
+use Hyn\Tenancy\Repositories\HostnameRepository;
 
 /**
  * @property Website website
@@ -27,10 +27,11 @@ class Tenant
         $this->hostname = $hostname;
     }
 
-    public function delete()
+    public static function delete($hostname, $website)
     {
-        app(HostnameRepository::class)->delete($this->hostname, true);
-        app(WebsiteRepository::class)->delete($this->website, true);
+        app(WebsiteRepository::class)->delete($website, true);
+        app(HostnameRepository::class)->delete($hostname, true);
+        return true;
     }
 
     public static function create(User $user, String $subdomain): Tenant
@@ -46,8 +47,7 @@ class Tenant
         $hostname->fqdn = strtolower($subdomain) . "." . env('TENANT_URL_BASE');
         app(HostnameRepository::class)->attach($hostname, $website);
         // make hostname current
-        app(Environment::class)->tenant($website);
-    return new Tenant($website, $hostname);
+        return new Tenant($website, $hostname);
     }
 
     public function subsrcibe(PaymentPlan $plan)
@@ -56,7 +56,7 @@ class Tenant
     }
     public function get_api_key()
     {
-        return Subscription::where("hostname_id", $this->hostname->id)->get('api_key')->first()->api_key;
+        return Subscription::where("hostname_id",  $this->hostname->id)->get('api_key')->first()->api_key;
     }
 
     public function suspend()
@@ -66,12 +66,12 @@ class Tenant
 
     public static function tenantExists($name)
     {
-        return Hostname::where('fqdn', $name)->exists();
+        return Hostname::where('fqdn',  $name)->exists();
     }
-    public static function rules(){
+    public static function rules()
+    {
         return [
             'fqdn' => 'unique:hostnames|max:30|min:5',
         ];
-
     }
 }
