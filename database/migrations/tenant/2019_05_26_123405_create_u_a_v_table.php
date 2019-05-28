@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEavTenantUsersTable extends Migration
+class CreateUAVTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateEavTenantUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('eav_tenant_users', function (Blueprint $table) {
+        Schema::create('uav', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('value');
             
-            $table->bigInteger('tenant_user_id')->unsigned()->nullable();            
-            $table->foreign('tenant_user_id')->references('id')->on('tenant_users')->nullable();
+            $table->bigInteger('user_id')->unsigned()->nullable();            
+            $table->foreign('user_id')->references('id')->on('users')->nullable();
 
             $table->bigInteger('attribute_id')->unsigned()->nullable();
             $table->foreign('attribute_id')->references('id')->on('attributes')->onDelete('set null');
@@ -34,6 +34,6 @@ class CreateEavTenantUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('eav_tenant_users');
+        Schema::dropIfExists('uav');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRequestLogsTable extends Migration
+class CreateIAVTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class CreateRequestLogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('request_logs', function (Blueprint $table) {
+        Schema::create('iav', function (Blueprint $table) {
             $table->bigIncrements('id');
-
-            $table->unsignedBigInteger('item_id')->nullable();
+            $table->string('value');
+            
+            $table->bigInteger('item_id')->unsigned()->nullable();            
             $table->foreign('item_id')->references('id')->on('items')->nullable();
 
-            $table->unsignedBigInteger('tenant_user_id')->nullable();
-            $table->foreign('tenant_user_id')->references('id')->on('tenant_users')->nullable();
-
+            $table->bigInteger('attribute_id')->unsigned()->nullable();
+            $table->foreign('attribute_id')->references('id')->on('attributes')->onDelete('set null');
+            
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ class CreateRequestLogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('request_logs');
+        Schema::dropIfExists('iav');
     }
 }

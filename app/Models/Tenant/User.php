@@ -2,20 +2,23 @@
 
 namespace App\Models\Tenant;
 
+use App\Models\Tenant\IAV;
+use App\Models\Tenant\UAV;
 use Illuminate\Database\Eloquent\Model;
 use Hyn\Tenancy\Traits\UsesTenantConnection;
 
-class TenantUser extends Model
+class User extends Model
 {
     use UsesTenantConnection;
-    protected $table = "tenant_users";
+    protected $table = "users";
+    protected $fillable = ['entity_id'];
 
     public function attributes(){
-        return $this->hasManyThrough(Attribute::class, ItemAttributeValues::class);
+        return $this->hasManyThrough(Attribute::class, IAV::class);
     }
 
     public function attributeValues(){
-        return $this->hasMany(UserAttributeValues::class);
+        return $this->hasMany(UAV::class);
     }
 
     public function ratings(){

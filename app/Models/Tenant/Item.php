@@ -2,15 +2,16 @@
 
 namespace App\Models\Tenant;
 
+use App\Models\Tenant\IAV;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
-use phpDocumentor\Reflection\Types\Object_;
 use PHPUnit\Framework\Constraint\Attribute;
 use Hyn\Tenancy\Traits\UsesTenantConnection;
 
 class Item extends Model
 {
     use UsesTenantConnection;
+    protected $fillable = ['entity_id'];
     protected $table='items';
  
     public function setOptionsAttribute($options)
@@ -29,11 +30,14 @@ class Item extends Model
     }
 
     public function attributes(){
-        return $this->hasManyThrough(Attribute::class, ItemAttributeValues::class);
+        return $this->hasManyThrough(Attribute::class, IAV::class);
     }
 
+    public function get_iav(){
+        return $this->hasMany(IAV::class)->get(['id', 'value'])->toArray();
+    }
     public function attributeValues(){
-        return $this->hasMany(ItemAttributeValues::class);
+        return $this->hasMany(IAV::class);
     }
 
     public function ratings(){

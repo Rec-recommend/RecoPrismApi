@@ -2,16 +2,16 @@
 
 namespace App\Models\Tenant;
 
+use App\Models\Tenant\Attribute;
 use Illuminate\Database\Eloquent\Model;
-use PHPUnit\Framework\Constraint\Attribute;
 use Hyn\Tenancy\Traits\UsesTenantConnection;
 
-class EavItems extends Model
+class IAV extends Model
 {
     use UsesTenantConnection;
 
     protected $fillable = ["item_id", "attribute_id", "value"];
-    protected $table = "eav_items";
+    protected $table = "iav";
 
     public function item(){
         return $this->belongsTo(Item::class);
@@ -19,4 +19,5 @@ class EavItems extends Model
     public function attribute(){
         return $this->belongsTo(Attribute::class);
     }
+
 }

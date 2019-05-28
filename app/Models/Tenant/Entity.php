@@ -12,6 +12,6 @@ class Entity extends Model
     protected $fillable = ['name'];
 
     public function attributes(){
-        $this->hasMany(Attribute::class);
+        return $this->hasMany(Attribute::class);
     }
 }

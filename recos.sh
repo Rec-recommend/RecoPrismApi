@@ -63,6 +63,7 @@ then
 elif [ $1 == '--samurai' ] || [ $1 == '-s' ] 
 then 
     samurai
+    exit 0
 elif [ $1 == '--clean'  ] || [ $1 == '-c' ]
 then
     clean

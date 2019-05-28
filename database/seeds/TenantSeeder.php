@@ -1,16 +1,16 @@
 <?php
 
 use Carbon\Carbon;
+use App\Models\Tenant\IAV;
+use App\Models\Tenant\UAV;
 use App\Models\Tenant\Item;
+use App\Models\Tenant\User;
 use Illuminate\Support\Str;
 use App\Models\Tenant\Entity;
 use App\Models\Tenant\Rating;
 use App\Models\Tenant\Purchase;
 use Illuminate\Database\Seeder;
 use App\Models\Tenant\Attribute;
-use App\Models\Tenant\TenantUser;
-use App\Models\Tenant\EavItems;
-use App\Models\Tenant\EavTenantUser;
 
 class TenantSeeder extends Seeder
 {
@@ -38,22 +38,22 @@ class TenantSeeder extends Seeder
         ));
         $users = array();
         $items = array();
-        $eav_items= [];
-        $eav_tenant_users= [];
+        $iav= [];
+        $uav= [];
         for ($i=1; $i<11; $i++){
             $users [] = $this->create_model($i);
             for($j =1 ; $j<5; $j++){
-                $eav_items [] = $this->create_eav('item', $i,$j, Str::random(5));
+                $iav [] = $this->create_eav('item', $i,$j, Str::random(5));
             }
             $items [] = $this->create_model($i);
             for($j =1 ; $j<4; $j++){
-                $eav_tenant_users [] = $this->create_eav('tenant_user', $i,$j, Str::random(5));
+                $uav [] = $this->create_eav('user', $i,$j, Str::random(5));
             }
         }   
-        TenantUser::insert($users);
+        User::insert($users);
         Item::insert($items);
-        EavItems::insert($eav_items);
-        EavTenantUser::insert($eav_tenant_users);
+        IAV::insert($iav);
+        UAV::insert($uav);
 
         $ratings = [];
         $purchases=[];
@@ -67,16 +67,20 @@ class TenantSeeder extends Seeder
 
     function create_purchase(){
         return [
-            'tenant_user_id'=>rand(1,10),
+            'user_id'=>rand(1,10),
             'item_id'=>rand(1,10),
-            'count'=>rand(1,5)
+            'count'=>rand(1,5),
+            'created_at' => $this->now,
+            'updated_at' => $this->now
         ];
     }
     function create_rating(){
         return [
-            'tenant_user_id'=>rand(1,10),
+            'user_id'=>rand(1,10),
             'item_id'=>rand(1,10),
-            'value'=>rand(1,5)
+            'value'=>rand(1,5),
+            'created_at' => $this->now,
+            'updated_at' => $this->now
         ];
     }
 
@@ -108,6 +112,8 @@ class TenantSeeder extends Seeder
             "{$entity}_id"=>$entity_id,
             "attribute_id"=>$attr_id,
             "value"=>$value,
+            'created_at' => $this->now,
+            'updated_at' => $this->now
         ];
     }
 

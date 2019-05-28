@@ -8,6 +8,6 @@ use Hyn\Tenancy\Traits\UsesTenantConnection;
 class Rating extends Model
 {
     use UsesTenantConnection;    
-    protected $fillable =['item_id','tenant_user_id','value']; 
+    protected $fillable =['item_id','user_id','value']; 
 
 }
