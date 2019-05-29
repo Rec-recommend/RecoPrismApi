@@ -24,13 +24,13 @@ clean(){
     fi
     for DB_NAME in $DB_NAMES ; 
     do 
-        printf "${LIGHTRED}Deleting ${LIGHTCYAN}$DB_NAME${NC}"
+        # printf "    ${LIGHTRED}Deleting ${LIGHTCYAN}$DB_NAME${NC}"
         sql_cmd="DROP DATABASE $DB_NAME"
         mysql -u $USER -p$PASS -e "$sql_cmd" 2>/dev/null
-        if [ $? -eq 0 ]
-        then 
-            printf "${LIGHTGREEN} -> Deleted${NC}\n"
-        fi
+            # printf "${LIGHTGREEN} -> Deleted${NC}"
+        # if [ $? -eq 0 ]
+        # then 
+        # fi
     done
 
     return 0
@@ -50,14 +50,14 @@ invalid(){
 }
 
 samurai_format(){
-    printf "    ${LIGHTPURPLE} %-10s=> " "$1"  
+    printf "    ${LIGHTPURPLE} %-10s" "$1"  
 }
 success(){
-    printf "${LIGHTGREEN}Done\n"  
+    printf "${LIGHTPURPLE}=> ${LIGHTGREEN}Done\n"  
 }
 samurai(){
     samurai_format "Cleaning"
-    clean | 0>/dev/null
+    clean 
     success
     samurai_format "Migration"
     php artisan migrate:fresh | 0>/dev/null
