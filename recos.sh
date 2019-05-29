@@ -49,10 +49,22 @@ invalid(){
     printf "    ${RED}!! INVALID PARAMATERS ${NC} ${GREEN} -h for help\n"
 }
 
+samurai_format(){
+    printf "    ${LIGHTPURPLE} %-10s=> " "$1"  
+}
+success(){
+    printf "${LIGHTGREEN}Done\n"  
+}
 samurai(){
-    clean
-    php artisan migrate:fresh
-    php artisan db:seed
+    samurai_format "Cleaning"
+    clean | 0>/dev/null
+    success
+    samurai_format "Migration"
+    php artisan migrate:fresh | 0>/dev/null
+    success
+    samurai_format "Seeding"
+    php artisan db:seed | 0>/dev/null
+    success
 }
 if [ -z $1 ]
 then 
