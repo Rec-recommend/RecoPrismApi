@@ -1,11 +1,12 @@
 <?php
 
 use App\User;
-use App\Models\Tenant\Entity;
-use App\PaymentPlan;
 use App\Tenant;
 use Carbon\Carbon;
+use App\PaymentPlan;
+use App\Models\Tenant\Entity;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 use Hyn\Tenancy\Traits\UsesSystemConnection;
 
 class SystemSeeder extends Seeder
@@ -22,15 +23,13 @@ class SystemSeeder extends Seeder
 
         User::create([
             "name" => "test",
-            "email" => "test@tester.com",
-            "password" => "12345678",
-            'created_at' => now(),
-            'updated_at' => now()
+            "email" => "test@gmail.com",
+            "password" => Hash::make("12345678"),
         ]);
 
         $subdomain = 'test';
         $user = User::where([
-            'email' => 'test@tester.com',
+            'email' => 'test@gmail.com',
         ])->first();
 
         $pp = PaymentPlan::create([

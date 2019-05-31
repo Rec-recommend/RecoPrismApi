@@ -60,10 +60,10 @@ samurai(){
     clean 
     success
     samurai_format "Migration"
-    php artisan migrate:fresh | 0>/dev/null
+    php artisan migrate:fresh 
     success
     samurai_format "Seeding"
-    php artisan db:seed | 0>/dev/null
+    php artisan db:seed 
     success
 }
 if [ -z $1 ]
