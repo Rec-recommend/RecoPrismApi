@@ -12,6 +12,11 @@ abstract class EntityRepository
     {  
     }
 
+    public function all()
+    {
+        
+    }
+
     public function store($entities)
     {
         $eavs = [];

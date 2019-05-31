@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\Tenant;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Tenant\Purchase;
 
 class PurchaseController extends Controller
 {
@@ -14,7 +15,7 @@ class PurchaseController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(Purchase::all());
     }
 
     /**
@@ -25,7 +26,7 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
-        
+      return response()->json(Purchase::insert($request->all()));
     }
 
     /**
@@ -36,7 +37,7 @@ class PurchaseController extends Controller
      */
     public function show($id)
     {
-        //
+     
     }
 
     /**

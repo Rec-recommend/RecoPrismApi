@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\Tenant;
 
 use Illuminate\Http\Request;
+use App\Models\Tenant\Rating;
 use App\Http\Controllers\Controller;
 
 class RatingController extends Controller
@@ -14,7 +15,7 @@ class RatingController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(Rating::all());        
     }
 
     /**
@@ -25,7 +26,7 @@ class RatingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      return response()->json(Rating::insert($request->all()));        
     }
 
     /**
