@@ -13,7 +13,9 @@ class Item extends Model
     use UsesTenantConnection;
     protected $fillable = ['entity_id'];
     protected $table='items';
- 
+    protected $rules = [
+        'id' => 'unique'
+    ];
     public function setOptionsAttribute($options)
     {
         $this->attributes['options'] = json_encode($options);

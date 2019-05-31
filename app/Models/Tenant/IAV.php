@@ -13,6 +13,7 @@ class IAV extends Model
     protected $fillable = ["item_id", "attribute_id", "value"];
     protected $table = "iav";
 
+
     public function item(){
         return $this->belongsTo(Item::class);
     }
