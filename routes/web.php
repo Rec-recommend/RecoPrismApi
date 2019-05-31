@@ -28,4 +28,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
     Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
+    Route::get('applications/{id}/addattributes','Tenant\AttributeController@create')->name('createAttributes');
+    Route::post('applications/{id}/addattributes','Tenant\AttributeController@store')->name('storeAttributes');
 });
