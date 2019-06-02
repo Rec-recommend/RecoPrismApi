@@ -13,7 +13,9 @@ class EnforceTenancy
      */
     public function handle($request, Closure $next)
     {
-        Config::set('database.default', 'tenant');        
+        if ($request->header()['host'][0] !=="recoprism.com"){
+            Config::set('database.default', 'tenant') ;
+        }
         return $next($request);
     }
 }
