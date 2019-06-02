@@ -107,12 +107,12 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href='{{ route('tenantIndex') }}'>
-                        <i class="ni ni-planet text-blue"></i> {{ __('Apps') }}
+                        <i class="ni ni-collection text-blue"></i> {{ __('Apps') }}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="ni ni-pin-3 text-orange"></i> {{ __('Maps') }}
+                    <a class="nav-link" href="{{ route('indexAttributes') }}">
+                        <i class="ni ni-books text-orange"></i> {{ __('Attributes') }}
                     </a>
                 </li>
                 <li class="nav-item">
