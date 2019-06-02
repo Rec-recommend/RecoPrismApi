@@ -26,6 +26,7 @@ Route::group([
 
 // Tenant(subdomain) Routes
 Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', 'HomeController@index')->name('home');
     Route::get('applications', 'Api\TenantController@index')->name('tenantIndex');
     Route::get('create', 'Api\TenantController@create')->name('createApp');
     Route::post('store', 'Api\TenantController@store')->name('storeApp');
@@ -37,5 +38,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('attributes','Tenant\AttributeController@index')->name('indexAttributes');
     Route::get('attributes/create','Tenant\AttributeController@create')->name('createAttributes');
     Route::post('attributes','Tenant\AttributeController@store')->name('storeAttributes');
-    Route::delete('attribute/{id}','Tenant\AttributeController@destroy')->name('deleteAttributes');
+    Route::delete('attribute/{id}','Tenant\AttributeController@destroy')->name('deleteAttribute');
 });

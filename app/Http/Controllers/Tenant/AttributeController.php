@@ -21,8 +21,8 @@ class AttributeController extends Controller
     {
         // Config::set('database.default', 'tenant');
         $attributes = Attribute::all();
-        dd($attributes);
-        // return view('Attributes',$attributes);
+        // dd($attributes);
+        return view('attributes')->with('attributes',$attributes);
 
     }
 
@@ -57,7 +57,8 @@ class AttributeController extends Controller
             }
         }
         Attribute::insert($attributes);
-        return view('attributes');
+        return redirect('/attributes');
+        
     }
 
     /**
@@ -104,5 +105,7 @@ class AttributeController extends Controller
     {
         $attribute = Attribute::find($id);
         $attribute->delete();
+        return redirect('/attributes');
+
     }
 }
