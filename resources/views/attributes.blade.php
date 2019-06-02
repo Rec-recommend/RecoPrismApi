@@ -3,7 +3,8 @@
 @section('content')
 @include('layouts.headers.cards')
 <br>
-<form method="POST" action="{{route('storeAttributes')}}" id="form">
+{{dd($attributes)}}
+<form method="POST" action='#' id="form">
   @csrf
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 

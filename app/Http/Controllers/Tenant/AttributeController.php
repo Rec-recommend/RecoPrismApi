@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Tenant\Attribute;
 use App\Http\Controllers\Controller;
 use Hyn\Tenancy\Traits\UsesTenantConnection;
+use Illuminate\Support\Facades\Config;
 
 class AttributeController extends Controller
 {
@@ -18,7 +19,11 @@ class AttributeController extends Controller
      */
     public function index()
     {
-        //
+        // Config::set('database.default', 'tenant');
+        $attributes = Attribute::all();
+        dd($attributes);
+        // return view('Attributes',$attributes);
+
     }
 
     /**
@@ -39,7 +44,20 @@ class AttributeController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $attributes = [];
+        $attributes_weights = $request->all();
+        $index = 0;
+        foreach ($attributes_weights as $key => $value) {
+            $index++;
+            if ($index % 2 == 0) {
+                $attributes [ ] = [
+                    "label" => $value,
+                    'weight' => $attributes_weights[$key . "_weight"]
+                ];
+            }
+        }
+        Attribute::insert($attributes);
+        return view('attributes');
     }
 
     /**
@@ -84,6 +102,7 @@ class AttributeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $attribute = Attribute::find($id);
+        $attribute->delete();
     }
 }
