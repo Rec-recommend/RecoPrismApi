@@ -10,6 +10,13 @@
   <div class="form-horizontal">
     <div class="form-body">
       <div class="form-group">
+        @if ($errors->any())
+        <div class="alert alert-danger" role="alert">
+            {{ $errors->first('label')}}
+            {{ $errors->first('weight')}}
+          </div>
+        @endif
+        
         <label class="control-label col-md-3">Attributes & weights</label>
         <div class="col-md-10 fields">
           <div class="row">
