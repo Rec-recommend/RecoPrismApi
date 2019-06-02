@@ -15,15 +15,21 @@ use Illuminate\Http\Request;
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', 'HomeController@index')->name('home');
+// Admin Routes:
+Route::group([
+    'domain' => 'recoprism.com',
+    'middleware' => 'auth'
+], function () {
+    Route::get('/home', 'HomeController@index')->name('home');;
+    Route::get('/', 'HomeController@index')->name('home');
+});
 
-Route::group(['middleware' => ['auth', 'tenancy.enforce']], function () {
+// Tenant(subdomain) Routes
+Route::group(['middleware' => 'auth'], function () {
     Route::get('applications', 'Api\TenantController@index')->name('tenantIndex');
     Route::get('create', 'Api\TenantController@create')->name('createApp');
     Route::post('store', 'Api\TenantController@store')->name('storeApp');
     Route::delete('delete/{id}', 'Api\TenantController@delete')->name('deleteApp');
-
     Route::resource('user', 'UserController', ['except' => ['show']]);
     Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
     Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
