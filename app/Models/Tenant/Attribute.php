@@ -22,7 +22,7 @@ class Attribute extends Model
     public static function rules(){
         return [
             'label' => 'required|unique:tenant.attributes,label',
-            'weight' => 'required',
+            'weight' => 'numeric|min:1'
         ];
     }
 }
