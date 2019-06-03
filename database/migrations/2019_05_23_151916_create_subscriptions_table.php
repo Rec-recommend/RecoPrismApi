@@ -15,9 +15,8 @@ class CreateSubscriptionsTable extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->boolean('is_active');
-            $table->string('api_key');
-
+            $table->string('email');
+            $table->string('password');
             $table->bigInteger('hostname_id')->unsigned()->nullable();
             $table->foreign('hostname_id')->references('id')->on('hostnames')->onDelete('set null');
             
