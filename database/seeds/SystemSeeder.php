@@ -21,24 +21,22 @@ class SystemSeeder extends Seeder
     {
         Config::set('database.default', 'system');
 
+        //Super Admin
         User::create([
-            "name" => "test",
-            "email" => "test@gmail.com",
+            "name" => "admin",
+            "email" => "admin@gmail.com",
             "password" => Hash::make("12345678"),
         ]);
 
         $subdomain = 'test';
-        $user = User::where([
-            'email' => 'test@gmail.com',
-        ])->first();
-
+     
         $pp = PaymentPlan::create([
             'name' => 'basic',
             'price' => 25
         ]);
 
         
-        $tenant = Tenant::create($user, $subdomain);
+        $tenant = Tenant::create($subdomain);
         
         $this->call(TenantSeeder::class);
         

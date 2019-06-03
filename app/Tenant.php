@@ -34,7 +34,7 @@ class Tenant
         return true;
     }
 
-    public static function create(User $user, String $subdomain): Tenant
+    public static function create(String $subdomain): Tenant
     {
         // Create New Website
         $website = new Website;
@@ -43,7 +43,6 @@ class Tenant
 
         // associate the website with a hostname
         $hostname = new Hostname;
-        $hostname->user_id = $user->id;
         $hostname->fqdn = strtolower($subdomain) . "." . env('TENANT_URL_BASE');
         app(HostnameRepository::class)->attach($hostname, $website);
         // make hostname current

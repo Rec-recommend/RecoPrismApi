@@ -7,11 +7,10 @@ use App\Models\Tenant\UAV;
 use Illuminate\Database\Eloquent\Model;
 use Hyn\Tenancy\Traits\UsesTenantConnection;
 
-class User extends Model
+class TenantUser extends Model
 {
     use UsesTenantConnection;
-    protected $table = "users";
-    protected $fillable = ['entity_id'];
+    protected $table = "tenant_users";
 
     public function attributes(){
         return $this->hasManyThrough(Attribute::class, IAV::class);
