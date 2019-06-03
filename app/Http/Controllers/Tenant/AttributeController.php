@@ -50,9 +50,10 @@ class AttributeController extends Controller
         foreach ($attributes_weights as $key => $value) {
             $index++;
             if ($index % 2 == 0) {
+                $weight =$attributes_weights[$key . "_weight"];
                 $attribute = [
                     "label" => $value,
-                    'weight' => $attributes_weights[$key . "_weight"]
+                    'weight' => ($weight)? $weight : 1
                 ];
             $validator = Validator::make($attribute,Attribute::rules());
             if ($validator->fails()) {

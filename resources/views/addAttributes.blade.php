@@ -24,7 +24,7 @@
               <input type="text" class="form-control" name='attribute_1' />
             </div>
             <div class="col">
-              <input type="number" class="form-control" name='attribute_1_weight' />
+              <input type="number" class="form-control" name='attribute_1_weight' placeholder="Default weight 1" min="1"/>
             </div>
             
               <span class="btn input-group-addon add-field btn-default col">+</span>
