@@ -15,9 +15,17 @@ use Illuminate\Http\Request;
 
 Auth::routes();
 
+// Landing Page 
+Route::group([
+    'domain' => 'recoprism.com'
+], function () {
+    Route::get('/', 'TestController@index')->name('home');
+});
+
+
 // Admin Routes:
 Route::group([
-    'domain' => 'recoprism.com',
+    'domain' => 'admin.recoprism.com',
     'middleware' => 'auth'
 ], function () {
     Route::get('/home', 'HomeController@index')->name('home');;
@@ -25,7 +33,7 @@ Route::group([
 });
 
 // Tenant(subdomain) Routes
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'tenant'], function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('applications', 'Api\TenantController@index')->name('tenantIndex');
     Route::get('create', 'Api\TenantController@create')->name('createApp');

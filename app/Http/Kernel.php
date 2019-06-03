@@ -46,6 +46,9 @@ class Kernel extends HttpKernel
             'apikeycheck',
             'tenancy.enforce'
         ],
+        'tenant' =>[
+            'tenancy.enforce'
+        ]
     ];
 
     /**
