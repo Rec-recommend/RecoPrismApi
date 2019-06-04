@@ -2,10 +2,11 @@
 
 namespace App\Providers;
 
-use Hyn\Tenancy\Environment;
-
-
 use App;
+
+
+use Hyn\Tenancy\Environment;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -17,8 +18,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
-        \Laravel\Passport\Passport::ignoreMigrations();
     }
 
     /**

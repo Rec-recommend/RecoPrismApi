@@ -3,13 +3,20 @@
 @section('content')
 @include('layouts.headers.cards')
 <br>
-<form method="POST" action='#' id="form">
+<form method="POST" action="{{route('storeAttributes')}}" id="form">
   @csrf
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
   <div class="form-horizontal">
     <div class="form-body">
       <div class="form-group">
+        @if ($errors->any())
+        <div class="alert alert-danger" role="alert">
+            {{ $errors->first('label')}}
+            {{ $errors->first('weight')}}
+          </div>
+        @endif
+        
         <label class="control-label col-md-3">Attributes & weights</label>
         <div class="col-md-10 fields">
           <div class="row">
@@ -17,7 +24,7 @@
               <input type="text" class="form-control" name='attribute_1' />
             </div>
             <div class="col">
-              <input type="number" class="form-control" name='attribute_1_weight' />
+              <input type="number" class="form-control" name='attribute_1_weight' placeholder="Default weight 1" min="1"/>
             </div>
             
               <span class="btn input-group-addon add-field btn-default col">+</span>

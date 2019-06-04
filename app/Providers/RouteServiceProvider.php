@@ -35,11 +35,42 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
-        $this->mapApiRoutes();
+        // $this->mapApiRoutes();
 
-        $this->mapWebRoutes();
+        // $this->mapWebRoutes();
+        $this->mapGuestRoutes();
 
-        //
+        $this->mapSystemRoutes();
+        
+        $this->mapTenantRoutes();
+    }
+
+    protected function mapGuestRoutes()
+    {
+        Route::domain('recoprism.com')
+        ->middleware('system')
+        ->namespace($this->namespace)
+        ->group(base_path('routes/guest.php'));
+    }
+
+
+
+    protected function mapSystemRoutes()
+    {
+        Route::domain('admin.recoprism.com')
+        ->middleware('system')
+        ->namespace($this->namespace)
+        ->group(base_path('routes/system.php'));
+    }
+
+    protected function mapTenantRoutes()
+    {
+        $hostname  = app(\Hyn\Tenancy\Environment::class)->hostname();
+        if(isset($hostname)){
+        Route::middleware('tenant')
+        ->namespace($this->namespace)
+        ->group(base_path('routes/tenant.php'));
+        }
     }
 
     /**

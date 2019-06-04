@@ -18,9 +18,6 @@ class CreateAttributesTable extends Migration
             $table->string('label');
             $table->integer('weight')->default(1);
             
-            $table->bigInteger('entity_id')->unsigned()->nullable();
-            $table->foreign('entity_id')->references('id')->on('entities')->onDelete('set null');
-            
             $table->timestamps();
         });
     }

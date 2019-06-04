@@ -60,7 +60,7 @@ samurai(){
     clean 
     success
     samurai_format "Migration"
-    php artisan migrate:fresh 
+    php artisan migrate:fresh --path=/database/migrations/system
     success
     samurai_format "Seeding"
     php artisan db:seed 

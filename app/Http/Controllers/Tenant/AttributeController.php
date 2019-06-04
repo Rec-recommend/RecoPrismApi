@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Tenant;
 use Illuminate\Http\Request;
 use App\Models\Tenant\Attribute;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Validator;
 use Hyn\Tenancy\Traits\UsesTenantConnection;
 
 class AttributeController extends Controller
@@ -18,7 +20,10 @@ class AttributeController extends Controller
      */
     public function index()
     {
-        //
+        // Config::set('database.default', 'tenant');
+        $attributes = Attribute::all();
+        // dd($attributes);
+        return view('attributes')->with('attributes', $attributes);
     }
 
     /**
@@ -39,7 +44,32 @@ class AttributeController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $attributes = [];
+        $attributes_weights = $request->all();
+        $index = 0;
+        foreach ($attributes_weights as $key => $value) {
+            $index++;
+            if ($index % 2 == 0) {
+                $weight =$attributes_weights[$key . "_weight"];
+                $attribute = [
+                    "label" => $value,
+                    'weight' => ($weight)? $weight : 1
+                ];
+            $validator = Validator::make($attribute,Attribute::rules());
+            if ($validator->fails()) {
+                return redirect('attributes/create')
+                            ->withErrors($validator)
+                            ->withInput();
+            }
+            else{
+                $attributes [] = $attribute;
+            }
+
+            }
+        }
+        Attribute::insert($attributes);
+        return redirect('/attributes');
+
     }
 
     /**
@@ -84,6 +114,8 @@ class AttributeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $attribute = Attribute::find($id);
+        $attribute->delete();
+        return redirect('/attributes');
     }
 }
