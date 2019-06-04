@@ -17,8 +17,7 @@ class CreatePaymentPlansTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->integer('price');
-            $table->bigInteger('hostname_id')->unsigned()->nullable();
-            $table->foreign('hostname_id')->references('id')->on('hostnames')->onDelete('set null');
+            $table->text('description');
             $table->timestamps();
         });
     }

@@ -30,7 +30,12 @@ class SystemSeeder extends Seeder
      
         $pp = PaymentPlan::create([
             'name' => 'basic',
-            'price' => 25
+            'price' => 25,
+            'description'=> 'Unlimited Entrance
+            Comfortable Seat
+            Paid Certificate
+            Day One Workshop
+            One Certificate'
         ]);
 
         
