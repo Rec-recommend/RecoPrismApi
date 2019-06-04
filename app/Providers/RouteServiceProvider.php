@@ -35,22 +35,20 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
-        // $this->mapApiRoutes();
 
-        // $this->mapWebRoutes();
         $this->mapGuestRoutes();
 
         $this->mapSystemRoutes();
-        
+
         $this->mapTenantRoutes();
     }
 
     protected function mapGuestRoutes()
     {
         Route::domain('recoprism.com')
-        ->middleware('system')
+        ->middleware('web_system')
         ->namespace($this->namespace)
-        ->group(base_path('routes/guest.php'));
+        ->group(base_path('routes/web_guest.php'));
     }
 
 
@@ -58,47 +56,29 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapSystemRoutes()
     {
         Route::domain('admin.recoprism.com')
-        ->middleware('system')
+        ->middleware('web_system')
         ->namespace($this->namespace)
-        ->group(base_path('routes/system.php'));
+        ->group(base_path('routes/web_system.php'));
+
+        Route::domain('admin.recoprism.com')
+        ->middleware('api_system')
+        ->namespace($this->namespace)
+        ->group(base_path('routes/api_system.php'));
     }
 
     protected function mapTenantRoutes()
     {
         $hostname  = app(\Hyn\Tenancy\Environment::class)->hostname();
         if(isset($hostname)){
-        Route::middleware('tenant')
-        ->namespace($this->namespace)
-        ->group(base_path('routes/tenant.php'));
+            Route::middleware('web_tenant')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web_tenant.php'));
+
+            Route::prefix('api')
+            ->middleware('api_tenant')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/api_tenant.php'));
         }
     }
 
-    /**
-     * Define the "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapWebRoutes()
-    {
-        Route::middleware('web')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/web.php'));
-    }
-
-    /**
-     * Define the "api" routes for the application.
-     *
-     * These routes are typically stateless.
-     *
-     * @return void
-     */
-    protected function mapApiRoutes()
-    {
-        Route::prefix('api')
-             ->middleware('api')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/api.php'));
-    }
 }
