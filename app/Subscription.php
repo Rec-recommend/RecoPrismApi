@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\System;
+namespace App;
 
 use Mockery\Expectation;
 use Illuminate\Support\Str;

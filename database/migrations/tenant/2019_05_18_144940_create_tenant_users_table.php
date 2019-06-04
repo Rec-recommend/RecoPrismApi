@@ -1,13 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSystemAdminsTable extends Migration
+class CreateTenantUsersTable extends Migration
 {
-    
     /**
      * Run the migrations.
      *
@@ -15,13 +13,9 @@ class CreateSystemAdminsTable extends Migration
      */
     public function up()
     {
-        Schema::create('system_admins', function (Blueprint $table) {
+        Schema::create('tenant_users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            
             $table->timestamps();
         });
     }
@@ -33,6 +27,6 @@ class CreateSystemAdminsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('system_admins');
+        Schema::dropIfExists('tenant_users');
     }
 }

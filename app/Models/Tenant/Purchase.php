@@ -8,5 +8,5 @@ use Hyn\Tenancy\Traits\UsesTenantConnection;
 class Purchase extends Model
 {
     use UsesTenantConnection;
-    protected $fillable =['item_id','end_user_id', 'count']; 
+    protected $fillable =['item_id','user_id', 'count']; 
 }
