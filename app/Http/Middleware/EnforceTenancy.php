@@ -16,8 +16,8 @@ class EnforceTenancy
      */
     public function handle($request, Closure $next)
     {
-        // $domin = $request->header()['host'][0];
-        // if ($domin !== "recoprism.com" || $domin !== "admin.recoprism.com") {
+        // $domain = $request->header()['host'][0];
+        // if ($domain !== "recoprism.com" || $domain !== "admin.recoprism.com") {
         Config::set('database.default', 'tenant');
         Config::set('auth.defaults',[
                 'guard' => 'tenant_admin',
