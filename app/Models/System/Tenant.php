@@ -1,13 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models\System;
 
-use App\PaymentPlan;
 use Illuminate\Support\Str;
-use Hyn\Tenancy\Environment;
 use Hyn\Tenancy\Models\Website;
 use Hyn\Tenancy\Models\Hostname;
-use Illuminate\Support\Facades\Artisan;
 use Hyn\Tenancy\Repositories\WebsiteRepository;
 use Hyn\Tenancy\Repositories\HostnameRepository;
 

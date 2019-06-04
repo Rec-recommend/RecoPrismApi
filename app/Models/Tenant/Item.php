@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use PHPUnit\Framework\Constraint\Attribute;
 use Hyn\Tenancy\Traits\UsesTenantConnection;
+use PhpParser\Node\Stmt\Global_;
 
 class Item extends Model
 {
@@ -29,6 +30,7 @@ class Item extends Model
         foreach ($data as $key => $value) {
             DB::table('items')->insert( $value);
         }
+
     }
 
     public function attributes(){

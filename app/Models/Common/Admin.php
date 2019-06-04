@@ -1,17 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Models\Common;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Laravel\Passport\HasApiTokens;
-use Hyn\Tenancy\Traits\UsesSystemConnection;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class Admin extends Model
 {
-    use HasApiTokens,Notifiable,UsesSystemConnection;
-
     /**
      * The attributes that are mass assignable.
      *
