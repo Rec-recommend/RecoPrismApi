@@ -2,5 +2,5 @@
 use Illuminate\Http\Request;
 
 Route::group(['middleware' => 'system'],function(){
-    Route::get('/', 'TestController@index')->name('home');
+    Route::get('/', 'Guest\HomeController@index')->name('home');
 });

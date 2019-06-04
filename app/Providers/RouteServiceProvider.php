@@ -65,9 +65,12 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapTenantRoutes()
     {
+        $hostname  = app(\Hyn\Tenancy\Environment::class)->hostname();
+        if(isset($hostname)){
         Route::middleware('tenant')
         ->namespace($this->namespace)
         ->group(base_path('routes/tenant.php'));
+        }
     }
 
     /**
