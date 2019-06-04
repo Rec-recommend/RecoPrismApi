@@ -38,11 +38,22 @@ class RouteServiceProvider extends ServiceProvider
         // $this->mapApiRoutes();
 
         // $this->mapWebRoutes();
+        $this->mapGuestRoutes();
 
         $this->mapSystemRoutes();
         
         $this->mapTenantRoutes();
     }
+
+    protected function mapGuestRoutes()
+    {
+        Route::domain('recoprism.com')
+        ->middleware('system')
+        ->namespace($this->namespace)
+        ->group(base_path('routes/guest.php'));
+    }
+
+
 
     protected function mapSystemRoutes()
     {
