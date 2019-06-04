@@ -9,9 +9,8 @@ use Illuminate\Support\Facades\Config;
 class TestController extends Controller
 {
     public function index(){
-        // $tables = DB::connection()->getDoctrineSchemaManager()->listTableNames();
-        // dd($tables);
+        $tables = DB::connection()->getDoctrineSchemaManager()->listTableNames();
+        dd($tables);
         return view('landingPage');
-
     }
 }

@@ -1,11 +1,9 @@
 <?php
 
-use App\User;
-use App\Tenant;
-use Carbon\Carbon;
-use App\PaymentPlan;
-use App\Models\Tenant\Entity;
+use App\Models\System\Tenant;
 use Illuminate\Database\Seeder;
+use App\Models\System\PaymentPlan;
+use App\Models\System\SystemAdmin;
 use Illuminate\Support\Facades\Hash;
 use Hyn\Tenancy\Traits\UsesSystemConnection;
 
@@ -22,7 +20,7 @@ class SystemSeeder extends Seeder
         Config::set('database.default', 'system');
 
         //Super Admin
-        User::create([
+        SystemAdmin::create([
             "name" => "admin",
             "email" => "admin@gmail.com",
             "password" => Hash::make("12345678"),

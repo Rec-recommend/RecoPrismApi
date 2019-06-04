@@ -34,9 +34,7 @@ class Kernel extends HttpKernel
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
-            \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \Laravel\Passport\Http\Middleware\CreateFreshApiToken::class,
-            
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,            
             
         ],
         
@@ -47,7 +45,26 @@ class Kernel extends HttpKernel
             'tenancy.enforce'
         ],
         'tenant' =>[
-            'tenancy.enforce'
+            'tenancy.enforce',
+            // 'auth:web_tenant',
+            \App\Http\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            \Illuminate\Session\Middleware\StartSession::class,
+            // \Illuminate\Session\Middleware\AuthenticateSession::class,
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \App\Http\Middleware\VerifyCsrfToken::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class, 
+        ],
+        'system' =>[
+            'system.enforce',
+            // 'auth:web_system',
+            \App\Http\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            \Illuminate\Session\Middleware\StartSession::class,
+            // \Illuminate\Session\Middleware\AuthenticateSession::class,
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \App\Http\Middleware\VerifyCsrfToken::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class, 
         ]
     ];
 
@@ -70,6 +87,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'apikeycheck' => \App\Http\Middleware\ApiKeyCheck::class,
         'tenancy.enforce' => \App\Http\Middleware\EnforceTenancy::class,
+        'system.enforce' => \App\Http\Middleware\EnforceSystem::class
     ];
 
     /**

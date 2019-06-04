@@ -4,12 +4,13 @@ use App\User;
 use Carbon\Carbon;
 use App\Models\Tenant\IAV;
 use App\Models\Tenant\Item;
-use App\Models\Tenant\TenantUser;
 use Illuminate\Support\Str;
 use App\Models\Tenant\Rating;
+use App\Models\Tenant\EndUser;
 use App\Models\Tenant\Purchase;
 use Illuminate\Database\Seeder;
 use App\Models\Tenant\Attribute;
+use App\Models\Tenant\TenantAdmin;
 
 class TenantSeeder extends Seeder
 {
@@ -21,16 +22,12 @@ class TenantSeeder extends Seeder
     protected $now;
     public function run()
     {
-        User::create([
+        $owner= TenantAdmin::create([
             "name" => "owner",
             "email" => "owner@gmail.com",
             "password" => Hash::make("12345678"),
+            "is_owner"=> true
         ]);
-
-
-        $owner = User::where([
-            'email' => 'owner@gmail.com',
-        ])->first();
 
 
         $this->now = Carbon::now('utc')->toDateTimeString();
@@ -54,7 +51,7 @@ class TenantSeeder extends Seeder
                 $iav [] = $this->create_eav( $j, Str::random(5));
             }
         }   
-        TenantUser::insert($users);
+        EndUser::insert($users);
         Item::insert($items);
         IAV::insert($iav);
 
@@ -70,7 +67,7 @@ class TenantSeeder extends Seeder
 
     function create_purchase(){
         return [
-            'tenant_user_id'=>rand(1,10),
+            'end_user_id'=>rand(1,10),
             'item_id'=>rand(1,10),
             'count'=>rand(1,5),
             'created_at' => $this->now,
@@ -79,7 +76,7 @@ class TenantSeeder extends Seeder
     }
     function create_rating(){
         return [
-            'tenant_user_id'=>rand(1,10),
+            'end_user_id'=>rand(1,10),
             'item_id'=>rand(1,10),
             'value'=>rand(1,5),
             'created_at' => $this->now,

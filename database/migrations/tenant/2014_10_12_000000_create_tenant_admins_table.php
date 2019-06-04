@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTenantUsersTable extends Migration
+class CreateTenantAdminsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,15 @@ class CreateTenantUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('tenant_users', function (Blueprint $table) {
+        Schema::create('tenant_admins', function (Blueprint $table) {
             $table->bigIncrements('id');
-            
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
+            $table->boolean('is_owner');
         });
     }
 
@@ -27,6 +32,6 @@ class CreateTenantUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tenant_users');
+        Schema::dropIfExists('tenant_admins');
     }
 }
