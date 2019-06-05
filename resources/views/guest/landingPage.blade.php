@@ -251,9 +251,12 @@
               <ul class="card-pricing__list">
                 <li><i class="ti-check text-success"></i>{!! nl2br(e($plan->description))!!}</li>
               </ul>
+              <form method="get" action="/register">
               <div class="card-pricing__footer">
+                <input value={{$plan->id}} name="plan" hidden>
                 <button class="button button-light">Buy Now</button>
               </div>
+              </form>
             </div>
           </div>
           @endforeach
