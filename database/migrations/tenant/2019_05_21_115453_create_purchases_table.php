@@ -15,14 +15,11 @@ class CreatePurchasesTable extends Migration
     {
         Schema::create('purchases', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('count');
-            
-            $table->unsignedBigInteger('item_id')->nullable();
-            $table->foreign('item_id')->references('id')->on('items')->nullable();
-
             $table->unsignedBigInteger('end_user_id')->nullable();
             $table->foreign('end_user_id')->references('id')->on('end_users')->nullable();
-
+            $table->unsignedBigInteger('item_id')->nullable();
+            $table->foreign('item_id')->references('id')->on('items')->nullable();
+            $table->string('count');
             $table->timestamps();
         });
     }
