@@ -104,18 +104,20 @@
                         </ul>
                     </div>
                 </li>
-                @if(URL::current() === "http://admin.recoprism.com")
+                @system
                 <li class="nav-item">
                     <a class="nav-link" href='{{ route('tenantIndex') }}'>
-                        <i class="ni ni-collection text-blue"></i> {{ __('Apps') }}
+                        <i class="ni ni-collection text-blue"></i> {{ __('Tenants') }}
                     </a>
-                </li>                 
-                @endif
+                </li>   
+                @endsystem    
+                @tenant                      
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('indexAttributes') }}">
                         <i class="ni ni-books text-orange"></i> {{ __('Attributes') }}
                     </a>
                 </li>
+                @endtenant  
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="ni ni-key-25 text-info"></i> {{ __('Login') }}

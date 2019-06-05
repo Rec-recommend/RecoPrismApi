@@ -2,12 +2,6 @@
 
 @section('content')
     @include('layouts.headers.cards')
-    <div style='padding:20px;'>
-    <a type="button" class="btn btn-default" href='{{ route('createApp') }}' >CREATE APP</a>
-    </div>
-
-
-
                         <!-- Projects table -->
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
