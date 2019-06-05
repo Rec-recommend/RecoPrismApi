@@ -11,8 +11,9 @@ class Admin extends Authenticatable
 {
     use Notifiable;
 
-    public function __construct()
+    public function __construct($attributes = array())
     {
+        parent::__construct($attributes);
         $this->table = Config::get('auth.current_admin_table');
     }
     /**
