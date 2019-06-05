@@ -31,53 +31,53 @@ class TenantSeeder extends Seeder
 
 
         $this->now = Carbon::now('utc')->toDateTimeString();
-    
+
         Attribute::insert(array(
             $this->create_attr('name'),
             $this->create_attr('category'),
             $this->create_attr('brand'),
             $this->create_attr('price'),
             $this->create_attr('name'),
-            $this->create_attr('email'),           
-            $this->create_attr('country'),           
+            $this->create_attr('email'),
+            $this->create_attr('country'),
         ));
         $users = array();
         $items = array();
         $iav= [];
-        for ($i=1; $i<11; $i++){
+        for ($i=1; $i<=10; $i++){
             $items [] = $this->create_model($i);
             $users [] = $this->create_model($i);
             for($j =1 ; $j<5; $j++){
                 $iav [] = $this->create_eav( $j, Str::random(5));
             }
-        }   
+        }
         EndUser::insert($users);
         Item::insert($items);
         IAV::insert($iav);
 
         $ratings = [];
         $purchases=[];
-        for($i =1; $i<25; $i++){
-            $ratings [] =$this->create_rating();
-            $purchases [] =$this->create_purchase();
+        for($i =1; $i<=10; $i++){
+            $ratings [] =$this->create_rating($i);
+            $purchases [] =$this->create_purchase($i);
         }
         Rating::insert($ratings);
         Purchase::insert($purchases);
     }
 
-    function create_purchase(){
+    function create_purchase($i){
         return [
-            'end_user_id'=>rand(1,10),
-            'item_id'=>rand(1,10),
+            'end_user_id'=>$i,
+            'item_id'=>$i,
             'count'=>rand(1,5),
             'created_at' => $this->now,
             'updated_at' => $this->now
         ];
     }
-    function create_rating(){
+    function create_rating($i){
         return [
-            'end_user_id'=>rand(1,10),
-            'item_id'=>rand(1,10),
+            'end_user_id'=>$i,
+            'item_id'=>$i,
             'value'=>rand(1,5),
             'created_at' => $this->now,
             'updated_at' => $this->now
@@ -87,14 +87,14 @@ class TenantSeeder extends Seeder
 
     function create_attr($label){
         return array(
-            'label' => $label, 
+            'label' => $label,
             'created_at' => $this->now,
             'updated_at' => $this->now
         );
     }
     function create_model($id){
         return array(
-            'id' => $id, 
+            'id' => $id,
             'created_at' => $this->now,
             'updated_at' => $this->now
         );
