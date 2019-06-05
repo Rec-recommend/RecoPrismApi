@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Tenant\UserRepository;
 
-class UserController extends EntityController
+class UserController
 {
     /**
      * Display a listing of the resource.

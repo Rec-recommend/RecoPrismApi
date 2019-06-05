@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\System;
 
 use Redirect;
 use Illuminate\Http\Request;
@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Config;
 use Hyn\Tenancy\Traits\UsesTenantConnection;
 use App\Models\Api\Item;
 use App\Tenant;
-use App\User;
+use App\Models\Common\Admin as User;;
 use App\Factories\TenantModelFactory;
 use Illuminate\Support\Facades\Validator;
 use Hyn\Tenancy\Models\Website;

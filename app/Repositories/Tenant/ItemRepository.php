@@ -1,46 +1,59 @@
-<?php 
+<?php
 namespace App\Repositories\Tenant;
 
-use App\Models\Tenant\Item;
-use App\Models\Tenant\Entity;
-use App\Models\Tenant\Attribute;
 use App\Models\Tenant\IAV;
-use App\Models\Tenant\EntityRepository;
+use App\Models\Tenant\Item;
+use App\Models\Tenant\Attribute;
+use Illuminate\Support\Facades\DB;
 
-class ItemRepository  extends EntityRepository
+class ItemRepository
 {
-    public function __construct()
+    public function store($items)
     {
-        $this->entity_id = 1;
-        $this->entity_name = "item";
-        $this->entity_model = \App\Models\Tenant\Item::class;
-        $this->entity_eav = \App\Models\Tenant\IAV::class;
+        DB::statement($this->prepareItemsInsertStatement($items));
+        DB::statement($this->prepareIAVsInsertStatement($items));
     }
-   
-    // public function store($items)
-    // {
-    //     $eavs = [];
-    //     $item_ids = [];
-    //     $attr ["id"]= NULL;
-    //     $attributes = Attribute::where('entity_id',1)->get(['id','label'])->toArray();
-    //     foreach ($attributes as $key => $value) {
-    //         $attr[$value['label']] = $value['id'];
-    //     }
-    //      foreach ($items as $key => $item) {
-    //         $item_ids [] = [
-    //             "id"=>$item['id']
-    //         ];
-    //         foreach ($item as $key => $value) {
-    //             if($key !== "id"){
-    //                 $eavs [ ] = [ 
-    //                     "item_id"=>$item["id"],
-    //                     'attribute_id'=>$attr[$key],
-    //                     'value'=>$value 
-    //                 ];
-    //             }
-    //         }
-    //     }
-    //     Item::insert($item_ids);
-    //     IAV::insert($eavs);
-    // }
+
+    public function prepareItemsInsertStatement($items)
+    {
+        $item_sql = "insert into items (`id`) values ";
+
+        foreach ($items as $item) {
+            $item_sql .= "('" . $item['id'] . "'), ";
+        }
+
+        $item_sql = substr($item_sql, 0, -2);
+        return $item_sql;
+    }
+
+
+    public function prepareIAVsInsertStatement($items)
+    {
+        $iav_sql  = "insert into iav (`item_id`, `attribute_id`, `value`) values ";
+        $attr_label_to_id = [];
+
+        foreach (Attribute::get(['id','label'])->toArray() as $attr) {
+            $attr_label_to_id[$attr['label']] = $attr['id'];
+        }
+        foreach ($items as $item) {
+            foreach ($item as $attr_label => $attr_value) {
+                if($attr_label !== "id"){
+                    $iav_sql .= " (";
+                    $iav_sql .= " '" . addslashes($item["id"])                    . "', ";
+                    $iav_sql .= " '" . addslashes($attr_label_to_id[$attr_label]) . "', ";
+                    $iav_sql .= " '" . addslashes($attr_value)                    . "' ";
+                    $iav_sql .= "), ";
+                }
+            }
+        }
+        $iav_sql  = substr($iav_sql, 0, -2);
+        return $iav_sql;
+    }
 }
+
+/*
+    [
+        { 'id':1,'title':'iphone','price':1000 },
+        { 'id':2,'title':'samsung','price':2000 },
+    ]
+*/

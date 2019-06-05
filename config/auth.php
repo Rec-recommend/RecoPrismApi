@@ -12,6 +12,7 @@ return [
     | as required, but they're a perfect start for most applications.
     |
     */
+    'current_admin_table' => NULL,
 
     'defaults' => [
         'guard' => 'tenant_admin',

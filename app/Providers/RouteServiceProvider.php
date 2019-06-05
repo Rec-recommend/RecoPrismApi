@@ -48,7 +48,12 @@ class RouteServiceProvider extends ServiceProvider
         Route::domain('recoprism.com')
         ->middleware('web_system')
         ->namespace($this->namespace)
-        ->group(base_path('routes/web_guest.php'));
+        ->group(base_path('routes/guest/web.php'));
+
+        Route::domain('recoprism.com')
+        ->middleware('web_system')
+        ->namespace($this->namespace)
+        ->group(base_path('routes/guest/api.php'));
     }
 
 
@@ -58,12 +63,12 @@ class RouteServiceProvider extends ServiceProvider
         Route::domain('admin.recoprism.com')
         ->middleware('web_system')
         ->namespace($this->namespace)
-        ->group(base_path('routes/web_system.php'));
+        ->group(base_path('routes/system/web.php'));
 
         Route::domain('admin.recoprism.com')
         ->middleware('api_system')
         ->namespace($this->namespace)
-        ->group(base_path('routes/api_system.php'));
+        ->group(base_path('routes/system/api.php'));
     }
 
     protected function mapTenantRoutes()
@@ -72,12 +77,12 @@ class RouteServiceProvider extends ServiceProvider
         if(isset($hostname)){
             Route::middleware('web_tenant')
             ->namespace($this->namespace)
-            ->group(base_path('routes/web_tenant.php'));
+            ->group(base_path('routes/tenant/web.php'));
 
             Route::prefix('api')
             ->middleware('api_tenant')
             ->namespace($this->namespace)
-            ->group(base_path('routes/api_tenant.php'));
+            ->group(base_path('routes/tenant/api.php'));
         }
     }
 
