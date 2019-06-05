@@ -19,6 +19,7 @@ class EnforceTenancy
         // $domain = $request->header()['host'][0];
         // if ($domain !== "recoprism.com" || $domain !== "admin.recoprism.com") {
         Config::set('database.default', 'tenant');
+        Config::set('auth.current_admin_table', 'tenant_admins');
         Config::set('auth.defaults',[
                 'guard' => 'tenant_admin',
                 'passwords' => 'tenant_admins',

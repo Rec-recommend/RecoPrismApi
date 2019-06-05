@@ -17,6 +17,7 @@ class EnforceSystem
     public function handle($request, Closure $next)
     {
         Config::set('database.default', 'system');
+        Config::set('auth.current_admin_table', 'system_admins');
         Config::set('auth.defaults', 
         [   
             'guard'=>'system_admin',
