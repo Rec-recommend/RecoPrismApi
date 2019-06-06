@@ -4,8 +4,8 @@ use Illuminate\Http\Request;
 // Route::get('/', 'TestController@index')->name('home');
 Auth::routes();
 
-Route::get('/import', 'Tenant\Web\ItemController@import')->name('import');
-Route::resource('items_web', 'Tenant\Web\ItemController');
+Route::get('/csv', 'Tenant\Web\CSVController@import')->name('csv.import');
+Route::post('/csv', 'Tenant\Web\CSVController@store')->name('csv.store');
 
 Route::get('/test', 'TestController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
