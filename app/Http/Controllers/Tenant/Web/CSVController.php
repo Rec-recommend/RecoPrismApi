@@ -21,7 +21,7 @@ class CsvController
         $path = $request->file('csvfile')->getRealPath();
         $array = array_map('str_getcsv', file($path));
         $filtered = array_filter(array_map('array_filter', $array));
-        // $repository->store($filtered);
+        $repository->store($filtered);
         return redirect('csv')->with(['message'=> 'Profile updated!','success' => true]);
     }
 
