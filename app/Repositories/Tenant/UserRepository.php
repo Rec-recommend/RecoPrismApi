@@ -3,14 +3,11 @@ namespace App\Repositories\Tenant;
 
 use App\Models\Tenant\EntityRepository;
 
-class UserRepository  extends EntityRepository
+class UserRepository extends Repository
 {
-    public function store($users)
+    public function transaction($users, $headers)
     {
-        $headers = $users[0];
-        $headers = array_flip($headers);
-        unset($users[0]);
-        DB::statement($this->prepareUsersInsertStatement($users, $headers));
+        DB::statement($this->prepareRatingsInsertStatement($users, $headers));
     }
 
     public function prepareUsersInsertStatement($users, $labels_indeces)

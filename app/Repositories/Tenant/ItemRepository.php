@@ -1,18 +1,13 @@
 <?php
 namespace App\Repositories\Tenant;
 
-use App\Models\Tenant\IAV;
-use App\Models\Tenant\Item;
 use App\Models\Tenant\Attribute;
 use Illuminate\Support\Facades\DB;
 
-class ItemRepository
+class ItemRepository extends Repository
 {
-    public function store($items)
+    public function transaction($items, $headers)
     {
-        $headers = $items[0];
-        $headers = array_flip($headers);
-        unset($items[0]);
         DB::statement($this->prepareItemsInsertStatement($items, $headers));
         DB::statement($this->prepareIAVsInsertStatement($items, $headers));
     }

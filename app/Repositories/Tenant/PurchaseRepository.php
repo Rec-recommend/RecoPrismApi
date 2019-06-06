@@ -1,18 +1,12 @@
 <?php
 namespace App\Repositories\Tenant;
 
-use App\Models\Tenant\IAV;
-use App\Models\Tenant\Item;
-use App\Models\Tenant\Attribute;
 use Illuminate\Support\Facades\DB;
 
-class PurchaseRepository
+class PurchaseRepository extends Repository
 {
-    public function store($purchases)
+    public function transaction($purchases, $headers)
     {
-        $headers = $purchases[0];
-        $headers = array_flip($headers);
-        unset($purchases[0]);
         DB::statement($this->preparePurchaseInsertStatement($purchases, $headers));
     }
 

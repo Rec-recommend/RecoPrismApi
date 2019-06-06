@@ -1,18 +1,12 @@
 <?php
 namespace App\Repositories\Tenant;
 
-use App\Models\Tenant\IAV;
-use App\Models\Tenant\Item;
-use App\Models\Tenant\Attribute;
 use Illuminate\Support\Facades\DB;
 
-class RatingRepository
+class RatingRepository extends Repository
 {
-    public function store($ratings)
+    public function transaction($ratings, $headers)
     {
-        $headers = $ratings[0];
-        $headers = array_flip($headers);
-        unset($ratings[0]);
         DB::statement($this->prepareRatingsInsertStatement($ratings, $headers));
     }
 
