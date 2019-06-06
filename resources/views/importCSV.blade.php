@@ -5,7 +5,7 @@
     <div class="container">
         <div class="card bg-light mt-3">
             <div class="card-header">
-                import your data
+                Import your data
             </div>
             @if(Session::has('message'))
                 @if(Session::has('success'))
@@ -17,7 +17,7 @@
             <div class="card-body">
                 <form action="{{ route('csv.store') }}" method="POST" enctype="multipart/form-data" name="csvForm">
                     @csrf
-                    <select onChange="document.forms.csvForm.model.value = this.value">
+                    <select onChange="document.forms.csvForm.model.value = this.value" class="form-control input-group mb-1" >
                             <option value="Item">items</option>
                             <option value="User">users</option>
                             <option value="Rating">ratings</option>

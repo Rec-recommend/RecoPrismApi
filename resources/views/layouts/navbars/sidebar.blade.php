@@ -114,21 +114,24 @@
                 @tenant                      
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('indexAttributes') }}">
-                        <i class="ni ni-books text-orange"></i> {{ __('Attributes') }}
+                        <i class="ni ni-fat-add text-info"></i> {{ __('Attributes') }}
                     </a>
                 </li>
                 @endtenant  
+                @system                      
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="ni ni-key-25 text-info"></i> {{ __('Login') }}
+                    <a class="nav-link" href="{{ route('home') }}">
+                        <i class="ni ni-bag-17 text-orange"></i> {{ __('Packages') }}
                     </a>
                 </li>
+                @endsystem 
+                @tenant                      
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="ni ni-circle-08 text-pink"></i> {{ __('Register') }}
+                    <a class="nav-link" href="{{ route('csv.import') }}">
+                        <i class="ni ni-cloud-upload-96 text-blue"></i> {{ __('Import CSV') }}
                     </a>
                 </li>
-
+                @endtenant
             </ul>
         </div>
     </div>
