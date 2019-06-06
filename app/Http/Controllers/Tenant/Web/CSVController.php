@@ -22,7 +22,7 @@ class CsvController
         $array = array_map('str_getcsv', file($path));
         $filtered = array_filter(array_map('array_filter', $array));
         $repository->store($filtered);
-        return redirect('csv')->with(['message'=> 'Profile updated!','success' => true]);
+        return redirect('csv')->with(['message'=> 'Data Uploaded Successfully!','success' => true]);
     }
 
     public function import(){
