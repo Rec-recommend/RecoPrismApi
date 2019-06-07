@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 
-Route::apiResource('items', 'Api\Tenant\ItemController');
-Route::apiResource('users', 'Api\Tenant\UserController');
-Route::apiResource('ratings', 'Api\Tenant\RatingController');
-Route::apiResource('purchases', 'Api\Tenant\PurchaseController');
+Route::apiResource('items', 'Tenant\Api\ItemController');
+Route::apiResource('users', 'Tenant\Api\UserController');
+Route::apiResource('ratings', 'Tenant\Api\RatingController');
+Route::apiResource('purchases', 'Tenant\Api\PurchaseController');

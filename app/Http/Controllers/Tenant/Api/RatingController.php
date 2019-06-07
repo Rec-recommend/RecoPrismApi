@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\Tenant;
+namespace App\Http\Controllers\Tenant\Api;
 
 use Illuminate\Http\Request;
+use App\Models\Tenant\Rating;
 use App\Http\Controllers\Controller;
-use App\Models\Tenant\Purchase;
 
-class PurchaseController extends Controller
+class RatingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class PurchaseController extends Controller
      */
     public function index()
     {
-        return response()->json(Purchase::all());
+        return response()->json(Rating::all());        
     }
 
     /**
@@ -26,7 +26,7 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
-      return response()->json(Purchase::insert($request->all()));
+      return response()->json(Rating::insert($request->all()));        
     }
 
     /**
@@ -37,7 +37,7 @@ class PurchaseController extends Controller
      */
     public function show($id)
     {
-     
+        //
     }
 
     /**

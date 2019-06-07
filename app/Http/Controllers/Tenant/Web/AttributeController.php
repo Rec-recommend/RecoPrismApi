@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Tenant;
+namespace App\Http\Controllers\Tenant\Web;
 
 use Illuminate\Http\Request;
 use App\Models\Tenant\Attribute;
