@@ -29,7 +29,7 @@ class SystemSeeder extends Seeder
         $subdomain = 'test';
      
         $pp = Plan::create([
-            'name' => 'basic',
+            'name' => 'Basic',
             'cost' => 25,
             'slug' => 'basic',
             'stripe_plan'=>'plan_FBzkdlFLUa5PC9',
