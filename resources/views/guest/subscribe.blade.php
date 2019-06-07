@@ -134,7 +134,7 @@
                           <h3 id="subdomain" class="text-white" ></h3>
                           <div class="form-group">
                               <label for="exampleFormControlSelect1">Selected Plan</label>
-                              <select class="form-control" id="exampleFormControlSelect1" name="plan_id">
+                              <select class="form-control" id="exampleFormControlSelect1" name="payment_plan_id">
                                 @foreach ($plans as $plan)
                               <option value={{$plan->id}}
                                 @if ($plan->id == $selected_plan)
