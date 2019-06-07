@@ -68,96 +68,121 @@
                       <div class="text-center text">
                           <h1>register</h1>
                       </div>
-                      <form role="form" method="POST" action="{{ route('ClientStore') }}">
-                          @csrf
-              
-                          <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                              <div class="input-group input-group-alternative mb-3">
-                                  <div class="input-group-prepend">
-                                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
-                                  </div>
-                                  <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" type="text" name="name" value="{{ old('name') }}" required autofocus>
-                              </div>
-                              @if ($errors->has('name'))
-                                  <span class="invalid-feedback" style="display: block;" role="alert">
-                                      <strong>{{ $errors->first('name') }}</strong>
-                                  </span>
-                              @endif
-                          </div>
-                          <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                              <div class="input-group input-group-alternative mb-3">
-                                  <div class="input-group-prepend">
-                                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                                  </div>
-                                  <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" type="email" name="email" value="{{ old('email') }}" required>
-                              </div>
-                              @if ($errors->has('email'))
-                                  <span class="invalid-feedback" style="display: block;" role="alert">
-                                      <strong>{{ $errors->first('email') }}</strong>
-                                  </span>
-                              @endif
-                          </div>
-                          <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
-                              <div class="input-group input-group-alternative">
-                                  <div class="input-group-prepend">
-                                      <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                                  </div>
-                                  <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Password') }}" type="password" name="password" required>
-                              </div>
-                              @if ($errors->has('password'))
-                                  <span class="invalid-feedback" style="display: block;" role="alert">
-                                      <strong>{{ $errors->first('password') }}</strong>
-                                  </span>
-                              @endif
-                          </div>
-                          <div class="form-group">
-                              <div class="input-group input-group-alternative">
-                                  <div class="input-group-prepend">
-                                      <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                                  </div>
-                                  <input class="form-control" placeholder="{{ __('Confirm Password') }}" type="password" name="password_confirmation" required>
-                              </div>
-                          </div>
-                          <div class="form-group{{ $errors->has('subdomain') ? ' has-danger' : '' }}">
-                              <div class="input-group input-group-alternative mb-3">
-                                  <div class="input-group-prepend">
-                                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
-                                  </div>
-                                  <input class="form-control" placeholder="{{ __('subdomain') }}" type="text" name="subdomain" oninput="updateInput(this.value)" required>
-                              </div>
-                              @if ($errors->has('subdomain'))
-                                  <span class="invalid-feedback" style="display: block;" role="alert">
-                                      <strong>{{ $errors->first('subdomain') }}</strong>
-                                  </span>
-                              @endif
-                          </div>
-                          <h3 id="subdomain" class="text-white" ></h3>
-                          <div class="form-group">
-                              <label for="exampleFormControlSelect1">Selected Plan</label>
-                              <select class="form-control" id="exampleFormControlSelect1" name="payment_plan_id">
-                                @foreach ($plans as $plan)
-                              <option value={{$plan->id}}
-                                @if ($plan->id == $selected_plan)
-                                selected="selected"
-                                @endif
-                                >{{$plan->name}} : {{$plan->cost}}$</option>
-                                @endforeach
-                              </select>
+<!-- PAYMENT -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="">
+                <p>You will be charged ${{ number_format($plan->cost, 2) }} for {{ $plan->name }} Plan</p>
+            </div>
+            <div class="card">
+                <form action="{{ route('subscription.create') }}" method="post" id="payment-form">
+                    @csrf                    
+                    <div class="form-group">
+                        <div class="card-header">
+                            <label for="card-element">
+                                Enter your credit card information
+                            </label>
+                        </div>
+                        <div class="card-body">
+                            <div id="card-element">
+                            <!-- A Stripe Element will be inserted here. -->
                             </div>
-                          <div class="row my-4">
-                              <div class="col-12">
-                                  <div class="custom-control custom-control-alternative custom-checkbox">
-                                      <input class="custom-control-input" id="customCheckRegister" type="checkbox">
-                                      <label class="custom-control-label" for="customCheckRegister">
-                                          <span class="text-muted">{{ __('I agree with the') }} <a href="#!">{{ __('Privacy Policy') }}</a></span>
-                                      </label>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="text-center">
-                              <button type="submit" class="btn btn-primary">{{ __('Create account') }}</button>
-                          </div>
-                      </form>
+                            <!-- Used to display form errors. -->
+                            <div id="card-errors" role="alert"></div>
+                            <input type="hidden" name="plan" value="{{ $plan->id }}" />
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-dark" type="submit">Pay</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    // Create a Stripe client.
+var stripe = Stripe('{{ env("STRIPE_KEY") }}');
+
+
+// Create an instance of Elements.
+var elements = stripe.elements();
+
+// Custom styling can be passed to options when creating an Element.
+// (Note that this demo uses a wider set of styles than the guide below.)
+var style = {
+  base: {
+    color: '#32325d',
+    lineHeight: '18px',
+    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+    fontSmoothing: 'antialiased',
+    fontSize: '16px',
+    '::placeholder': {
+      color: '#aab7c4'
+    }
+  },
+  invalid: {
+    color: '#fa755a',
+    iconColor: '#fa755a'
+  }
+};
+
+// Create an instance of the card Element.
+var card = elements.create('card', {style: style});
+
+// Add an instance of the card Element into the `card-element` <div>.
+card.mount('#card-element');
+
+// Handle real-time validation errors from the card Element.
+card.addEventListener('change', function(event) {
+  var displayError = document.getElementById('card-errors');
+  if (event.error) {
+    displayError.textContent = event.error.message;
+  } else {
+    displayError.textContent = '';
+  }
+});
+
+// Handle form submission.
+var form = document.getElementById('payment-form');
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  stripe.createToken(card).then(function(result) {
+    if (result.error) {
+      // Inform the user if there was an error.
+      var errorElement = document.getElementById('card-errors');
+      errorElement.textContent = result.error.message;
+    } else {
+      // Send the token to your server.
+      stripeTokenHandler(result.token);
+    }
+  });
+});
+
+// Submit the form with the token ID.
+function stripeTokenHandler(token) {
+  // Insert the token ID into the form so it gets submitted to the server
+  var form = document.getElementById('payment-form');
+  var hiddenInput = document.createElement('input');
+  hiddenInput.setAttribute('type', 'hidden');
+  hiddenInput.setAttribute('name', 'stripeToken');
+  hiddenInput.setAttribute('value', token.id);
+  form.appendChild(hiddenInput);
+
+  // Submit the form
+  form.submit();
+}
+</script>
+
+
+
+
+
+
+
                   </div>
             </div>
         </div>
