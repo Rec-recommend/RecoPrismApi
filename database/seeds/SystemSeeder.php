@@ -1,8 +1,8 @@
 <?php
 
+use App\Models\System\Plan;
 use App\Models\System\Tenant;
 use Illuminate\Database\Seeder;
-use App\Models\System\PaymentPlan;
 use App\Models\System\SystemAdmin;
 use Illuminate\Support\Facades\Hash;
 use Hyn\Tenancy\Traits\UsesSystemConnection;
@@ -28,9 +28,11 @@ class SystemSeeder extends Seeder
 
         $subdomain = 'test';
      
-        $pp = PaymentPlan::create([
+        $pp = Plan::create([
             'name' => 'basic',
-            'price' => 25,
+            'cost' => 25,
+            'slug' => 'basic',
+            'stripe_plan'=>'plan_FBzkdlFLUa5PC9',
             'description'=> 'Unlimited Entrance
             Comfortable Seat
             Paid Certificate

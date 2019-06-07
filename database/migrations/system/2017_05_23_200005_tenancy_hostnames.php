@@ -24,7 +24,7 @@ class TenancyHostnames extends AbstractMigration
     {
         Schema::create('hostnames', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('owner_id')->unsigned()->nullable();
+            $table->bigInteger('client_id')->unsigned()->nullable();
             $table->bigInteger('website_id')->unsigned()->nullable();
             $table->string('fqdn')->unique();
             $table->string('redirect_to')->nullable();
@@ -33,7 +33,7 @@ class TenancyHostnames extends AbstractMigration
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('website_id')->references('id')->on('websites')->onDelete('set null');
-            $table->foreign('owner_id')->references('id')->on('owners')->onDelete('set null');
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('set null');
         });
     }
 

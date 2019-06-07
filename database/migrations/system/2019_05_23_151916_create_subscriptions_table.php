@@ -15,15 +15,15 @@ class CreateSubscriptionsTable extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('owner_id');
+            $table->bigInteger('client_id')->unsigned()->nullable();
             $table->string('name');
             $table->string('stripe_id')->collation('utf8mb4_bin');
             $table->string('stripe_plan');
             $table->integer('quantity');
-            $table->timestamps('trial_ends_at')->nullable();
-            $table->timestamps('ends_at');
+            $table->timestamp('ends_at');
+            $table->timestamp('trial_ends_at')->nullable();
             $table->timestamps();
-            $table->foreign('owner_id')->references('id')->on('owners')->onDelete('set null');
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('set null');
         });
     }
 

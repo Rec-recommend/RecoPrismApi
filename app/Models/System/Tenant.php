@@ -2,6 +2,7 @@
 
 namespace App\Models\System;
 
+use App\Models\System\Plan;
 use Illuminate\Support\Str;
 use Hyn\Tenancy\Models\Website;
 use Hyn\Tenancy\Models\Hostname;
@@ -46,7 +47,7 @@ class Tenant
         return new Tenant($website, $hostname);
     }
 
-    public function subsrcibe(PaymentPlan $plan)
+    public function subsrcibe(Plan $plan)
     {
         Subscription::new($this->hostname, $plan);
     }

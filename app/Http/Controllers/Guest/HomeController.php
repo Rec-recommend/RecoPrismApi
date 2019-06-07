@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Guest;
 
+use App\Models\System\Plan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\System\PaymentPlan;
 
 class HomeController extends Controller
 {
     public function index(){
-        $plans = PaymentPlan::all();
+        $plans = Plan::all();
         return view('guest.landingPage')->with('plans', $plans);
     } 
 }

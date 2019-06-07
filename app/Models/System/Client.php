@@ -4,10 +4,10 @@ namespace App\Models\System;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PaymentPlan extends Model
+class Client extends Model
 {
-    protected $table='payment_plans';
+    protected $table = 'clients';    
     protected $fillable = [
-        'name', 'price'
+        'name', 'email', 'password','subdomain'
     ];
 }
