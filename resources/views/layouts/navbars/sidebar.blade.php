@@ -120,7 +120,7 @@
                 @endtenant  
                 @system                      
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
+                    <a class="nav-link" href="{{ route('pkgshow') }}">
                         <i class="ni ni-bag-17 text-orange"></i> {{ __('Packages') }}
                     </a>
                 </li>
