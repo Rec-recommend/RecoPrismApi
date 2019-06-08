@@ -6,7 +6,8 @@ use App\Models\System\Plan;
 use Illuminate\Http\Request;
 use App\Models\System\Client;
 use App\Http\Controllers\Controller;
-
+use Mail; 
+use App\Mail\Recoprism;
 class SubscriptionController extends Controller
 {
     public function store(Request $request)
@@ -22,7 +23,8 @@ class SubscriptionController extends Controller
         $client
             ->newSubscription('main', $plan->stripe_plan)
             ->create($request->stripeToken);
-        
+        $client->plan = $plan;
+        Mail::to($client->email)->send(new Recoprism($client));
         // return redirect()->route('home')->with('success', 'Your plan subscribed successfully');
         return ('success Your plan subscribed successfully');
     }
