@@ -26,7 +26,7 @@
                     <input type="file" name="csvfile" class="form-control">
                     <input type="text" name="model" value='Item' class="form-control" hidden>
                     <br>
-                    <button class="btn btn-success">Import Csv file</button>
+                    <button class="btn btn-success">Import CSV file</button>
                 </form>
             </div>
         </div>
