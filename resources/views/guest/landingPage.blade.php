@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{ config('app.name', 'Argon Dashboard') }}</title>
   <link href="{{ asset('argon') }}/img/brand/favicon.png" rel="icon" type="image/png">
-
+  <link href="/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('guest') }}/vendors/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="{{ asset('guest') }}/vendors/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="{{ asset('guest') }}/vendors/themify-icons/themify-icons.css">
@@ -33,22 +33,16 @@
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-end">
               <li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
-              <li class="nav-item"><a class="nav-link" href="{{ asset('guest') }}/feature.html">Feature</a></li> 
+              <li class="nav-item"><a class="nav-link" href="#feature">Features</a></li> 
               <li class="nav-item"><a class="nav-link" href="#pricing">Price</a>
-              <li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Pages</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="{{ asset('guest') }}/blog.html">Blog</a></li>
-                  <li class="nav-item"><a class="nav-link" href="{{ asset('guest') }}/blog-details.html">Blog Details</a></li>
-                </ul>
-							</li>
-              <li class="nav-item"><a class="nav-link" href="{{ asset('guest') }}/contact.html">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="#us">About Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Docs</a></li>
+
             </ul>
 
             <ul class="navbar-right">
               <li class="nav-item">
-                <button class="button button-header bg">Sign up</button>
+                <a href="{{route('ClientCreate')}}"class="button button-header bg">Sign up</a>
               </li>
             </ul>
           </div> 
@@ -71,9 +65,9 @@
           </div>
           <div class="col-lg-5 pt-5">
             <div class="hero-banner__content">
-              <h1>Advanced software made simple</h1>
-              <p>Vel aliquam quis, nulla pede mi commodo tristique nam hac Luctun torquent velit felis commodo pellentesque nulla cras vel aliqua quisan nulla pede mi commoda</p>
-              <a class="button bg" href="{{ asset('guest') }}/#">Get Started</a>
+              <h1>You Ask, We Recommend</h1>
+             <div style="width:300px;font-size:20px;">  <p>Advanced Software Made Simple Through Our Recommendation Service. </p> </div>
+              <a class="button bg" href="#getstarted">Get Started</a>
             </div>
           </div>
         </div>
@@ -85,8 +79,7 @@
     <section class="section-margin">
       <div class="container">
         <div class="section-intro pb-85px text-center">
-          <h2 class="section-intro__title">Awesome Soft Feature</h2>
-          <p class="section-intro__subtitle">Vel aliquam quis, nulla pede mi commodo tristique nam hac. Luctus torquent velit felis commodo pellentesque nulla cras. Tincidunt hacvel alivquam quis nulla pede mi commodo tristique nam hac  luctus torquent</p>
+          <h2 class="section-intro__title">Easy Steps To Get The Service </h2>
         </div>
 
         <div class="container">
@@ -94,29 +87,27 @@
             <div class="col-lg-4">
               <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
                 <span class="card-feature__icon">
-                  <i class="ti-package"></i>
+                  <i class= ti-credit-card "></i>
                 </span>
-                <h3 class="card-feature__title">Unique Design</h3>
-                <p class="card-feature__subtitle">Molestie lorem est faucibus faucibus erat phasellus placerat proin aptent</p>
+                <h3 class="card-feature__title">Register And Choose Your Payment Plan</h3>
               </div>
             </div>
             <div class="col-lg-4">
               <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
                 <span class="card-feature__icon">
-                  <i class="ti-mouse-alt"></i>
+                  <i class=" ti-server "></i>
                 </span>
-                <h3 class="card-feature__title">Business Solution</h3>
-                <p class="card-feature__subtitle">Molestie lorem est faucibus faucibus erat phasellus placerat proin aptent</p>
+                <h3 class="card-feature__title"> Upload Your DataBase</h3>
               </div>
             </div>
             <div class="col-lg-4">
               <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
                 <span class="card-feature__icon">
-                  <i class="ti-headphone-alt"></i>
+                  <i class="ti-key"></i>
                 </span>
-                <h3 class="card-feature__title">Customer Support</h3>
-                <p class="card-feature__subtitle">Molestie lorem est faucibus faucibus erat phasellus placerat proin aptent</p>
+                <h3 class="card-feature__title"> Get Your API Key</h3>
               </div>
+              
             </div>
           </div>
         </div>
@@ -130,9 +121,8 @@
         <div class="row no-gutters align-items-center">
           <div class="col-md-5 mb-5 mb-md-0">
             <div class="about__content">
-              <h2>Leading the Digital Entertainment Revolution</h2>
-              <p>Molestie lorem est faucibus Faucibus erat phasellus placerat proinint aptent pulvinar fusce nostra porta sem platea nec, donec fusce erat Molestie lorem est faucibus faucibus erat phasellus placerat proin aptent pulvinar fusce nostra port</p>
-              <a class="button button-light" href="{{ asset('guest') }}/#">Know More</a>
+              <h2 >Elegant Dashboard To Control Your Website Recommendations</h2>
+              <p style='font-size:20px;'>Now You Can Use RecoPrim Service Easily With Our Dashboard To Control Your Website Recommendations Flow </p>
             </div>
           </div>
           <div class="col-md-7">
@@ -146,11 +136,11 @@
     <!--================ about section end =================-->      
     
     <!--================ Offer section start =================-->      
-    <section class="section-margin">
+    <section class="section-margin" id="feature">
       <div class="container">
         <div class="section-intro pb-85px text-center">
           <h2 class="section-intro__title">Features We Offer</h2>
-          <p class="section-intro__subtitle">Vel aliquam quis, nulla pede mi commodo tristique nam hac. Luctus torquent velit felis commodo pellentesque nulla cras. Tincidunt hacvel alivquam quis nulla pede mi commodo tristique nam hac  luctus torquent</p>
+          <p style='font-size:20px;' class="section-intro__subtitle"> We provide recommendations as a service for website owners to increase website sales as response of the increasing demand of data analytics in business sector</p>
         </div>
 
         <div class="row">
@@ -163,7 +153,7 @@
                     <i class="ti-pencil-alt"></i>
                   </span>
                   <h4>Easy To Manage</h4>
-                  <p>Posuere porttitor justo ornare dictum ultricies enim imperdiet integer habitant.</p>
+                  <p> Mange Your Website Recommendation With Your Own Dashboard.</p>
                 </div>
               </div>
               
@@ -173,7 +163,7 @@
                     <i class="ti-ruler-pencil"></i>
                   </span>
                   <h4>Analytics Tool</h4>
-                  <p>Posuere porttitor justo ornare dictum ultricies enim imperdiet integer habitant.</p>
+                  <p>See How Many Times Your Users Used Our Service.</p>
                 </div>
               </div>
             </div>
@@ -184,8 +174,8 @@
                   <span class="offer-single__icon">
                     <i class="ti-cut"></i>
                   </span>
-                  <h4>Professionals Tools</h4>
-                  <p>Posuere porttitor justo ornare dictum ultricies enim imperdiet integer habitant.</p>
+                  <h4>Easy Integration</h4>
+                  <p>Quick and Easy Integration into Your Website.</p>
                 </div>
               </div>
               
@@ -194,8 +184,8 @@
                   <span class="offer-single__icon">
                     <i class="ti-light-bulb"></i>
                   </span>
-                  <h4>Ready Content</h4>
-                  <p>Posuere porttitor justo ornare dictum ultricies enim imperdiet integer habitant.</p>
+                  <h4>Scalable System</h4>
+                  <p> Recommend Anything You Want For Your Users Through Our Service.</p>
                 </div>
               </div>
             </div>
@@ -211,8 +201,8 @@
     </section>
     <!--================ Offer section end =================-->      
 
-    <!--================ Solution section start =================-->      
-    <section class="section-padding--small bg-magnolia">
+    <!--================ Solution section start =================-->    
+    <section class="section-padding--small bg-magnolia" id="getstarted">
       <div class="container">
         <div class="row align-items-center pt-xl-3 pb-xl-5">
           <div class="col-lg-6">
@@ -221,10 +211,13 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="solution__content">
-              <h2>Simple Solutions for Complex Connections</h2>
-              <p>Molestie lorem est faucibus Faucibus erat phasellus placerat proinint aptent pulvinar fusce nostra porta sem platea nec, donec fusce erat Molestie lorem est faucibus faucibus erat phasellus placerat proin aptent pulvinar fusce nostra port</p>
-              <a class="button button-light" href="{{ asset('guest') }}/#">Know More</a>
+            <div class="solution__content " style="font-size:20px;">
+              <h2>Simple Solution For Your Website Recommendations </h2>
+              <p ><i class=" ti-user"></i>    Provide Personalized Recommendation for User based on Items and Users Criteria.</p>
+              <p><i class="  ti-stats-up "></i> Increase your Revenue.</p>
+              <p><i class="ti-key"></i> Quick and Easy Integration into Your Website.</p>
+
+              <a class="button button-light" href="{{route('ClientCreate')}}">Join Now</a>
             </div>
           </div>
         </div>
@@ -237,7 +230,8 @@
       <div class="container">
         <div class="section-intro pb-85px text-center">
           <h2 class="section-intro__title">Choose Your Plan</h2>
-          <p class="section-intro__subtitle">Vel aliquam quis, nulla pede mi commodo tristique nam hac. Luctus torquent velit felis commodo pellentesque nulla cras. Tincidunt hacvel alivquam quis nulla pede mi commodo tristique nam hac  luctus torquent</p>
+          <p class="section-intro__subtitle"> Our Plans Fits all Sites Subscriptions Ranges From $100 to $1000.   </p>
+          <p style="color:red;"> Start with 30-Days Free Trial.</p>
         </div>
 
         <div class="row" id="pricing">
@@ -266,143 +260,45 @@
     <!--================ Pricing section end =================-->      
 
     <!--================ Testimonial section start =================-->      
-    <section class="section-padding bg-magnolia">
+    <section class="section-padding bg-magnolia" id="us">
       <div class="container">
-        <div class="section-intro pb-5 text-center">
-          <h2 class="section-intro__title">Client Says Me</h2>
-          <p class="section-intro__subtitle">Vel aliquam quis, nulla pede mi commodo tristique nam hac. Luctus torquent velit felis commodo pellentesque nulla cras. Tincidunt hacvel alivquam </p>
+        <div class="section-intro pb-5 text-center" style="font-size:25px;">
+          <h2 class="section-intro__title">Who Are We</h2>
+          <p class="section-intro__subtitle"> We are A Group ITIans Love To Exceed Our Limits And Follow The Universal Trends Of Tecnology. </p>
         </div>
+          <div class="testimonial__item text-center">
+          </div>
+          </div>
+          <div class="testimonial__item text-center" style="font-size:25px;color:white;">
+            <div class="testimonial__content" >
+              <h2>RecoPrism Team</h2>
+              <a class="btn btn-primary" href="https://github.com/AbanoubMagdyAdly" >  Abanoub Magdy </a>
+              <a class="btn btn-primary" href="https://github.com/AbdelrhamanAmin">  Abdelrahman Amin </a>
+              <a class="btn btn-primary" href="https://github.com/a-tarek">  Ahmed Tarek </a>
+              <a class="btn btn-primary" href="https://github.com/Hussein-ElAttar">  Hussein Elattar </a>
+              <a class="btn btn-primary" href="https://github.com/Mohamed-Elnemr">  Mohamed Elnemr </a>
+              <a class="btn btn-primary" href="https://github.com/Miramar95">  Miramar Etman </a>
 
-        <div class="owl-carousel owl-theme testimonial">
-          <div class="testimonial__item text-center">
-            <div class="testimonial__img">
-              <img src="{{ asset('guest') }}/img/testimonial/testimonial1.png" alt="">
-            </div>
-            <div class="testimonial__content">
-              <h3>Stephen Mcmilan</h3>
-              <p>Executive, ACI Group</p>
-              <p class="testimonial__i">Also made from. Give may saying meat there from heaven it lights face had is gathered god earth light for life may itself shall whales made they're blessed whales also made from give may saying meat. There from heaven it lights face had also made from. Give may saying meat there from heaven</p>
-            </div>
-          </div>
-          <div class="testimonial__item text-center">
-            <div class="testimonial__img">
-              <img src="{{ asset('guest') }}/img/testimonial/testimonial1.png" alt="">
-            </div>
-            <div class="testimonial__content">
-              <h3>Stephen Mcmilan</h3>
-              <p>Executive, ACI Group</p>
-              <p class="testimonial__i">Also made from. Give may saying meat there from heaven it lights face had is gathered god earth light for life may itself shall whales made they're blessed whales also made from give may saying meat. There from heaven it lights face had also made from. Give may saying meat there from heaven</p>
-            </div>
-          </div>
-          <div class="testimonial__item text-center">
-            <div class="testimonial__img">
-              <img src="{{ asset('guest') }}/img/testimonial/testimonial1.png" alt="">
-            </div>
-            <div class="testimonial__content">
-              <h3>Stephen Mcmilan</h3>
-              <p>Executive, ACI Group</p>
-              <p class="testimonial__i">Also made from. Give may saying meat there from heaven it lights face had is gathered god earth light for life may itself shall whales made they're blessed whales also made from give may saying meat. There from heaven it lights face had also made from. Give may saying meat there from heaven</p>
             </div>
           </div>
         </div>
-      </div>
     </section>
     <!--================ Testimonial section end =================-->      
-
-
-    <!--================ Start Clients Logo Area =================-->
-    <section class="clients_logo_area section-padding">
-      <div class="container">
-        <div class="clients_slider owl-carousel">
-          <div class="item">
-            <img src="{{ asset('guest') }}/img/clients-logo/c-logo-1.png" alt="">
-          </div>
-          <div class="item">
-            <img src="{{ asset('guest') }}/img/clients-logo/c-logo-2.png" alt="">
-          </div>
-          <div class="item">
-            <img src="{{ asset('guest') }}/img/clients-logo/c-logo-3.png" alt="">
-          </div>
-          <div class="item">
-            <img src="{{ asset('guest') }}/img/clients-logo/c-logo-4.png" alt="">
-          </div>
-          <div class="item">
-            <img src="{{ asset('guest') }}/img/clients-logo/c-logo-5.png" alt="">
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--================ End Clients Logo Area =================-->
-  </main>
-
-
   <!-- ================ start footer Area ================= -->
   <footer class="footer-area section-gap">
 		<div class="container">
 			<div class="row">
-				<div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-					<h4>Top Products</h4>
-					<ul>
-						<li><a href="{{ asset('guest') }}/#">Managed Website</a></li>
-						<li><a href="{{ asset('guest') }}/#">Manage Reputation</a></li>
-						<li><a href="{{ asset('guest') }}/#">Power Tools</a></li>
-						<li><a href="{{ asset('guest') }}/#">Marketing Service</a></li>
-					</ul>
-				</div>
-				<div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-					<h4>Quick Links</h4>
-					<ul>
-						<li><a href="{{ asset('guest') }}/#">Jobs</a></li>
-						<li><a href="{{ asset('guest') }}/#">Brand Assets</a></li>
-						<li><a href="{{ asset('guest') }}/#">Investor Relations</a></li>
-						<li><a href="{{ asset('guest') }}/#">Terms of Service</a></li>
-					</ul>
-				</div>
-				<div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-					<h4>Features</h4>
-					<ul>
-						<li><a href="{{ asset('guest') }}/#">Jobs</a></li>
-						<li><a href="{{ asset('guest') }}/#">Brand Assets</a></li>
-						<li><a href="{{ asset('guest') }}/#">Investor Relations</a></li>
-						<li><a href="{{ asset('guest') }}/#">Terms of Service</a></li>
-					</ul>
-				</div>
-				<div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-					<h4>Resources</h4>
-					<ul>
-						<li><a href="{{ asset('guest') }}/#">Guides</a></li>
-						<li><a href="{{ asset('guest') }}/#">Research</a></li>
-						<li><a href="{{ asset('guest') }}/#">Experts</a></li>
-						<li><a href="{{ asset('guest') }}/#">Agencies</a></li>
-					</ul>
-				</div>
-				<div class="col-xl-4 col-md-8 mb-4 mb-xl-0 single-footer-widget">
-					<h4>Newsletter</h4>
-					<p>You can trust us. we only send promo offers,</p>
-					<div class="form-wrap" id="mc_embed_signup">
-						<form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-						 method="get" class="form-inline">
-							<input class="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
-							 required="" type="email">
-							<button class="click-btn btn btn-default">subscribe</button>
-							<div style="position: absolute; left: -5000px;">
-								<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-							</div>
 
-							<div class="info"></div>
-						</form>
-					</div>
-				</div>
+				
+				
+
 			</div>
 			<div class="footer-bottom row align-items-center text-center text-lg-left">
 				<p class="footer-text m-0 col-lg-8 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="{{ asset('guest') }}/https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="#" target="_blank">RecoPrim</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 				<div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
-					<a href="{{ asset('guest') }}/#"><i class="fab fa-facebook-f"></i></a>
-					<a href="{{ asset('guest') }}/#"><i class="fab fa-twitter"></i></a>
-					<a href="{{ asset('guest') }}/#"><i class="fab fa-dribbble"></i></a>
-					<a href="{{ asset('guest') }}/#"><i class="fab fa-behance"></i></a>
+					<a href="https://github.com/Rec-recommend"> <i class=" ti-github "></i> </a> GitHub Link
 				</div>
 			</div>
 		</div>
