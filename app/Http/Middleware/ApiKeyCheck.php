@@ -17,7 +17,7 @@ use App\Models\Tenant\Setting;
     // {
         //     return new Success($code);
         // }
-        
+
 class ApiKeyCheck
 {
     /**
@@ -33,15 +33,15 @@ class ApiKeyCheck
     }
 
     public function invalid(){
-        return response()->json(['API_KEY'=>'Invalid API Key was given']);
+        return response()->json(['api-key'=>'Invalid API Key was given']);
     }
-    
+
     public function header_key($request){
-        return isset($request->header()['API_KEY'])?  $request->header()['API_KEY'][0] : false;
+        return isset($request->header()['api-key'])?  $request->header()['api-key'][0] : false;
     }
-    
+
     public function cached_key( $request){
-        // get the redis cached value from the created subsription 
+        // get the redis cached value from the created subsription
         return Redis::get($request->header()['host'][0]);
     }
 
