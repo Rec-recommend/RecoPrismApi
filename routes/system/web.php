@@ -3,6 +3,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes();
+Route::middleware(['auth'])->group(function () {
 
 Route::get('/test', 'TestController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
@@ -17,3 +18,4 @@ Route::get('/packages/show', 'System\PlanController@show')->name('pkgshow');
 Route::get('/package/create', 'System\PlanController@create')->name('pkgcreate');
 Route::post('/package/store', 'System\PlanController@store')->name('pkgstore');
 Route::delete('/package/delete/{id}', 'System\PlanController@destroy')->name('pkgdestroy');
+});

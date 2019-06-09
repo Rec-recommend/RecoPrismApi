@@ -4,6 +4,9 @@ use Illuminate\Http\Request;
 // Route::get('/', 'TestController@index')->name('home');
 Auth::routes();
 
+
+
+Route::middleware(['auth'])->group(function () {
 Route::get('/csv', 'Tenant\Web\CSVController@import')->name('csv.import');
 Route::post('/csv', 'Tenant\Web\CSVController@store')->name('csv.store');
 
@@ -17,3 +20,7 @@ Route::get('attributes', 'Tenant\Web\AttributeController@index')->name('indexAtt
 Route::get('attributes/create', 'Tenant\Web\AttributeController@create')->name('createAttributes');
 Route::post('attributes', 'Tenant\Web\AttributeController@store')->name('storeAttributes');
 Route::delete('attribute/{id}', 'Tenant\Web\AttributeController@destroy')->name('deleteAttribute');
+Route::get('settings', 'Tenant\Web\SettingController@index')->name('setting.index');
+Route::put('settings/{id}', 'Tenant\Web\SettingController@update')->name('setting.update');
+
+});
