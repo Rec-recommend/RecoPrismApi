@@ -12,7 +12,6 @@ class RecommendationController extends Controller
     public function recos(Request $req){
         $collection = explode(".",$req->route()->getName())[1];
         $rec = new Recommendation([],$collection);
-
         $validator = validator(["id"=> $req->id], $rec->rules());
 
         if($validator->fails()){
@@ -24,8 +23,11 @@ class RecommendationController extends Controller
         $id = (integer) $req->id;
         $entity_id = str_singular($collection).'_id';
 
+        $items = $rec->where($entity_id , $id)->pluck('items');
+        $items = sizeof($items)>0 ? $items[0]: $items;
+
         return [
-          'items' => $rec->where($entity_id , $id)->pluck('items')[0]
+          'items' => $items
         ];
     }
 }
