@@ -3,6 +3,7 @@
 @section('content')
 @include('layouts.headers.cards')
 <br>
+<div class="container">
 <form method="POST" action="{{route('storeAttributes')}}" id="form">
   @csrf
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -42,7 +43,7 @@
     </div>
   </div>
 </form>
-
+</div>
 <script>
 
   var count = 1;
