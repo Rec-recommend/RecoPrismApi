@@ -120,7 +120,7 @@
                 @endtenant  
                 @system                      
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
+                    <a class="nav-link" href="{{ route('pkgshow') }}">
                         <i class="ni ni-bag-17 text-orange"></i> {{ __('Packages') }}
                     </a>
                 </li>
@@ -129,6 +129,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('csv.import') }}">
                         <i class="ni ni-cloud-upload-96 text-blue"></i> {{ __('Import CSV') }}
+                    </a>
+                </li>
+                @endtenant
+                @tenant                      
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('setting.index') }}">
+                        <i class="ni ni-key-25 text-red"></i> {{ __('Settings') }}
                     </a>
                 </li>
                 @endtenant

@@ -11,7 +11,6 @@ class CsvController
     {
         $repository = RepositoryFactory::make($request->model);
         $csv_file   = $request->hasFile('csvfile');
-
         if (!$repository || !$csv_file) {
             return redirect('csv')->with([
                 'message'=> 'Please validate your data!',
