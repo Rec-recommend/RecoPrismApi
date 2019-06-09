@@ -2,7 +2,8 @@
 
 @section('content')
     @include('layouts.headers.cards')
-
+<br>
+<div class="container">
 <form method="POST" action="{{route('pkgstore')}}" id="form">
   @csrf
   <div class="form-horizontal">
@@ -39,7 +40,7 @@
         <div class="form-group row">
             <label class="col-sm-3 col-form-label">Package Description</label>
             <div class="col-sm-9">
-                <input name="package description" type="text" class="form-control" id="pckgprice" placeholder="Package Description">
+                <textarea name="package description" type="text" class="form-control" id="pckgprice" placeholder="Package Description" rows="3" style="resize: none;"></textarea>
             </div>
         </div>
                 <div class="form-group row">
@@ -59,6 +60,6 @@
   </div>
 </form>
 
-
+</div>
 @include('layouts.footers.auth')
 @endsection

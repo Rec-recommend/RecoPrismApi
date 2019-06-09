@@ -132,6 +132,13 @@
                     </a>
                 </li>
                 @endtenant
+                @tenant                      
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('setting.index') }}">
+                        <i class="ni ni-key-25 text-red"></i> {{ __('Settings') }}
+                    </a>
+                </li>
+                @endtenant
             </ul>
         </div>
     </div>

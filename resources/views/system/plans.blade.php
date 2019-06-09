@@ -2,6 +2,8 @@
 
 @section('content')
     @include('layouts.headers.cards')
+<div class="container">
+
         <div style='padding:20px;'>
         <a type="button" class="btn btn-default" href='{{ route('pkgcreate') }}' >CREATE New Package</a>
         </div>
@@ -46,6 +48,6 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        
+</div>       
      @include('layouts.footers.auth')
 @endsection
