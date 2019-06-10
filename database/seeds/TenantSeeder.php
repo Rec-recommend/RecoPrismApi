@@ -11,6 +11,7 @@ use App\Models\Tenant\Purchase;
 use Illuminate\Database\Seeder;
 use App\Models\Tenant\Attribute;
 use App\Models\Tenant\TenantAdmin;
+use App\Models\Tenant\Setting;
 
 class TenantSeeder extends Seeder
 {
@@ -22,14 +23,6 @@ class TenantSeeder extends Seeder
     protected $now;
     public function run()
     {
-        $owner= TenantAdmin::create([
-            "name" => "owner",
-            "email" => "owner@gmail.com",
-            "password" => Hash::make("12345678"),
-            "is_owner"=> true
-        ]);
-
-
         $this->now = Carbon::now('utc')->toDateTimeString();
 
         Attribute::insert(array(
@@ -64,7 +57,7 @@ class TenantSeeder extends Seeder
         Rating::insert($ratings);
         Purchase::insert($purchases);
     }
-
+//-----------------------------------------------------------------------------------------------------
     function create_purchase($i){
         return [
             'end_user_id'=>$i,

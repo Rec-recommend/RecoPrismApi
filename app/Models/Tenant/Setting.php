@@ -14,8 +14,7 @@ class Setting extends Model
 
 
     public static function generate_api_key(){
-            $str=rand(); 
-            return $result = md5($str); 
+            return $result = md5(rand()); 
     }
 }
     

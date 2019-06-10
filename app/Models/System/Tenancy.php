@@ -8,13 +8,16 @@ use Hyn\Tenancy\Models\Website;
 use Hyn\Tenancy\Models\Hostname;
 use Hyn\Tenancy\Repositories\WebsiteRepository;
 use Hyn\Tenancy\Repositories\HostnameRepository;
+use App\Models\Tenant\Setting;
+use Illuminate\Support\Facades\DB;
+use App\Models\Tenant\TenantAdmin;
 
 /**
  * @property Website website
  * @property Hostname hostname
  */
 
-class Tenant
+class Tenancy
 {
     public $website;
     public $hostname;
@@ -32,7 +35,7 @@ class Tenant
         return true;
     }
 
-    public static function create(String $subdomain): Tenant
+    public static function create(Client $client): Tenancy
     {
         // Create New Website
         $website = new Website;
@@ -41,34 +44,30 @@ class Tenant
 
         // associate the website with a hostname
         $hostname = new Hostname;
-        $hostname->fqdn = strtolower($subdomain) . "." . env('TENANT_URL_BASE');
+        $hostname->client_id=$client->id;
+        $hostname->fqdn = strtolower($client->subdomain) . "." . env('TENANT_URL_BASE');
         app(HostnameRepository::class)->attach($hostname, $website);
-        // make hostname current
-        return new Tenant($website, $hostname);
-    }
+        //  current connection: tenant
 
-    public function subsrcibe(Plan $plan)
-    {
-        Subscription::new($this->hostname, $plan);
-    }
-    public function get_api_key()
-    {
-        return Subscription::where("hostname_id",  $this->hostname->id)->get('api_key')->first()->api_key;
-    }
 
-    public function suspend()
-    {
-        Subscription::suspend($this->hostname);
-    }
+        // Generate AN API_KEY
+        Setting::create([
+            'key'=>'api-key',
+            'value'=>Setting::generate_api_key()
+        ]);
 
-    public static function tenantExists($name)
-    {
-        return Hostname::where('fqdn',  $name)->exists();
-    }
-    public static function rules()
-    {
-        return [
-            'fqdn' => 'unique:hostnames|max:30|min:5',
-        ];
+
+
+        // puts owner in tenant database
+        $admin = new TenantAdmin([
+            'name'=>$client->name,
+            'email'=>$client->email,
+            'password'=>$client->password,
+            'is_owner'=>true
+        ]);
+        $admin->save();
+
+        
+        return new Tenancy($website, $hostname);
     }
 }
