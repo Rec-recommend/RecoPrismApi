@@ -16,14 +16,15 @@ class CreateIAVTable extends Migration
         Schema::create('iav', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('value');
-            
-            $table->bigInteger('item_id')->unsigned()->nullable();            
+
+            $table->bigInteger('item_id')->unsigned()->nullable();
             $table->foreign('item_id')->references('id')->on('items')->nullable();
 
             $table->bigInteger('attribute_id')->unsigned()->nullable();
             $table->foreign('attribute_id')->references('id')->on('attributes')->onDelete('set null');
-            
-            $table->timestamps();
+
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

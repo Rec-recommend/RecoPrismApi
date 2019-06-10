@@ -22,7 +22,8 @@ class CreateLogsTable extends Migration
             $table->unsignedBigInteger('end_user_id')->nullable();
             $table->foreign('end_user_id')->references('id')->on('end_users')->nullable();
 
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 
