@@ -14,7 +14,7 @@ class ItemRepository extends Repository
 
     public function prepareItemsInsertStatement($items, $labels_indeces)
     {
-        $item_sql = "insert into items (`id`) values ";
+        $item_sql = "replace into items (`id`) values ";
 
         foreach ($items as $item) {
             $item_id   = $item[$labels_indeces['id']];
@@ -27,7 +27,7 @@ class ItemRepository extends Repository
 
     public function prepareIAVsInsertStatement($items, $labels_to_array_indeces)
     {
-        $iav_sql  = "insert into iav (`item_id`, `attribute_id`, `value`) values ";
+        $iav_sql  = "replace into iav (`item_id`, `attribute_id`, `value`) values ";
         $attr_label_to_fk = [];
 
         foreach (Attribute::get(['id','label'])->toArray() as $attr) {
