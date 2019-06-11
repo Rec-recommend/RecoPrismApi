@@ -4,6 +4,7 @@ namespace App\Http\Controllers\System;
 
 use Redirect;
 use App\Tenant;
+use Carbon\Carbon;
 use App\Models\Api\Item;
 use Illuminate\Http\Request;
 use Hyn\Tenancy\Models\Website;
@@ -42,6 +43,19 @@ class TenantController extends Controller
         Schema::getConnection()->getDoctrineSchemaManager()->dropDatabase("`{$tenantDBName}`");
         app(WebsiteRepository::class)->delete($website, true);
         app(HostnameRepository::class)->delete($hostname, true);
+        return redirect('/applications');
+    }
+
+    public function toggle_maintenanc_mode($id)
+    {
+        $hostname = Hostname::find($id);
+        $website = $hostname->website()->first();
+        if (!$hostname->under_maintenance_since) {
+            $hostname->under_maintenance_since = Carbon::now();
+        } else {
+            $hostname->under_maintenance_since = NULL;
+        }
+        $hostname->save();
         return redirect('/applications');
     }
 }
