@@ -63,4 +63,10 @@ class SubscriptionController extends Controller
 
         return view('tenant.subscription', compact('plans'));
     }
+    public function unsubscribe(){
+        $admin = TenantAdmin::where('email', auth()->user()->email)->first();
+        Config::set('database.default', 'system');
+        $client = Client::where('email', $admin->email)->first();
+        $client->subscription('main')->cancel();
+    }
 }

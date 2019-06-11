@@ -17,9 +17,11 @@
 
                               <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('SUBMIT') }}</button>
+                                </div>                               
+                            <div>
+                                    <a href="{{ route('subscription.unsubscribe')}}" class="btn btn-danger mt-4">{{ __('UNSUBSCRIBE') }}</a>
                                 </div>   
-                            </div>
-                            
-                                    
+                            </div>   
+                                     
 @include('layouts.footers.auth')
 @endsection
