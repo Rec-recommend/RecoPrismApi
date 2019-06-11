@@ -24,5 +24,6 @@ Route::get('settings', 'Tenant\Web\SettingController@index')->name('setting.inde
 Route::put('settings/{id}', 'Tenant\Web\SettingController@update')->name('setting.update');
 Route::get('/subscription', 'Guest\SubscriptionController@index')->name('subscription.index');
 Route::post('/swap', 'Guest\SubscriptionController@swap')->name('subscription.swap');
+Route::get('/unsubscribe', 'Guest\SubscriptionController@unsubscribe')->name('subscription.unsubscribe');
 
 });
