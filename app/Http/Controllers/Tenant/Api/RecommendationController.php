@@ -11,7 +11,7 @@ class RecommendationController extends Controller
 {
     public function recos(Request $req){
         $collection = explode(".",$req->route()->getName())[1];
-        $rec = new Recommendation([],$collection);
+        $rec = new Recommendation($collection);
         $validator = validator(["id"=> $req->id], $rec->rules());
 
         if($validator->fails()){
