@@ -278,6 +278,7 @@
                 </div>
             </div>
         </div>
+        @include('progress')
 
         @include('layouts.footers.auth')
     </div>

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Guest;
 
+use Mail; 
+use App\Mail\Recoprism;
 use App\Models\System\Plan;
 use Illuminate\Http\Request;
 use App\Models\System\Client;
 use App\Http\Controllers\Controller;
-use Mail; 
-use App\Mail\Recoprism;
+use Illuminate\Support\Facades\Config;
+
 class SubscriptionController extends Controller
 {
     public function store(Request $request)
@@ -28,4 +30,17 @@ class SubscriptionController extends Controller
         // return redirect()->route('home')->with('success', 'Your plan subscribed successfully');
         return ('success Your plan subscribed successfully');
     }
+    public function index (Request $request){
+        Config::set('database.default', 'system');
+        $plans = Plan::all();
+            return view('tenant.subscription',compact('plans'));
+    }
+    public function swap (Request $request){
+        Config::set('database.default', 'system');
+        $plans = Plan::all();
+        $client = Client::find(auth()->user()->id);
+    $client->subscription('main')->swap($request->plan_id);
+
+    return view('tenant.subscription',compact('plans'));
+}
 }
