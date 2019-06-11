@@ -41,7 +41,7 @@ class SubscriptionController extends Controller
 
         Mail::to($client->email)->send(new Recoprism($client));
 
-        $domain =$client->subdomain . ".recoprism.com";
+        $domain =$client->subdomain . ".".env('APP_URL');
 
         $output = shell_exec(base_path()."/recos.sh --host $domain ".base_path());
 
