@@ -14,8 +14,9 @@ class CreateEndUsersTable extends Migration
     public function up()
     {
         Schema::create('end_users', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+        $table->bigIncrements('id');
+        $table->timestamp('created_at')->useCurrent();
+        $table->timestamp('updated_at')->useCurrent();
         });
     }
 

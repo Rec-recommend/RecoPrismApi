@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\System\Client;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-
+use Hyn\Tenancy\Models\Hostname;
 
 class ClientController extends Controller
 {
@@ -19,6 +19,10 @@ class ClientController extends Controller
 
 
     public function store(Request $request){
+        $validator = validator($request->all(),Client::rules());
+        if ($validator->fails()){
+            return  back()->withInput()->withErrors($validator);
+        }
         $request['password']=Hash::make($request['password']);
         $client =  Client::create($request->all());
         $plan = Plan::where('id',$request['plan_id'])->first();

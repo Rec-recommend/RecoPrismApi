@@ -13,7 +13,7 @@ class UserRepository extends Repository
 
     public function prepareUsersInsertStatement($users, $labels_indeces)
     {
-        $end_user_sql = "insert into end_users (`id`) values ";
+        $end_user_sql = "replace into end_users (`id`) values ";
         foreach ($users as $end_user) {
             $end_user_id = $end_user[$labels_indeces['user_id']];
 

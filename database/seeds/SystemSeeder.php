@@ -6,6 +6,8 @@ use Illuminate\Database\Seeder;
 use App\Models\System\SystemAdmin;
 use Illuminate\Support\Facades\Hash;
 use Hyn\Tenancy\Traits\UsesSystemConnection;
+use App\Models\System\Tenancy;
+use App\Models\System\Client;
 
 class SystemSeeder extends Seeder
 {
@@ -40,13 +42,17 @@ class SystemSeeder extends Seeder
             One Certificate'
         ]);
 
-        
-        $tenant = Tenant::create($subdomain);
+        $client = Client::create(
+            [
+                'name'=>'test',
+                'email'=>'test@gmail.com',
+                'password'=>Hash::make('12345678'),
+                'subdomain'=>'test'
+            ]);
+        $tenant = Tenancy::create($client);
         
         $this->call(TenantSeeder::class);
         
         Config::set('database.default', 'system');
-
-        $tenant->subsrcibe($pp);
     }
 }

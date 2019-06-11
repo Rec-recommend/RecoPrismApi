@@ -12,7 +12,7 @@ class RatingRepository extends Repository
 
     public function prepareRatingsInsertStatement($ratings, $labels_indeces)
     {
-        $rating_sql = "insert into ratings (`end_user_id` , `item_id`, `value`) values ";
+        $rating_sql = "replace into ratings (`end_user_id` , `item_id`, `value`) values ";
         foreach ($ratings as $rating) {
             $end_user_id = $rating[$labels_indeces['user_id']];
             $item_id     = $rating[$labels_indeces['item_id']];

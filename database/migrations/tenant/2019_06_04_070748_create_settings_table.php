@@ -17,7 +17,8 @@ class CreateSettingSTable extends Migration
             $table->bigIncrements('id');
             $table->string('key');
             $table->string('value');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 
