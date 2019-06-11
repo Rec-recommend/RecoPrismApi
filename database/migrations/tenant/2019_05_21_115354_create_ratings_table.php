@@ -21,7 +21,8 @@ class CreateRatingsTable extends Migration
             $table->foreign('item_id')->references('id')->on('items')->nullable();
             $table->string('value');
             $table->unique(['end_user_id', 'item_id']);
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

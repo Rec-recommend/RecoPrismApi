@@ -12,7 +12,7 @@ class PurchaseRepository extends Repository
 
     public function preparePurchaseInsertStatement($purchases, $labels_indeces)
     {
-        $purchase_sql = "insert into purchase (`end_user_id` , `item_id`, `count`) values ";
+        $purchase_sql = "replace into purchase (`end_user_id` , `item_id`, `count`) values ";
         foreach ($purchases as $purchase) {
             $end_user_id = $purchase[$labels_indeces['user_id']];
             $item_id     = $purchase[$labels_indeces['item_id']];
