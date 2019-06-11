@@ -68,16 +68,15 @@ samurai(){
 }
 addhost() {
     cd $2
-    ROOT_PASSWORD=`cat .env | grep "SUDO_PASSWORD" |awk -F '=' {'print $2'}`
     HOSTNAME=$1
-    HOSTS_LINE="127.0.0.1\t$HOSTNAME"
+    HOSTS_LINE="127.0.0.1   $HOSTNAME"
     ETC_HOSTS="/etc/hosts"
     if [ -n "$(grep $HOSTNAME /etc/hosts)" ]
         then
             echo "$HOSTNAME already exists : $(grep $HOSTNAME $ETC_HOSTS)"
         else
             echo "Adding $HOSTNAME to your $ETC_HOSTS";
-            echo $ROOT_PASSWORD | sudo -- sh -c -e "echo '$HOSTS_LINE' >> /etc/hosts";
+            echo $HOSTS_LINE >> /etc/hosts;
             if [ -n "$(grep $HOSTNAME /etc/hosts)" ]
                 then
                     echo "$HOSTNAME was added succesfully \n $(grep $HOSTNAME /etc/hosts)";
