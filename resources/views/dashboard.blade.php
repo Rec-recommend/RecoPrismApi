@@ -278,6 +278,11 @@
                 </div>
             </div>
         </div>
+        
+        @tenant
+            @include('progress')
+        @endtenant
+
 
         @include('layouts.footers.auth')
     </div>

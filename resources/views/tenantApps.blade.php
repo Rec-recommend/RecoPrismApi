@@ -12,20 +12,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach ($websites as $website)
+                            @foreach ($hostnames as $hostname)
                                 <tr>
                                     <th scope="row">
-                                        {{$website->fqdn}}
+                                        {{$hostname->fqdn}}
                                     </th>
                                     <td>
-                                        <form id="delete-form" method="POST" action='{{ route('deleteApp',[$website->id])}}'> 
+                                        <form id="delete-form" method="POST" action='{{ route('deleteApp',[$hostname->id])}}'> 
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
                                             <div class="form-group">
                                             <button type="submit" class="btn btn-danger"> DELETE </button>
                                             </div>
                                         </form>
-                                            {{-- <input type="submit" class="btn btn-danger" href='{{ route('deleteApp') }}' value="DELETE">  --}}
                                     </td>
                                   
                                   
