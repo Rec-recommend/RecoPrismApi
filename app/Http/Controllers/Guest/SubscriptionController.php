@@ -14,13 +14,15 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
 
 class SubscriptionController extends Controller
-{
+{   
+    public function __construct()
+    {
+        
+    }
     public function store(Request $request)
     {
         $client = Client::find($request->client);
-
         $plan = Plan::find($request->plan);
-
         if ($client->subscribedToPlan($plan->stripe_plan, 'main')) {
             return redirect()->route('home')->with('success', 'You have already subscribed the plan');
         }
@@ -46,27 +48,38 @@ class SubscriptionController extends Controller
         return redirect("http://" . $domain);
     }
     public function index(Request $request)
-    {
-        Config::set('database.default', 'system');
+    {   $client = $this->client();
         $plans = Plan::all();
-        return view('tenant.subscription', compact('plans'));
+        return view('tenant.subscription', compact('plans','client'));
     }
     public function swap(Request $request)
     {
-        $admin = TenantAdmin::where('email', auth()->user()->email)->first();
-        Config::set('database.default', 'system');
-        // $client = Client::where(where('email',auth()->user()->email)->first());
-        $client = Client::where('email', $admin->email)->first();
-        // dd($client);
+        $client = $this->client();
         $plans = Plan::all();
         $client->subscription('main')->swap($request->plan_id);
 
-        return view('tenant.subscription', compact('plans'));
+        return view('tenant.subscription', compact('plans','client'));
     }
     public function unsubscribe(){
+    
+        $client = $this->client();
+        $plans = Plan::all();
+        if ($client->status == 1){
+            $client->subscription('main')->cancel();
+            Client::where('id', $client->id)->update(array('status' => '0'));
+        }else{
+            $client->subscription('main')->resume();
+            Client::where('id', $client->id)->update(array('status' => '1'));
+
+        }
+        return view('tenant.subscription', compact('plans','client'));
+
+    }
+
+    public function client(){
         $admin = TenantAdmin::where('email', auth()->user()->email)->first();
         Config::set('database.default', 'system');
-        $client = Client::where('email', $admin->email)->first();
-        $client->subscription('main')->cancel();
+        return Client::where('email', $admin->email)->first();
+
     }
 }
