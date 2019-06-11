@@ -25,5 +25,4 @@ Route::put('settings/{id}', 'Tenant\Web\SettingController@update')->name('settin
 Route::get('/subscription', 'Guest\SubscriptionController@index')->name('subscription.index');
 Route::post('/swap', 'Guest\SubscriptionController@swap')->name('subscription.swap');
 
-
 });

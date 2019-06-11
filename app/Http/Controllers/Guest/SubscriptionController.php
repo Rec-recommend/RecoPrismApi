@@ -8,6 +8,7 @@ use App\Models\System\Plan;
 use Illuminate\Http\Request;
 use App\Models\System\Client;
 use App\Models\System\Tenancy;
+use App\Models\Tenant\TenantAdmin;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
@@ -41,17 +42,22 @@ class SubscriptionController extends Controller
 
         return redirect("http://" . $client->subdomain . ".recoprism.com");
     }
-    public function index (Request $request){
+    public function index(Request $request)
+    {
         Config::set('database.default', 'system');
         $plans = Plan::all();
-            return view('tenant.subscription',compact('plans'));
+        return view('tenant.subscription', compact('plans'));
     }
-    public function swap (Request $request){
+    public function swap(Request $request)
+    {
+        $admin = TenantAdmin::where('email', auth()->user()->email)->first();
         Config::set('database.default', 'system');
+        // $client = Client::where(where('email',auth()->user()->email)->first());
+        $client = Client::where('email', $admin->email)->first();
+        // dd($client);
         $plans = Plan::all();
-        $client = Client::find(auth()->user()->id);
-    $client->subscription('main')->swap($request->plan_id);
+        $client->subscription('main')->swap($request->plan_id);
 
-    return view('tenant.subscription',compact('plans'));
-}
+        return view('tenant.subscription', compact('plans'));
+    }
 }
