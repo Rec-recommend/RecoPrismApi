@@ -7,21 +7,21 @@
     <a type="button" class="btn btn-default" href='{{ route('createAttributes') }}' >CREATE ATTRIBUTES</a>
     </div>
                         <!-- Projects table -->
-                        <table class="table align-items-center table-flush">
-                            <thead class="thead-light">
+                    <table class="table align-items-center table-flush" style="padding:6px;">
+                            <thead class="thead-light" >
                                 <tr>
-                                    <th scope="col">Attributes Name</th>
-                                    <th scope="col">Attributes weight</th>
-                                    <th scope="col">Delete Attribute</th>
+                                    <th  style="font-size:18px;" scope="col">Attributes Name</th>
+                                    <th  style="font-size:18px;" scope="col">Attributes weight</th>
+                                    <th  style="font-size:18px;" scope="col">Delete Attribute</th>
                                 </tr>
                             </thead>
                             <tbody>
                             @foreach ($attributes as $attribute)
                                 <tr>
-                                    <th scope="row">
+                                    <th  style="font-size:15px;" scope="row">
                                         {{$attribute->label}}
                                     </th>
-                                    <th scope="row">
+                                    <th style="font-size:15px;" scope="row">
                                       {{$attribute->weight}}
                                   </th>
                                     <td>
