@@ -19,8 +19,6 @@ class TestController extends Controller
         $end_users_done =  EndUser::all()->first();
         $rating_done =  Rating::all()->first();
         $purchase_done =  Purchase::all()->first();
-        $output = shell_exec(base_path()."/recos.sh --host amin.recoprism.com ".base_path());
-        // dd($output);
         return view('progress',compact('attributes_done','items_done','end_users_done','rating_done','purchase_done'));
     }
 }
