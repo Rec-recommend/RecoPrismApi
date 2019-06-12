@@ -45,12 +45,12 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapGuestRoutes()
     {
-        Route::domain(env('APP_URL'))
+        Route::domain("recoprism.com")
         ->middleware('web_system')
         ->namespace($this->namespace)
         ->group(base_path('routes/guest/web.php'));
 
-        Route::domain(env('APP_URL'))
+        Route::domain("recoprism.com")
         ->middleware('web_system')
         ->namespace($this->namespace)
         ->group(base_path('routes/guest/api.php'));
@@ -60,12 +60,12 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapSystemRoutes()
     {
-        Route::domain('admin.'.env('APP_URL'))
+        Route::domain('admin.recoprism.com')
         ->middleware('web_system')
         ->namespace($this->namespace)
         ->group(base_path('routes/system/web.php'));
 
-        Route::domain('admin.'.env('APP_URL'))
+        Route::domain('admin.recoprism.com')
         ->middleware('api_system')
         ->namespace($this->namespace)
         ->group(base_path('routes/system/api.php'));
