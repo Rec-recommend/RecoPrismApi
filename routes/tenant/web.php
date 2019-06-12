@@ -25,6 +25,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/subscription', 'Guest\SubscriptionController@index')->name('subscription.index');
     Route::post('/swap', 'Guest\SubscriptionController@swap')->name('subscription.swap');
     Route::get('/unsubscribe', 'Guest\SubscriptionController@unsubscribe')->name('subscription.unsubscribe');
+    Route::get('/resume', 'Guest\SubscriptionController@resume')->name('subscription.resume');
     Route::get('/endusers', 'Tenant\Web\EndUserController@show')->name('enduser');
     Route::get('/items', 'Tenant\Web\ItemsController@show')->name('items');
     Route::POST('/search', 'Tenant\Web\EndUserController@search')->name('search');

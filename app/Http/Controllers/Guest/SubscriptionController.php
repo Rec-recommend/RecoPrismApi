@@ -41,7 +41,7 @@ class SubscriptionController extends Controller
 
         Mail::to($client->email)->send(new Recoprism($client));
 
-        $domain =$client->subdomain . ".recoprism.com";
+        $domain =$client->subdomain . ".".env('APP_URL');
 
         $output = shell_exec(base_path()."/recos.sh --host $domain ".base_path());
 
@@ -64,17 +64,22 @@ class SubscriptionController extends Controller
     
         $client = $this->client();
         $plans = Plan::all();
-        if ($client->status == 1){
-            $client->subscription('main')->cancel();
-            Client::where('id', $client->id)->update(array('status' => '0'));
-        }else{
-            $client->subscription('main')->resume();
-            Client::where('id', $client->id)->update(array('status' => '1'));
-
-        }
+        $client->subscription('main')->cancel();
+        Client::where('id', $client->id)->update(array('status' => '0'));
+        $client->status = 0;
         return view('tenant.subscription', compact('plans','client'));
 
     }
+
+    public function resume() {
+            $client = $this->client();
+            $plans = Plan::all();
+            $client->subscription('main')->resume();
+            Client::where('id', $client->id)->update(array('status' => '1'));
+            $client->status = 1;
+            return view('tenant.subscription', compact('plans','client'));
+
+            }
 
     public function client(){
         $admin = TenantAdmin::where('email', auth()->user()->email)->first();
