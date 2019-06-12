@@ -216,29 +216,8 @@
   <script src="{{ asset('guest') }}/js/main.js"></script>
   <script>
     function updateInput(subdomain) {
-      document.getElementById("subdomain").innerText = subdomain + env(APP_URL);
+      document.getElementById("subdomain").innerText = subdomain + ".recoprism.ml";
     }
-   
-    $(function() {
-      function generate_random_string(string_length) {
-        let random_string = '';
-        let random_ascii;
-        let ascii_low = 97
-        let ascii_high = 122
-        for (let i = 0; i < string_length; i++) {
-          random_ascii = Math.floor((Math.random() * (ascii_high - ascii_low)) + ascii_low);
-          random_string += String.fromCharCode(random_ascii)
-        }
-        return random_string
-      }
-
-      string = generate_random_string(7)
-      $(".form_name").val(string);
-      $(".form_email").val(string+"@email.com");
-      $(".form_password").val(12345678);
-      $(".form_subdomain").val(string);
-
-    });
   </script>
 </body>
 
