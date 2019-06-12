@@ -60,11 +60,30 @@ samurai(){
     clean 
     success
     samurai_format "Migration"
-    php artisan migrate:fresh 
+    php artisan migrate:fresh --path=/database/migrations/system
     success
     samurai_format "Seeding"
     php artisan db:seed 
     success
+}
+addhost() {
+    cd $2
+    HOSTNAME=$1
+    HOSTS_LINE="127.0.0.1   $HOSTNAME"
+    ETC_HOSTS="/etc/hosts"
+    if [ -n "$(grep $HOSTNAME /etc/hosts)" ]
+        then
+            echo "$HOSTNAME already exists : $(grep $HOSTNAME $ETC_HOSTS)"
+        else
+            echo "Adding $HOSTNAME to your $ETC_HOSTS";
+            echo $HOSTS_LINE >> /etc/hosts;
+            if [ -n "$(grep $HOSTNAME /etc/hosts)" ]
+                then
+                    echo "$HOSTNAME was added succesfully \n $(grep $HOSTNAME /etc/hosts)";
+                else
+                    echo "Failed to Add $HOSTNAME, Try again!";
+            fi
+    fi
 }
 if [ -z $1 ]
 then 
@@ -79,6 +98,10 @@ then
 elif [ $1 == '--clean'  ] || [ $1 == '-c' ]
 then
     clean
+    exit 0
+elif [ $1 == '--host'  ] || [ $1 == '-hos' ]
+then
+    addhost $2 $3
     exit 0
 else
     invalid

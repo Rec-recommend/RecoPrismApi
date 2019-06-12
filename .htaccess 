@@ -1,0 +1,5 @@
+<IfModule mod_php7.c>
+    php_value memory_limit 6000M
+    php_value max_post_size 6000M
+    php_value upload_max_filesize 6000M
+</IfModule>

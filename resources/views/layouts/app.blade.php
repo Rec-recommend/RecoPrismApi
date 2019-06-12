@@ -17,6 +17,8 @@
         <link href="{{ asset('argon') }}/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
         <!-- Argon CSS -->
         <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
+        <style type="text/css"> html,body{ overflow-x:hidden; } </style>
+
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()

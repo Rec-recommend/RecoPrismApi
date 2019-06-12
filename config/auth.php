@@ -12,10 +12,11 @@ return [
     | as required, but they're a perfect start for most applications.
     |
     */
+    'current_admin_table' => NULL,
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
+        'guard' => 'tenant_admin',
+        'passwords' => 'tenant_admins',
     ],
 
     /*
@@ -36,14 +37,13 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        'system_admin' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'system_admins',
         ],
-
-        'api' => [
-            'driver' => 'passport',
-            'provider' => 'users',
+        'tenant_admin' => [
+            'driver' => 'session',
+            'provider' => 'tenant_admins',
         ],
     ],
 
@@ -65,15 +65,18 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'tenant_admins' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Models\Tenant\TenantAdmin::class,
+            'table' => 'tenant_admins',
+        ],
+        'system_admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\System\SystemAdmin::class,
+            'table' => 'system_admins',
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+  
     ],
 
     /*
@@ -92,8 +95,13 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'system_admins' => [
+            'provider' => 'system_admins',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'tenant_admins' => [
+            'provider' => 'tenant_admins',
             'table' => 'password_resets',
             'expire' => 60,
         ],

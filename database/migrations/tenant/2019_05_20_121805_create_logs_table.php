@@ -19,10 +19,11 @@ class CreateLogsTable extends Migration
             $table->unsignedBigInteger('item_id')->nullable();
             $table->foreign('item_id')->references('id')->on('items')->nullable();
 
-            $table->unsignedBigInteger('tenant_user_id')->nullable();
-            $table->foreign('tenant_user_id')->references('id')->on('tenant_users')->nullable();
+            $table->unsignedBigInteger('end_user_id')->nullable();
+            $table->foreign('end_user_id')->references('id')->on('end_users')->nullable();
 
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

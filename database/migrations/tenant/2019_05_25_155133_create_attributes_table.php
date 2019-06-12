@@ -17,8 +17,9 @@ class CreateAttributesTable extends Migration
             $table->bigIncrements('id');
             $table->string('label');
             $table->integer('weight')->default(1);
-            
-            $table->timestamps();
+
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

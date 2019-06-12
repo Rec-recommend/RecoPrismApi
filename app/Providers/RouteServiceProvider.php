@@ -35,39 +35,55 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
-        $this->mapApiRoutes();
 
-        $this->mapWebRoutes();
+        $this->mapGuestRoutes();
 
-        //
+        $this->mapSystemRoutes();
+
+        $this->mapTenantRoutes();
     }
 
-    /**
-     * Define the "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapWebRoutes()
+    protected function mapGuestRoutes()
     {
-        Route::middleware('web')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/web.php'));
+        Route::domain(env('APP_URL'))
+        ->middleware('web_system')
+        ->namespace($this->namespace)
+        ->group(base_path('routes/guest/web.php'));
+
+        Route::domain(env('APP_URL'))
+        ->middleware('web_system')
+        ->namespace($this->namespace)
+        ->group(base_path('routes/guest/api.php'));
     }
 
-    /**
-     * Define the "api" routes for the application.
-     *
-     * These routes are typically stateless.
-     *
-     * @return void
-     */
-    protected function mapApiRoutes()
+
+
+    protected function mapSystemRoutes()
     {
-        Route::prefix('api')
-             ->middleware('api')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/api.php'));
+        Route::domain('admin.'.env('APP_URL'))
+        ->middleware('web_system')
+        ->namespace($this->namespace)
+        ->group(base_path('routes/system/web.php'));
+
+        Route::domain('admin.'.env('APP_URL'))
+        ->middleware('api_system')
+        ->namespace($this->namespace)
+        ->group(base_path('routes/system/api.php'));
     }
+
+    protected function mapTenantRoutes()
+    {
+        $hostname  = app(\Hyn\Tenancy\Environment::class)->hostname();
+        if(isset($hostname)){
+            Route::middleware('web_tenant')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/tenant/web.php'));
+
+            Route::prefix('api')
+            ->middleware('api_tenant')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/tenant/api.php'));
+        }
+    }
+
 }

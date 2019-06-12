@@ -1,6 +1,6 @@
 <?php
 namespace App\Http\Controllers\Auth;
-use App\User;
+use App\Models\Common\Admin as User;;
 use App\Tenant;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -56,7 +56,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \use App\Models\Common\Admin as User;
      */
     protected function create(array $data)
     {
