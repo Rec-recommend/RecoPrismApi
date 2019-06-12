@@ -10,6 +10,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('applications', 'System\TenantController@index')->name('tenantIndex');
     Route::delete('delete/{id}', 'System\TenantController@destroy')->name('deleteApp');
+    Route::post('suspend/{id}', 'System\TenantController@toggle_maintenanc_mode')->name('toggleApp');
     Route::resource('user', 'UserController', ['except' => ['show']]);
     Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
     Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
