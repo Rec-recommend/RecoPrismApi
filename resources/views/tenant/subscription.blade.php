@@ -23,7 +23,7 @@
                                 </div>   
                                 @else
                                 <div>
-                                    <a href="{{ route('subscription.unsubscribe')}}" class="btn btn-danger mt-4">{{ __('RESUME SUBSCRIPTION') }}</a>
+                                    <a href="{{ route('subscription.resume')}}" class="btn btn-success mt-4">{{ __('RESUME SUBSCRIPTION') }}</a>
                                 </div>
                                 @endif
                                     
