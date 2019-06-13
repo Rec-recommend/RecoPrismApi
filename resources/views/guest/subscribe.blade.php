@@ -272,7 +272,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   <script src="{{ asset('guest') }}/js/main.js"></script>
   <script>
     function updateInput(subdomain){
-    document.getElementById("subdomain").innerText = subdomain+".recoprism.com";
+    document.getElementById("subdomain").innerText = subdomain+".{{env('APP_URL')}}";
 }
   </script>
 </body>
