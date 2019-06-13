@@ -40,16 +40,19 @@
                                     <tr>
                                         <td>{{$hostname->fqdn}}</td>
                                         <td>
+                                            
                                             <form id="suspend-form" method="POST" action='{{route('toggleApp',[$hostname->id])}}'>
                                                 {{ csrf_field() }}
                                                 @if(!$hostname->under_maintenance_since)
-                                                <div class="form-group">
-                                                    <button type="submit" class="btn btn-success"> ON </button>
-                                                </div>
+                                                <label class="custom-toggle">
+                                                    <input type="checkbox" onChange="this.form.submit()">
+                                                    <span class="custom-toggle-slider rounded-circle"></span>
+                                                </label>
                                                 @else
-                                                <div class="form-group">
-                                                    <button type="submit" class="btn btn-"> OFF </button>
-                                                </div>
+                                                <label class="custom-toggle">
+                                                    <input type="checkbox" onChange="this.form.submit()" checked>
+                                                    <span class="custom-toggle-slider rounded-circle"></span>
+                                                </label>
                                                 @endif
                                             </form>
                                         </td>
