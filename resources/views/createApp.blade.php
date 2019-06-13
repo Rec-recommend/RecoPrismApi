@@ -9,7 +9,7 @@
     <div class="col-md-6">
         <label style='font-size:15px;' class='btn btn-default'> Enter Subdomain </label>
       <div class="form-group">
-        <input type="text" class="form-control" id="subdomain" name="subdomain" style="border-color:blue;" placeholder="subdomain.recoprism.com">
+        <input type="text" class="form-control" id="subdomain" name="subdomain" style="border-color:blue;" placeholder="subdomain.{{env('APP_URL')}}>
         <div style='padding:20px;margin-left:250px;'>
     <button type="submit" class="btn btn-default" >SUBMIT</button>
     </div>
