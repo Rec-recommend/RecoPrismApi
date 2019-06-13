@@ -45,7 +45,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                   </div>
-                  <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }} form_name" placeholder="{{ __('Name') }}" type="text" name="name" value="2121sa" required autofocus>
+                  <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }} form_name" placeholder="{{ __('Name') }}" type="text" name="name" value="" required autofocus>
                 </div>
                 @if ($errors->has('name'))
                 <span class="invalid-feedback" style="display: block;" role="alert">
@@ -219,27 +219,6 @@
     function updateInput(subdomain) {
       document.getElementById("subdomain").innerText = subdomain + env(APP_URL);
     }
-
-    $(function() {
-      function generate_random_string(string_length) {
-        let random_string = '';
-        let random_ascii;
-        let ascii_low = 97
-        let ascii_high = 122
-        for (let i = 0; i < string_length; i++) {
-          random_ascii = Math.floor((Math.random() * (ascii_high - ascii_low)) + ascii_low);
-          random_string += String.fromCharCode(random_ascii)
-        }
-        return random_string
-      }
-
-      string = generate_random_string(7)
-      $(".form_name").val(string);
-      $(".form_email").val(string+"@email.com");
-      $(".form_password").val(12345678);
-      $(".form_subdomain").val(string);
-
-    });
   </script>
 </body>
 
