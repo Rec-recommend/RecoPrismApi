@@ -5,9 +5,10 @@
 @php
 $color1=$color2=$color3=$color4 = 'primary';
 $progress = '0';
-if($attributes_done)
-$color1 = 'success';
-$progress = '23';
+if($attributes_done){
+  $color1 = 'success';
+  $progress = '23';
+}
 if($end_users_done) {
 $color1 =$color2 = 'success';
 $progress = '47';
@@ -30,6 +31,7 @@ $progress = '100';
         <div class="two {{$color2}}-color"></div>
         <div class="three {{$color3}}-color"></div>
         <div class="four {{$color4}}-color"></div>
+        
         <div class="progress-bar bg-success" style="width:{{$progress}}%;"></div>
       </div>
       <div class="row">
