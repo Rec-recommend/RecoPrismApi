@@ -11,13 +11,9 @@ class Attribute extends Model
 
     protected $table = 'attributes';
 
-    protected $fillable = ['label', 'weight','entity_id'];
+    protected $fillable = ['label', 'weight','created_at'];
 
-    public function entity()
-    {
-        $fillable = ['label',"entity_id"];
-        return $this->belongsTo(Entity::class);
-    }
+    public $timestamps = true;
 
     public static function rules(){
         return [
