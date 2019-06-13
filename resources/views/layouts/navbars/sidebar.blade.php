@@ -83,13 +83,6 @@
                         <i class="ni ni-tv-2 text-primary"></i> {{ __('Dashboard') }}
                     </a>
                 </li>
-                @tenant
-                <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.index') }}">
-                                <i class="ni ni-collection text-blue"></i>   {{ __('User Management') }}
-                                </a>
-                             </li>
-                @endtenant
                 @system
                 <li class="nav-item">
                     <a class="nav-link" href='{{ route('tenantIndex') }}'>
@@ -120,15 +113,8 @@
                 @endtenant
                 @tenant
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('setting.index') }}">
-                        <i class="ni ni-key-25 text-red"></i> {{ __('Settings') }}
-                    </a>
-                </li>
-                @endtenant
-                @tenant
-                <li class="nav-item">
                     <a class="nav-link" href="{{ route('enduser') }}">
-                        <i class="ni ni-single-02 text-blue"></i> {{ __('Website Users Recommendations') }}
+                        <i class="ni ni-single-02 text-blue"></i> {{ __('Users Recommendations') }}
                     </a>
                 </li>
                 @endtenant
@@ -139,7 +125,20 @@
                     </a>
                 </li>
                 @endtenant
-
+                @tenant
+                <li class="nav-item">
+                                <a class="nav-link" href="{{ route('user.index') }}">
+                                <i class="ni ni-collection text-blue"></i>   {{ __('Admins Management') }}
+                                </a>
+                             </li>
+                @endtenant
+                @tenant
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('setting.index') }}">
+                        <i class="ni ni-key-25 text-red"></i> {{ __('Settings') }}
+                    </a>
+                </li>
+                @endtenant
             </ul>
         </div>
     </div>
