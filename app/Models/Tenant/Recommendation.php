@@ -9,7 +9,7 @@ class Recommendation extends Eloquent
 {
     protected $connection = 'mongodb';
 
-    public function __construct($attributes = array(),$collection='')
+    public function __construct($collection='',$attributes = array())
     {
         parent::__construct($attributes);
         $this->collection = DB::getDatabaseName() . '_' . $collection;

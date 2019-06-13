@@ -19,11 +19,11 @@
 
 <body>
   <!--================Header Menu Area =================-->
- 
+
   @include('layouts.navbars.navs.landing')
 
-    <!--================ Hero sm Banner start =================-->      
-    <section class="hero-banner mb-20px">
+    <!--================ Hero sm Banner start =================-->
+    <section class="hero-banner mb-20px" style="padding-top:180px">
       <div class="container">
         <div class="row">
           <div class="col-lg-7">
@@ -32,7 +32,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-5 float-right">
           <div class="hero-banner__content">
             <div class="text-center text">
               <h1>register</h1>
@@ -45,7 +45,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                   </div>
-                  <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }} form_name" placeholder="{{ __('Name') }}" type="text" name="name" value="2121sa" required autofocus>
+                  <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }} form_name" placeholder="{{ __('Name') }}" type="text" name="name" value="" required autofocus>
                 </div>
                 @if ($errors->has('name'))
                 <span class="invalid-feedback" style="display: block;" role="alert">
@@ -128,6 +128,7 @@
             </form>
           </div>
         </div>
+        <div style="clear:both" ></div>
       </div>
     </div>
   </section>

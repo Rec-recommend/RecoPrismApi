@@ -64,17 +64,22 @@ class SubscriptionController extends Controller
     
         $client = $this->client();
         $plans = Plan::all();
-        if ($client->status == 1){
-            $client->subscription('main')->cancel();
-            Client::where('id', $client->id)->update(array('status' => '0'));
-        }else{
-            $client->subscription('main')->resume();
-            Client::where('id', $client->id)->update(array('status' => '1'));
-
-        }
+        $client->subscription('main')->cancel();
+        Client::where('id', $client->id)->update(array('status' => '0'));
+        $client->status = 0;
         return view('tenant.subscription', compact('plans','client'));
 
     }
+
+    public function resume() {
+            $client = $this->client();
+            $plans = Plan::all();
+            $client->subscription('main')->resume();
+            Client::where('id', $client->id)->update(array('status' => '1'));
+            $client->status = 1;
+            return view('tenant.subscription', compact('plans','client'));
+
+            }
 
     public function client(){
         $admin = TenantAdmin::where('email', auth()->user()->email)->first();
