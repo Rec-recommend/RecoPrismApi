@@ -95,51 +95,51 @@
                     <a class="nav-link" href='{{ route('tenantIndex') }}'>
                         <i class="ni ni-collection text-blue"></i> {{ __('Tenants') }}
                     </a>
-                </li>   
-                @endsystem    
-                @tenant                      
+                </li>
+                @endsystem
+                @tenant
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('indexAttributes') }}">
                         <i class="ni ni-fat-add text-info"></i> {{ __('Attributes') }}
                     </a>
                 </li>
-                @endtenant  
-                @system                      
+                @endtenant
+                @system
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('pkgshow') }}">
                         <i class="ni ni-bag-17 text-orange"></i> {{ __('Packages') }}
                     </a>
                 </li>
-                @endsystem 
-                @tenant                      
+                @endsystem
+                @tenant
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('csv.import') }}">
                         <i class="ni ni-cloud-upload-96 text-blue"></i> {{ __('Import CSV') }}
                     </a>
                 </li>
                 @endtenant
-                @tenant                      
+                @tenant
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('setting.index') }}">
                         <i class="ni ni-key-25 text-red"></i> {{ __('Settings') }}
                     </a>
                 </li>
                 @endtenant
-                @tenant                      
+                @tenant
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('enduser') }}">
-                        <i class="ni ni-single-02 text-blue"></i> {{ __('Website Users Recomendations') }}
+                        <i class="ni ni-single-02 text-blue"></i> {{ __('Website Users Recommendations') }}
                     </a>
                 </li>
                 @endtenant
-                @tenant                      
+                @tenant
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('subscription.index') }}">
                         <i class="ni ni-money-coins text-red"></i> {{ __('Subscribtion Management') }}
                     </a>
                 </li>
                 @endtenant
-                
+
             </ul>
         </div>
     </div>
