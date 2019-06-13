@@ -46,7 +46,6 @@
                                             @endif
                                         @endforeach
                                     </tr>
-                                        @endforeach
                                     </tr>
                                 @endforeach
                             </tbody>

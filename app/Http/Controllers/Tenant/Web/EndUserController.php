@@ -32,7 +32,7 @@ class EndUserController extends Controller
         try {
             $items = $rec->where("user_id", $ID)->pluck('items')->first();
             $items_value = IAV::select('item_id', 'value')->whereIn('item_id', $items)->get();
-            return view('tenant/userrecomendation')->with('end_user', $end_user)
+            return view('tenant/userRecommendation')->with('end_user', $end_user)
                 ->with('items', $items)
                 ->with('items_value', $items_value)
                 ->with('attributes', $attributes);
