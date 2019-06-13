@@ -1,61 +1,36 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => __('Search For User Recommendations')])
 
 @section('content')
-@include('layouts.headers.cards')
-<br>
-<div class="container">
-<form action='{{ route('search')}}' method="POST" role="search">
-    {{ csrf_field() }}
-    <div class="container">
-    <div class="row ">
-        <input type="number"  min="1" class="form-control col-6" name="userID" placeholder="Search User ID"> 
-        <span class="input-group-btn">
-            <button class="btn btn-icon btn-3 btn-default" type="submit">
-	            <span class="btn-inner--icon"><i class="ni ni-bag-17"></i></span>
-                <span class="btn-inner--text">SEARCH</span>
-            </button>
-        </span>
-    </div>
-    </div>
-</form>
-</div>
-<br>
+@include('users.partials.header', ['title' => __('User Recommendations')])
 
-<div class="container">
-<div class="table-responsive">
-    <table class="table align-items-center ">
-    <thead class="">
-        <tr>
-            <th scope="col">User ID</th>
-
-        </tr>
-        <tbody>
-
-            @for ($i = 0 ; $i<count($end_users); $i++)
-        <tr>
-            <td scope="row">
-                {{-- {{ dd($end_users[1]->id)}} --}}
-                {{$end_users[$i]->id}}
-            </td>
-
-            <td scope="row">
-                {{$end_users[++$i]->id}}
-            </td>
-
-            <td scope="row">
-                {{$end_users[++$i]->id}}
-            </td>
-        </tr>
-        @endfor
-    </div>
-</table>
-</div>
-                <div class="pagination">
-                {{ $end_users->links() }}
+<div class="container-fluid mt--7">
+    <div class="row">
+        <div class="col-xl-12 order-xl-1">
+            <div class="card bg-secondary shadow">
+                <div class="card-header bg-white border-0">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <h3 class="mb-0">{{ __('Search For User Recommendations') }}</h3>
+                            @if(Session::has('message'))
+                            <p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('message') }}</p>
+                            @endif
+                        </div>
+                    </div>
                 </div>
+                <div class="card-body">
+                    <form action='{{ route('search')}}' method="GET" role="search">
+                        <div class="container">
+                        <div class="row ">
+                            <input type="number"  min="1" class="form-control col-6" name="userID" placeholder="Search User ID"> 
+                        </div>
+                            <button type="submit" class="btn btn-success mt-4">{{ __('Search') }}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-
-
-@include('layouts.footers.auth')
+    @include('layouts.footers.auth')
+</div>
 @endsection
