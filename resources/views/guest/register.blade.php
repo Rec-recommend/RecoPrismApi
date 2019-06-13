@@ -19,11 +19,11 @@
 
 <body>
   <!--================Header Menu Area =================-->
- 
+
   @include('layouts.navbars.navs.landing')
 
-    <!--================ Hero sm Banner start =================-->      
-    <section class="hero-banner mb-20px">
+    <!--================ Hero sm Banner start =================-->
+    <section class="hero-banner mb-20px" style="padding-top:180px">
       <div class="container">
         <div class="row">
           <div class="col-lg-7">
@@ -32,7 +32,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-5 float-right">
           <div class="hero-banner__content">
             <div class="text-center text">
               <h1>register</h1>
@@ -128,6 +128,7 @@
             </form>
           </div>
         </div>
+        <div style="clear:both" ></div>
       </div>
     </div>
   </section>
@@ -218,7 +219,7 @@
     function updateInput(subdomain) {
       document.getElementById("subdomain").innerText = subdomain + env(APP_URL);
     }
-   
+
     $(function() {
       function generate_random_string(string_length) {
         let random_string = '';
