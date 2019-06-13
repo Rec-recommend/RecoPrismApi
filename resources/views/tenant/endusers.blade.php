@@ -9,7 +9,6 @@
         <p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('message') }}</p>
     @endif
 <form action='{{ route('search')}}' method="GET" role="search">
-    {{ csrf_field() }}
     <div class="container">
     <div class="row ">
         <input type="number"  min="1" class="form-control col-6" name="userID" placeholder="Search User ID"> 
