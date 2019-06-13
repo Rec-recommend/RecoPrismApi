@@ -125,7 +125,20 @@
                     </a>
                 </li>
                 @endtenant
-
+                @tenant                      
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('enduser') }}">
+                        <i class="ni ni-single-02 text-blue"></i> {{ __('Website Users') }}
+                    </a>
+                </li>
+                @endtenant
+                @tenant                      
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('items') }}">
+                        <i class="ni ni-money-coins shop-red"></i> {{ __('Items') }}
+                    </a>
+                </li>
+                @endtenant
                 @tenant                      
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('subscription.index') }}">
@@ -133,6 +146,7 @@
                     </a>
                 </li>
                 @endtenant
+                
             </ul>
         </div>
     </div>
