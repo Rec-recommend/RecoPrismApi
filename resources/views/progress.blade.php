@@ -6,19 +6,19 @@
 $color1=$color2=$color3=$color4 = 'primary';
 $progress = '0';
 if($attributes_done){
-  $color1 = 'success';
+  $color1 = 'primary';
   $progress = '23';
 }
 if($end_users_done) {
-$color1 =$color2 = 'success';
+$color1 =$color2 = 'primary';
 $progress = '47';
 }
 if($items_done) {
-$color1 =$color2 = $color3 = 'success';
+$color1 =$color2 = $color3 = 'primary';
 $progress = '74';
 }
 if($rating_done || $purchase_done) {
-$color1 =$color2 = $color3 = $color4= 'success';
+$color1 =$color2 = $color3 = $color4= 'primary';
 $progress = '100';
 }
 @endphp
@@ -27,12 +27,12 @@ $progress = '100';
     <div class="col-md-12">
       <br>
       <div class="progress">
-        <div class="one {{$color1}}-color"></div>
-        <div class="two {{$color2}}-color"></div>
-        <div class="three {{$color3}}-color"></div>
-        <div class="four {{$color4}}-color"></div>
+        <!-- <div class="one primary"></div> -->
+        <!-- <div class="two {{$color2}}-color"></div> -->
+        <!-- <div class="three {{$color3}}-color"></div> -->
+        <!-- <div class="four {{$color4}}-color"></div> -->
         
-        <div class="progress-bar bg-success" style="width:{{$progress}}%;"></div>
+        <div class="progress-bar bg-primary" style="width:{{$progress}}%;"></div>
       </div>
       <div class="row">
         <div class="clickable col-3 text-{{$color1}}" data-toggle="modal" data-target="#addAttributes">
@@ -149,8 +149,8 @@ $progress = '100';
               Import your data
             </div>
             @if(Session::has('message'))
-            @if(Session::has('success'))
-            <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('message') }}</p>
+            @if(Session::has('primary'))
+            <p class="alert {{ Session::get('alert-class', 'alert-primary') }}">{{ Session::get('message') }}</p>
             @else
             <p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('message') }}</p>
             @endif
@@ -167,7 +167,7 @@ $progress = '100';
                 <input type="file" name="csvfile" class="form-control">
                 <input type="text" name="model" value='Item' class="form-control" hidden>
                 <br>
-                <button class="btn btn-success">Import CSV file</button>
+                <button class="btn btn-primary">Import CSV file</button>
               </form>
             </div>
           </div>
@@ -241,7 +241,7 @@ $progress = '100';
     background-color: #4989bd;
   }
 
-  .success-color {
+  .primary-color {
     background-color: #5cb85c;
   }
 </style>
