@@ -19,7 +19,7 @@ class CreateRatingsTable extends Migration
             $table->foreign('end_user_id')->references('id')->on('end_users')->nullable();
             $table->unsignedBigInteger('item_id')->nullable();
             $table->foreign('item_id')->references('id')->on('items')->nullable();
-            $table->string('value');
+            $table->unsignedBigInteger('value');
             $table->unique(['end_user_id', 'item_id']);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
