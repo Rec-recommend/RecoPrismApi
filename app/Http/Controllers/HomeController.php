@@ -52,11 +52,11 @@ class HomeController extends Controller
             $cards[] = new Card('Items', Item::count(), 'fas fa-bars');
             $cards[] = new Card('Requests', Item::count(), 'fa fa-sort');
 
-            $attributes_done =  Attribute::all()->first();
-            $items_done =  Item::all()->first();
-            $end_users_done =  EndUser::all()->first();
-            $rating_done =  Rating::all()->first();
-            $purchase_done =  Purchase::all()->first();
+            $attributes_done =  Attribute::first();
+            $items_done =  Item::first();
+            $end_users_done =  EndUser::first();
+            $rating_done =  Rating::first();
+            $purchase_done =  Purchase::first();
             return view('dashboard', compact('cards', 'attributes_done', 'items_done', 'end_users_done', 'rating_done', 'purchase_done'));
         }
         $cards[] = new Card('Clients', Client::count(), 'fas fa-users');
