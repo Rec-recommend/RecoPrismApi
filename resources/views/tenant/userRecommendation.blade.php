@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => __('Recommendations')])
 
 @section('content')
-    @include('layouts.headers.cards')
+@include('users.partials.header', ['title' => __('User Recommendations')])
 
     <div class="container-fluid mt--7">
         <div class="row">
