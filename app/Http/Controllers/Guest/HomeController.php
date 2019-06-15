@@ -12,4 +12,7 @@ class HomeController extends Controller
         $plans = Plan::all();
         return view('guest.landingPage')->with('plans', $plans);
     } 
+    public function docs(){
+        return view('guest.docs');
+    } 
 }

@@ -14,11 +14,10 @@
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-end">
               <li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
-              <li class="nav-item"><a class="nav-link" href="#feature">Features</a></li> 
-              <li class="nav-item"><a class="nav-link" href="#pricing">Price</a>
-              <li class="nav-item"><a class="nav-link" href="#us">About Us</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Docs</a></li>
-
+              <li class="nav-item"><a class="nav-link" href="/#feature">Features</a></li> 
+              <li class="nav-item"><a class="nav-link" href="/#pricing">Price</a>
+              <li class="nav-item"><a class="nav-link" href="/#us">About Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="/docs">Docs</a></li>
             </ul>
 
             <ul class="navbar-right">
