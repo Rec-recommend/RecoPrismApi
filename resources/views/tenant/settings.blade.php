@@ -1,7 +1,7 @@
-@extends('layouts.app', ['title' => __('settings Management')])
+@extends('layouts.app', ['title' => __('Settings Management')])
 
 @section('content')
-@include('users.partials.header', ['title' => __('settings Management')])   
+@include('users.partials.header', ['title' => __('Settings Management')])   
 
 
 <div class="container-fluid mt--7">

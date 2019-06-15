@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => __('Item Attributes Management')])
 
 @section('content')
-    @include('layouts.headers.cards')
+@include('users.partials.header', ['title' => __('Attributes')])
 
     <div class="container-fluid mt--7">
         <div class="row">
