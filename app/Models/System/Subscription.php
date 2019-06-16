@@ -25,4 +25,15 @@ class Subscription extends Model
     {
         Subscription::where('hostname_id', $hostname->id)->update('is_active', false);
     }
+
+
+    public function check_requests(){
+        return $this->plan()->total_req > $this->used_req; 
+    }
+
+
+    public function plan(){
+        return Plan::where('stripe_plan',$this->stripe_plan)->first();
+        // return $this->belongsTo('App\Models\System\Plan');
+    }
 }

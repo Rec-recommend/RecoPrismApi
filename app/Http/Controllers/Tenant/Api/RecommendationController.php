@@ -19,10 +19,10 @@ class RecommendationController extends Controller
                 'message' => "Bad request"
             ], 400);
         }
+        
 
         $id = (integer) $req->id;
         $entity_id = str_singular($collection).'_id';
-
         $items = $rec->where($entity_id , $id)->pluck('items');
         $items = sizeof($items)>0 ? $items[0]: $items;
 
