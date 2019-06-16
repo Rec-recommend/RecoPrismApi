@@ -25,6 +25,7 @@ class PlanController extends Controller
         $plan = new Plan();
         $plan->name = $request->package_name;
         $plan->cost = $request->package_price;
+        $plan->total_req = $request->package_total_req;
         $plan->slug = strtolower($request->package_name);
         $plan->description = $request->package_description;
         $plan->stripe_plan = $request->stripe_plan;
