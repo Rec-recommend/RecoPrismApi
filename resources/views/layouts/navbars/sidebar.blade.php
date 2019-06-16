@@ -135,11 +135,20 @@
                 @tenant
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('setting.index') }}">
-                        <i class="ni ni-key-25 text-red"></i> {{ __('Settings') }}
+                        <i class="ni ni-settings text-red"></i> {{ __('Settings') }}
                     </a>
                 </li>
                 @endtenant
+
+               
             </ul>
+            @tenant
+            <li class="nav-item mt-auto" style="list-style: none">
+                <a class="nav-link" href="{{ route('anonymizer.import') }}">
+                    <i class="ni ni-key-25 text-green"></i>{{ __(' Data Anonymizer') }}
+                </a>
+            </li>
+            @endtenant
         </div>
     </div>
 </nav>
