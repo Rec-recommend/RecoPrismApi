@@ -29,4 +29,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/endusers', 'Tenant\Web\EndUserController@show')->name('enduser');
     Route::get('/items', 'Tenant\Web\ItemsController@show')->name('items');
     Route::get('/search', 'Tenant\Web\EndUserController@search')->name('search');
+    Route::get('/search', 'Tenant\Web\EndUserController@search')->name('search');
+
+    Route::get('/anonymize', 'Tenant\Web\AnonymizerController@import')->name('anonymizer.import');
+    Route::post('/anonymize', 'Tenant\Web\AnonymizerController@anonyimze')->name('anonymizer.anonyimze');
 });

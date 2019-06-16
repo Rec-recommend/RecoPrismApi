@@ -85,6 +85,12 @@ addhost() {
             fi
     fi
 }
+anonymize() {
+    
+    cd "$1/lib/python/anonymizer"
+    python3 Anonymizer_excuter.py "/home/abanoub/GraduationProject/RecoPrismApi/movies.csv" 
+    return 0
+}
 if [ -z $1 ]
 then 
     invalid
@@ -102,6 +108,10 @@ then
 elif [ $1 == '--host'  ] || [ $1 == '-hos' ]
 then
     addhost $2 $3
+    exit 0
+elif [ $1 == '--anon'  ] || [ $1 == '-anon' ]
+then
+    anonymize $2 $3
     exit 0
 else
     invalid
