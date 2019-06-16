@@ -22,10 +22,10 @@ class AnonymizerController extends Controller
         $file= base_path(). "/lib/python/anonymizer/$output";
 
         $headers = array(
-                  'Content-Type: application/pdf',
+                  'Content-Type: application/csv',
                 );
     
-        return Response::download($file, 'Anonymized.pdf', $headers);
+        return Response::download($file, 'Anonymized.csv', $headers);
     }
 
     public function import(){
