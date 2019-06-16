@@ -49,6 +49,12 @@
                                           <input name="package price" type="number" min="0" class="form-control" id="pckgprice" placeholder="Package Price">
                                       </div>
                                   </div>
+                                  <div class="form-group row">
+                                      <label for="titleid" class="col-sm-3 col-form-label">Package Limits</label>
+                                      <div class="col-sm-9">
+                                          <input name="package total_req"  type="number" min="0" class="form-control" id="total_req" placeholder="Package Limits">
+                                      </div>
+                                  </div>
                                   </div>
                                   <div class="form-group row">
                                       <label class="col-sm-3 col-form-label">Package Description</label>
