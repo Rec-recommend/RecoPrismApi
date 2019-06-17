@@ -57,15 +57,16 @@
                                   </div>
                                   </div>
                                   <div class="form-group row">
+                                      <label for="titleid" class="col-sm-3 col-form-label">Package Limits</label>
+                                      <div class="col-sm-9">
+                                          <input name="package total_req"  type="number" min="0" class="form-control" id="total_req" placeholder="Package Limits">
+                                      </div>
+                                  </div>
+                                  </div>
+                                  <div class="form-group row">
                                       <label class="col-sm-3 col-form-label">Package Description</label>
                                       <div class="col-sm-9">
                                           <textarea name="package description" type="text" class="form-control" id="pckgprice" placeholder="Package Description" rows="3" style="resize: none;"></textarea>
-                                      </div>
-                                  </div>
-                                          <div class="form-group row">
-                                      <label class="col-sm-3 col-form-label">Stripe Plan ID </label>
-                                      <div class="col-sm-9">
-                                          <input name="stripe_plan" type="text" class="form-control" id="pckgprice" placeholder="Stripe Plan ID ">
                                       </div>
                                   </div>
                                   

@@ -46,6 +46,6 @@ class ApiKeyCheck
     }
 
     public function db_key(){
-        return Setting::where('key','API_KEY')->first()['value'];
+        return Setting::where('key','api-key')->first()['value'];
     }
 }
