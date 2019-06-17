@@ -1,4 +1,4 @@
 #!/bin/bash
-cd /home/hussien/Desktop/Graduation_Project/RecoPrism/lib
+cd /var/www/recoprism/lib/
 source ./venv/bin/activate
-printf `python3 /home/hussien/Desktop/Graduation_Project/RecoPrism/lib/python.py $1`
+printf `python3 /var/www/recoprism/lib/python.py $1`
