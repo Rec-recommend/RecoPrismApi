@@ -31,8 +31,8 @@ class Kernel extends HttpKernel
         'api_tenant' => [
             'throttle:60,1',
             // 'bindings',
-            'apikeycheck',
-            'tenancy.enforce'
+            'tenancy.enforce',
+            'apikeycheck'
         ],
         'web_tenant' =>[
             'tenancy.enforce',
