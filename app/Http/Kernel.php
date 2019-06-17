@@ -30,9 +30,9 @@ class Kernel extends HttpKernel
 
         'api_tenant' => [
             'throttle:60,1',
-            // 'bindings',
             'tenancy.enforce',
-            'apikeycheck'
+            'apikeycheck',
+            'check.requests.amount'
         ],
         'web_tenant' =>[
             'tenancy.enforce',
@@ -82,7 +82,8 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'apikeycheck' => \App\Http\Middleware\ApiKeyCheck::class,
         'tenancy.enforce' => \App\Http\Middleware\EnforceTenancy::class,
-        'system.enforce' => \App\Http\Middleware\EnforceSystem::class
+        'system.enforce' => \App\Http\Middleware\EnforceSystem::class,
+        'check.requests.amount'=>\App\Http\Middleware\CheckRequestsAmount::class
     ];
 
     /**
