@@ -17,12 +17,10 @@ class EndUserController extends Controller
 {
     public function show()
     {
-        $perPage = request('perPage', 15);
-        $end_users = DB::table('end_users')->paginate($perPage);
-        return view('tenant/endusers')->with('end_users', $end_users);
+        return view('tenant/endusers');
     }
 
-    public function search()
+    public function getUserRecommendations()
     {
         $attributes = Attribute::select('label')->get();
         $inputID = Input::get('userID');
