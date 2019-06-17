@@ -120,6 +120,13 @@
                 @endtenant
                 @tenant
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('items') }}">
+                        <i class="ni ni-basket"></i> {{ __('Items Recommendations') }}
+                    </a>
+                </li>
+                @endtenant
+                @tenant
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('subscription.index') }}">
                         <i class="ni ni-money-coins text-red"></i> {{ __('Subscribtion Management') }}
                     </a>
