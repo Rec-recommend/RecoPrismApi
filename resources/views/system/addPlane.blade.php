@@ -62,12 +62,6 @@
                                           <textarea name="package description" type="text" class="form-control" id="pckgprice" placeholder="Package Description" rows="3" style="resize: none;"></textarea>
                                       </div>
                                   </div>
-                                          <div class="form-group row">
-                                      <label class="col-sm-3 col-form-label">Stripe Plan ID </label>
-                                      <div class="col-sm-9">
-                                          <input name="stripe_plan" type="text" class="form-control" id="pckgprice" placeholder="Stripe Plan ID ">
-                                      </div>
-                                  </div>
                                   
                                   <div class="form-actions right">
                                       <div class="row">
