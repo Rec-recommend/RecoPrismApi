@@ -9,3 +9,6 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+**XDG_CACHE_HOME
+**venv
+/lib/*.csv
