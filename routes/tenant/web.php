@@ -27,9 +27,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/unsubscribe', 'Guest\SubscriptionController@unsubscribe')->name('subscription.unsubscribe');
     Route::get('/resume', 'Guest\SubscriptionController@resume')->name('subscription.resume');
     Route::get('/endusers', 'Tenant\Web\EndUserController@show')->name('enduser');
-    Route::get('/items', 'Tenant\Web\ItemsController@show')->name('items');
-    Route::get('/search', 'Tenant\Web\EndUserController@search')->name('search');
-    Route::get('/search', 'Tenant\Web\EndUserController@search')->name('search');
+    Route::get('/search', 'Tenant\Web\EndUserController@getUserRecommendations')->name('search');
+    Route::get('/items', 'Tenant\Web\ItemController@show')->name('items');
+    Route::get('/isearch', 'Tenant\Web\ItemController@getItemRecommednations')->name('itemReco');
 
     Route::get('/anonymize', 'Tenant\Web\AnonymizerController@import')->name('anonymizer.import');
     Route::post('/anonymize', 'Tenant\Web\AnonymizerController@anonyimze')->name('anonymizer.anonyimze');
