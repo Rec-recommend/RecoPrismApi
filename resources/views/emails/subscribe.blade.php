@@ -12,7 +12,7 @@ Your Registeration Has Completed ...
 Your Subscription Plan is {{$client->plan->name}}
 </div>
 <div style="font-size:15px;font-weight:bold;">
-Your Domain Name is {{$client->subdomain}} 
+Your Domain Name is : <a href="{{$client->subdomain}}.recoprism.ml">{{$client->subdomain}}.recoprism.ml</a>
 </div>
 </div>
 </body>

@@ -18,7 +18,15 @@
         <!-- Argon CSS -->
         <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
         <style type="text/css"> html,body{ overflow-x:hidden; } </style>
-
+    <style>
+            .url_endpoint{
+                color: #1A2044;
+            }
+            .url_response{
+                font-size:14px;
+                color: red;
+            }
+        </style>
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
@@ -46,5 +54,6 @@
         
         <!-- Argon JS -->
         <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
+   
     </body>
 </html>
