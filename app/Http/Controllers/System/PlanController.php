@@ -1,26 +1,45 @@
 <?php
 
 namespace App\Http\Controllers\System;
+
+use App\Models\Tenant\TenantAdmin;
+use Illuminate\Support\Facades\Config;
 use \Stripe\Plan as stripe_plan;
+use App\Models\System\Client;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\System\Plan;
 use Illuminate\Support\Facades\Validator;
 use Stripe\Stripe;
+
 Stripe::setApiKey(env('STRIPE_SECRET'));
 
 class PlanController extends Controller
-{   public function create_plan (Request $request){
-   $plan = stripe_plan::create(array(
-        "amount" => strval((int)$request->package_price*100),
-        "interval" => "month",
-        "product" => ["name"=> $request->package_name],
-        "currency" => "usd",
-        )
-   );
-   return $plan -> id ;
-
-}
+{
+    public function getClient()
+    {
+        $admin = TenantAdmin::where('email', auth()->user()->email)->first();
+        Config::set('database.default', 'system');
+        return Client::where('email', $admin->email)->first();
+    }
+    public function create_plan(Request $request)
+    {
+        $plan = stripe_plan::create(
+            array(
+                "amount" => strval((int)$request->package_price * 100),
+                "interval" => "month",
+                "product" => ["name" => $request->package_name],
+                "currency" => "usd",
+            )
+        );
+        return $plan->id;
+    }
+    public function index(Request $request)
+    {
+        $client = $this->getClient();
+        $plans = Plan::all();
+        return view('tenant.subscription', compact('plans', 'client'));
+    }
     public function show()
     {
         $plans = Plan::all();
@@ -32,9 +51,9 @@ class PlanController extends Controller
         return view('system/addPlane');
     }
     public function store(Request $request)
-    {  
+    {
 
-        $stripe_id = $this -> create_plan($request);
+        $stripe_id = $this->create_plan($request);
         $plan = new Plan();
         $plan->name = $request->package_name;
         $plan->cost = $request->package_price;
@@ -57,6 +76,4 @@ class PlanController extends Controller
         $package->delete();
         return redirect('/packages/show')->withSuccess('Pacakge Deleted Successfuly');
     }
-
-
 }
