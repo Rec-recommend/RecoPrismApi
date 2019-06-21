@@ -22,7 +22,7 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('attribute/{id}', 'Tenant\Web\AttributeController@destroy')->name('deleteAttribute');
     Route::get('settings', 'Tenant\Web\SettingController@index')->name('setting.index');
     Route::put('settings/{id}', 'Tenant\Web\SettingController@update')->name('setting.update');
-    Route::get('/subscription', 'Guest\SubscriptionController@index')->name('subscription.index');
+    Route::get('/subscription', 'System\PlanController@index')->name('subscription.index');
     Route::post('/swap', 'Guest\SubscriptionController@swap')->name('subscription.swap');
     Route::get('/unsubscribe', 'Guest\SubscriptionController@unsubscribe')->name('subscription.unsubscribe');
     Route::get('/resume', 'Guest\SubscriptionController@resume')->name('subscription.resume');

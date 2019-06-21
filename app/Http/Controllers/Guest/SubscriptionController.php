@@ -14,11 +14,9 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
 
 class SubscriptionController extends Controller
-{   
+{
     public function __construct()
-    {
-        
-    }
+    { }
     public function store(Request $request)
     {
         $client = Client::find($request->client);
@@ -41,50 +39,45 @@ class SubscriptionController extends Controller
 
         Mail::to($client->email)->send(new Recoprism($client));
 
-        $domain =$client->subdomain . ".".env('APP_URL');
+        $domain = $client->subdomain . "." . env('APP_URL');
 
-        $output = shell_exec(base_path()."/recos.sh --host $domain ".base_path());
+        $output = shell_exec(base_path() . "/recos.sh --host $domain " . base_path());
 
         return redirect("http://" . $domain);
     }
-    public function index(Request $request)
-    {   $client = $this->client();
-        $plans = Plan::all();
-        return view('tenant.subscription', compact('plans','client'));
-    }
+
     public function swap(Request $request)
     {
-        $client = $this->client();
+        $client = $this->getClient();
         $plans = Plan::all();
         $client->subscription('main')->swap($request->plan_id);
 
-        return view('tenant.subscription', compact('plans','client'));
+        return view('tenant.subscription', compact('plans', 'client'));
     }
-    public function unsubscribe(){
-    
-        $client = $this->client();
+    public function unsubscribe()
+    {
+        $client = $this->getClient();
         $plans = Plan::all();
         $client->subscription('main')->cancel();
         Client::where('id', $client->id)->update(array('status' => '0'));
         $client->status = 0;
-        return view('tenant.subscription', compact('plans','client'));
-
+        return view('tenant.subscription', compact('plans', 'client'));
     }
 
-    public function resume() {
-            $client = $this->client();
-            $plans = Plan::all();
-            $client->subscription('main')->resume();
-            Client::where('id', $client->id)->update(array('status' => '1'));
-            $client->status = 1;
-            return view('tenant.subscription', compact('plans','client'));
+    public function resume()
+    {
+        $client = $this->getClient();
+        $plans = Plan::all();
+        $client->subscription('main')->resume();
+        Client::where('id', $client->id)->update(array('status' => '1'));
+        $client->status = 1;
+        return view('tenant.subscription', compact('plans', 'client'));
+    }
 
-            }
-
-    public function client(){
+    public function getClient()
+    {
         $admin = TenantAdmin::where('email', auth()->user()->email)->first();
         Config::set('database.default', 'system');
         return Client::where('email', $admin->email)->first();
-
     }
 }
