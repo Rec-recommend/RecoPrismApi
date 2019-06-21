@@ -33,7 +33,7 @@ class ApiKeyCheck
     }
 
     public function invalid(){
-        return response()->json(['api-key'=>'Invalid API Key was given']);
+        return response()->json(['api-key'=>'Invalid API Key was given'],403);
     }
 
     public function header_key($request){
