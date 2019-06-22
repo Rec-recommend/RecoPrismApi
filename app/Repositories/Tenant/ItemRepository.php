@@ -58,15 +58,13 @@ class ItemRepository extends Repository
                     $item_id      = $item[$labels_to_array_indeces['id']];
                     $value        = $item[$labels_to_array_indeces[$label]];    
                     $attribute_id = $attr_label_to_fk[$label];
-                    if (!$value){
-                        continue;
+                    if ($value){
+                        $iav_sql .= " (";
+                        $iav_sql .= " '" . addslashes($item_id)      . "', ";
+                        $iav_sql .= " '" . addslashes($attribute_id) . "', ";
+                        $iav_sql .= " '" . addslashes($value)        . "' ";
+                        $iav_sql .= "), ";
                     }
-
-                    $iav_sql .= " (";
-                    $iav_sql .= " '" . addslashes($item_id)      . "', ";
-                    $iav_sql .= " '" . addslashes($attribute_id) . "', ";
-                    $iav_sql .= " '" . addslashes($value)        . "' ";
-                    $iav_sql .= "), ";
                 }
             }
         }
