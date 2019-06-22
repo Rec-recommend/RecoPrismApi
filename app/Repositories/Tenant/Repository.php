@@ -27,6 +27,7 @@ abstract class Repository
                 }
                 return true;
             } catch (\Throwable $th) {
+                // dd($th);
                 return false;
             }
         });

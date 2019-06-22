@@ -8,10 +8,27 @@ class ItemRepository extends Repository
 {
     public function transaction($items, $headers)
     {
+
         DB::statement($this->prepareItemsInsertStatement($items, $headers));
+        DB::statement($this->prepareAttributeInsertStatement($headers));
         DB::statement($this->prepareIAVsInsertStatement($items, $headers));
     }
 
+  
+    public function prepareAttributeInsertStatement($headers)
+    {
+        $attributes_sql = "replace into attributes (`label`) values ";
+
+        foreach ($headers as $header => $label) {
+            $attributes_sql .= " (";
+            $attributes_sql .= " '" . $header . "' ";
+            $attributes_sql .= "), ";
+        }
+
+
+        $attributes_sql = substr($attributes_sql, 0, -2);
+        return $attributes_sql;
+    }
     public function prepareItemsInsertStatement($items, $labels_indeces)
     {
         $item_sql = "replace into items (`id`) values ";
@@ -27,6 +44,7 @@ class ItemRepository extends Repository
 
     public function prepareIAVsInsertStatement($items, $labels_to_array_indeces)
     {
+
         $iav_sql  = "replace into iav (`item_id`, `attribute_id`, `value`) values ";
         $attr_label_to_fk = [];
 
@@ -36,10 +54,13 @@ class ItemRepository extends Repository
 
         foreach ($items as $item) {
             foreach ($labels_to_array_indeces as $label => $index) {
-                if($label !== "id"){
+                if($label !== "id" ){
                     $item_id      = $item[$labels_to_array_indeces['id']];
-                    $value        = $item[$labels_to_array_indeces[$label]];
+                    $value        = $item[$labels_to_array_indeces[$label]];    
                     $attribute_id = $attr_label_to_fk[$label];
+                    if (!$value){
+                        continue;
+                    }
 
                     $iav_sql .= " (";
                     $iav_sql .= " '" . addslashes($item_id)      . "', ";
@@ -51,6 +72,17 @@ class ItemRepository extends Repository
         }
         $iav_sql  = substr($iav_sql, 0, -2);
         return $iav_sql;
+    }
+
+    public function dropItems(){
+        return 'TRUNCATE TABLE items';
+
+    }
+    public function dropAttributes(){
+        return 'TRUNCATE TABLE attributes';
+    }
+    public function dropIAVs(){
+        return 'TRUNCATE TABLE iav';
     }
 }
 

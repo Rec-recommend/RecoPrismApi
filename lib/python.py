@@ -36,7 +36,7 @@ class ItemAnonymizer(Anonymizer):
         vectorizer  = CountVectorizer(token_pattern=r'(?u)\b\w+\b')
         analyze     = vectorizer.build_analyzer()
         cleaned_words = []
-
+        
         for row_index, value in enumerate(self.df[column_name]):
             cleaned_words = analyze(value)
             for wordNum , word in enumerate(cleaned_words):

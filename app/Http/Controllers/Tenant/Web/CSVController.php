@@ -20,8 +20,9 @@ class CsvController
 
         $path = $request->file('csvfile')->getRealPath();
         $array = array_map('str_getcsv', file($path));
-        $filtered = array_filter(array_map('array_filter', $array));
-        return $repository->store($filtered)?
+        // $filtered = array_filter(array_map('array_filter', $array));
+        // dd($array);
+        return $repository->store($array)?
         redirect('csv')->with(['message'=> 'Data Uploaded Successfully!','success' => true]):
         redirect('csv')->with(['message'=> 'Data does not match the required format, please check the documentation']);
     }
